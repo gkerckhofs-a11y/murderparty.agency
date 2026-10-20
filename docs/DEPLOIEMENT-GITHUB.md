@@ -20,7 +20,7 @@ Après le message `AUTORISATION MURDERPARTY CONFIGURÉE`, Codex peut demander un
 
 Le workflow installe les dépendances verrouillées, compile Next.js, contrôle TypeScript, s'authentifie avec l'action Google officielle et une identité temporaire, crée le site Hosting s'il n'existe pas, puis déploie seulement `out/`. Les fichiers d'authentification restent hors de `out/`, ne sont pas archivés et sont nettoyés par l'action Google. Les pages publiques et la réponse 404 sont ensuite contrôlées. Aucun envoi de devis n'est effectué par ces contrôles.
 
-Au 20 octobre 2026, le script et le workflow sont préparés ; leur bon fonctionnement réel exige l'exécution par le propriétaire puis une première publication réussie. Aucun accès Google n'est considéré acquis avant cette vérification. La configuration DNS OVH est distincte.
+Au 20 octobre 2026, le propriétaire a exécuté le script corrigé et la publication réelle a réussi : [exécution 39464925264](https://github.com/gkerckhofs-a11y/murderparty.agency/actions/runs/39464925264), commit `40e64adaa8adc86b4446949a0976fef439f9415b`. Authentification temporaire, publication Hosting, contrôles des pages et réponse 404 ont tous réussi. Il n’est pas nécessaire de relancer l’autorisation pour les publications suivantes tant que cette délégation reste active. La configuration DNS OVH est distincte ; voir [l’état de mise en ligne](MISE-EN-LIGNE.md).
 
 ## Révocation
 

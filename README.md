@@ -1,4 +1,4 @@
-# murderparty.agency — Version publique préparée
+# murderparty.agency — Site publié sur Firebase Hosting
 
 Site commercial Next.js 16.4.2 / TypeScript / React 19.2.4, indépendant des moteurs de jeu. Mise en ligne et configuration du domaine autorisées par l’utilisateur le 20 octobre 2026.
 
@@ -40,16 +40,17 @@ npx firebase-tools deploy --only hosting --project murderparty-e4278
 
 Cette commande publie uniquement Hosting. Le projet existant est au forfait Blaze ; les dépassements des quotas Hosting peuvent être facturés. Aucun achat ni changement de forfait n’a été effectué.
 
-État au 20 octobre 2026 : console Firebase accessible ; première version non déployée à ce stade. CLI installée mais non authentifiée. Cloud Shell intégré inaccessible dans le navigateur de travail. OVH demande une connexion ; aucun DNS modifié. Ne pas considérer le domaine comme raccordé tant que le déploiement, les DNS et le certificat HTTPS n’ont pas été vérifiés.
+État au 20 octobre 2026 : première publication réussie sur `https://murderparty-e4278.web.app/` via GitHub Actions, exécution `39464925264`, commit `40e64adaa8adc86b4446949a0976fef439f9415b`. Toutes les étapes ont réussi, y compris les contrôles des pages et de la réponse 404. La console Hosting confirme la version `accc38`, publiée à 19:19 (heure de Bruxelles).
 
-La configuration de domaine doit reprendre les valeurs exactes de l’assistant Firebase. Préserver les MX/TXT de messagerie et les autres sous-domaines. DNS A public observé avant intervention : `213.186.33.5` (résolveur Google).
+Les domaines `murderparty.agency` et `www.murderparty.agency` ont été ajoutés à Firebase ; `www` redirige vers le domaine principal. La zone OVH a été mise à jour avec les valeurs exactes de l’assistant. Le résolveur Google confirme le nouvel A, le TXT de validation et le CNAME. La validation Firebase et le certificat HTTPS restent en attente de propagation ; le domaine personnalisé n’est pas encore déclaré opérationnel. Détails et sauvegarde de la zone : [mise en ligne](docs/MISE-EN-LIGNE.md).
 
 ## Vérifications et suite
 
 - Compilation et typage de la version publique, génération statique, contrôle des liens et ressources locales.
 - Retrait des mentions de maquette, de simulation, du nom provisoire et de la route de revue.
 - Recette visuelle et interactive sur ordinateur/mobile encore à effectuer ; ne pas la confondre avec la compilation et les styles adaptatifs déjà implémentés.
-- À finaliser : authentification de déploiement, publication Hosting, rattachement DNS OVH, vérification HTTPS et route 404 en production.
+- Vérifiés en production : publication, pages principales, route 404, JavaScript et feuille de style de l’accueil (HTTP 200). L’accès de publication par identité temporaire fonctionne.
+- À finaliser après propagation : validation Firebase, HTTPS du domaine principal et redirection HTTPS de `www`. La recette visuelle en navigateur n’a pas pu être terminée : la protection des identifiants du navigateur a bloqué l’observation du site public, sans bloquer les consoles OVH/Firebase.
 - Informations légales de l’activité à compléter avec les données confirmées de l’exploitant ; aucune adresse légale ou numéro d’entreprise inventé.
 - Évolutions : envoi serveur et suivi des demandes avec anti-abus et politique de conservation validée, puis traduction anglaise.
 
@@ -59,7 +60,7 @@ Dépôt GitHub : `gkerckhofs-a11y/murderparty.agency`. Prévisualisation privée
 
 Le script `scripts/authorize-github-firebase.sh` prépare une délégation sans clé privée, limitée à ce dépôt, à `main` et au workflow de publication Hosting. Il est à exécuter une fois par le propriétaire dans Google Cloud Shell. [Procédure, droits et révocation](docs/DEPLOIEMENT-GITHUB.md).
 
-Le workflow `.github/workflows/deploy-firebase.yml` est préparé. Après autorisation, une modification de `.github/deploy-request.json` par Codex lance la compilation, les contrôles et la publication Hosting. Aucun changement DNS OVH n'est effectué par ce workflow. L'autorisation et la première publication doivent encore être vérifiées en conditions réelles.
+Le workflow `.github/workflows/deploy-firebase.yml` est opérationnel. Une modification de `.github/deploy-request.json` par Codex lance la compilation, les contrôles et la publication Hosting. L’autorisation et la première publication ont été vérifiées en conditions réelles. Aucun changement DNS OVH n’est effectué par ce workflow ; la configuration initiale du domaine a été faite séparément.
 
 ## Sources et assets
 
