@@ -2049,3 +2049,76 @@ p {
   line-height: 1.6;
   margin-top: 12px;
 }
+
+.creator-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.85fr);
+  gap: 9%;
+  align-items: center;
+  padding-block: 88px 104px;
+}
+.creator-copy h1 {
+  font-family: var(--serif);
+  font-size: clamp(3.1rem, 6vw, 6rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  margin: 24px 0 18px;
+}
+.creator-copy .creator-role {
+  color: var(--copper);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 30px;
+}
+.creator-copy p {
+  font-size: 0.93rem;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  max-width: 600px;
+}
+.creator-copy .creator-lead {
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1.45;
+  margin-bottom: 25px;
+}
+.creator-copy > .text-link {
+  margin-top: 10px;
+}
+.creator-portrait {
+  margin: 0;
+}
+.creator-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+.creator-portrait figcaption {
+  color: var(--muted);
+  font-size: 0.65rem;
+  margin-top: 14px;
+  line-height: 1.6;
+}
+.creator-approach {
+  background: var(--panel);
+  border-block: 1px solid var(--line);
+  padding-block: 80px;
+}
+.creator-brand {
+  border-bottom: 0;
+}
+@media (min-width: 801px) and (max-width: 1000px) {
+  .nav { gap: 18px; font-size: 0.7rem; }
+  .nav .button.small { padding-inline: 16px; gap: 14px; font-size: 0.7rem; }
+  .language { padding-left: 14px; }
+}
+@media (max-width: 800px) {
+  .creator-hero { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 55px 65px; }
+  .creator-copy h1 { font-size: clamp(3rem, 10vw, 5.5rem); }
+  .creator-portrait { width: 100%; max-width: 430px; }
+  .creator-approach { padding-block: 60px; }
+}

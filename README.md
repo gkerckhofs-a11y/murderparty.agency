@@ -1,4 +1,4 @@
-# murderparty.agency — Maquette V0.4
+# murderparty.agency — Maquette V0.5
 
 Maquette commerciale navigable du 20 octobre 2026. Next.js 16.4.2, TypeScript, React 19.2.4. Le site est indépendant des moteurs de jeu.
 
@@ -26,6 +26,7 @@ Node.js 22 recommandé. Installer avec `npm ci`, démarrer avec `npm run dev`, c
 - `/scenarios/` : catalogue filtrable par univers.
 - `/scenarios/showbiz/`, `/scenarios/meurtre-au-chateau/`, `/scenarios/the-bikers/`, `/scenarios/black-velvet/` : fiches conceptuelles, FAQ et choix transmis au devis.
 - `/devis/` : trois étapes, validation HTML des champs, récapitulatif modifiable avec préférence de lieu et prise en charge du repas, confirmation de simulation et remise à zéro.
+- `/le-createur/` : présentation de Guillaume Kerckhofs et du Ludificateur, portrait publié sur le site source, démarche et lien externe. Accessible dans le menu desktop/mobile et le pied de page.
 - `/validation/` : décisions, contenus provisoires, accès, suite et critères de recette.
 - Page 404 et métadonnées de non-indexation.
 
@@ -65,6 +66,7 @@ Les tests interactifs et visuels dans un navigateur n’ont pas été exécutés
 ## Sources et assets
 
 - Brief de l’utilisateur et décisions du projet, 20 octobre 2026 ; ajout de deux offres, déplacement, lieux partenaires et repas.
+- [Le Ludificateur — À propos](https://leludificateur.be/), consulté le 20 octobre 2026 : Guillaume Kerckhofs, parcours culture/tourisme/événementiel/jeux ; fonction de responsable du Tourisme de la Ville de Liège, 2013–2020. Biographie reformulée sans témoignages ni références clients. Rédaction à valider. `public/images/guillaume-kerckhofs.webp` reprend le portrait publié à `https://leludificateur.be/wp-content/uploads/2026/07/ChatGPT-Image-1-juil.-2026-16_33_17-768x1024.png`, converti en WebP, sans modification de contenu. Crédit visible et lien vers le site source.
 - [Meurtre au Château — Le Ludificateur](https://leludificateur.be/meurtre-au-chateau/), consulté le 20 octobre 2026 : enquête en personnages, secrets, objectifs et indices, immersion dans le château.
 - [Sons of Misery — Le Ludificateur](https://leludificateur.be/sons-of-misery-balade-velo-murder-party/), consulté le 20 octobre 2026 : enquête itinérante à vélo inspirée des clubs de bikers. Titre commercial « The Bikers » demandé par l’utilisateur. Aucun récit de crime précis, durée, capacité ou prestation matériel inventé.
 - [Murder Party Ride — 204 Adventures](https://204adventures.bike/murder-party-ride/), consulté le 20 octobre 2026 : vélos électriques fatbike au look de moto. Location incluse confirmée par l’utilisateur. La page source affiche un minimum de 8 et un prix public ; ne pas les reprendre : le brief actuel impose 10–15 participants et uniquement un devis.

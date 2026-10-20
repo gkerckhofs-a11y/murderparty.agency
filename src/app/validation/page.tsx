@@ -3,7 +3,7 @@ export const metadata = { title: "Notes de validation" };
 export default function Page() {
   return (
     <article className="wrap validation-page">
-      <span className="eyebrow">MAQUETTE V0.4 · 20 OCTOBRE 2026</span>
+      <span className="eyebrow">MAQUETTE V0.5 · 20 OCTOBRE 2026</span>
       <h1>
         Ce qui est prêt.
         <br />
@@ -100,6 +100,11 @@ export default function Page() {
           <li>
             Accueil, catalogue filtrable, quatre fiches scénario et formulaire
             de devis en trois étapes.
+          </li>
+          <li>
+            Page « Le créateur » : Guillaume Kerckhofs, son parcours, sa démarche
+            et son lien avec Le Ludificateur. Portrait repris de son site ; lien
+            dans le menu sur ordinateur et mobile et dans le pied de page.
           </li>
           <li>
             Un fond cinématographique propre à chaque scénario, optimisé en WebP
@@ -269,6 +274,12 @@ export default function Page() {
             documentation Firebase, coûts App Hosting
           </a>{" "}
           (consultées le 20 octobre 2026).
+        </p>
+        <p>
+          Présentation du créateur et portrait :{" "}
+          <a href="https://leludificateur.be/">Le Ludificateur, rubrique « À propos »</a>,
+          consultée le 20 octobre 2026. Biographie reformulée ; aucun témoignage
+          ni référence client repris. La rédaction de la page reste à valider.
         </p>
         <p>
           Firebase App Hosting requiert un forfait Blaze avec facturation à

@@ -54,6 +54,12 @@ export function Header() {
               Les scénarios
             </Link>
             <Link
+              aria-current={path.startsWith("/le-createur") ? "page" : undefined}
+              href="/le-createur/"
+            >
+              Le créateur
+            </Link>
+            <Link
               className="button outline small"
               aria-current={path === "/devis/" ? "page" : undefined}
               href="/devis/"
@@ -87,6 +93,7 @@ export function Footer() {
           </p>
           <div>
             <Link href="/scenarios/">Les scénarios</Link>
+            <Link href="/le-createur/">Le créateur</Link>
             <Link href="/devis/">Demander un devis</Link>
             <Link href="/validation/">À propos de cette maquette</Link>
           </div>
