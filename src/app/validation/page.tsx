@@ -3,7 +3,7 @@ export const metadata = { title: "Notes de validation" };
 export default function Page() {
   return (
     <article className="wrap validation-page">
-      <span className="eyebrow">MAQUETTE V0.3 · 20 OCTOBRE 2026</span>
+      <span className="eyebrow">MAQUETTE V0.4 · 20 OCTOBRE 2026</span>
       <h1>
         Ce qui est prêt.
         <br />
@@ -35,9 +35,14 @@ export default function Page() {
             octobre 2026.
           </li>
           <li>
-            The Bikers se joue sur des fatbikes électriques au look de moto ; la
+            The Bikers se joue sur des fatbikes électriques Uni MK au look de moto ; la
             location du vélo est comprise dans le prix du devis.
           </li>
+          <li>
+            Durée des enquêtes : 3 h pour SHOWBIZ, Meurtre au Château et Black
+            Velvet ; 4 h pour The Bikers. Confirmation du 20 octobre 2026.
+          </li>
+          <li>The Bikers : départ depuis Hony (Esneux), confirmé le 20 octobre 2026.</li>
           <li>
             Meurtre au Château : immersion médiévale dans un château, costumes médiévaux fournis
             et compris dans le prix, selon votre confirmation du 20 octobre
@@ -67,7 +72,7 @@ export default function Page() {
           </li>
           <li>
             Les fonds illustrés de Meurtre au Château, The Bikers et Black
-            Velvet. Ce sont des illustrations d’ambiance générées, et non des photos de lieux, de matériel ou d’événements réels. La direction générale est conservée après votre retour
+            Velvet. Ce sont des illustrations d’ambiance générées, avec des décors fictifs. Le visuel The Bikers utilise une photo des Uni MK de 204 Adventures comme référence. La direction générale est conservée après votre retour
             positif.
           </li>
           <li>
@@ -80,7 +85,7 @@ export default function Page() {
             révélation des solutions.
           </li>
           <li>
-            Les durées, zones d’intervention, lieux précis, menus, autres inclusions et
+            Les zones d’intervention, lieux précis, menus, autres inclusions et
             conditions pratiques restent à définir pour chaque devis.
           </li>
           <li>

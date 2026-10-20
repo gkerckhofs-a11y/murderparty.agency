@@ -87,12 +87,12 @@ export default async function Page({
               </dd>
             </div>
             <div>
-              <dt>Durée</dt>
-              <dd>À confirmer</dd>
+              <dt>Durée de l’enquête</dt>
+              <dd>{s.durationHours} h</dd>
             </div>
             <div>
-              <dt>Lieu</dt>
-              <dd>{s.slug === "meurtre-au-chateau" ? "Dans un château" : "À définir ensemble selon le scénario"}</dd>
+              <dt>{s.departure ? "Départ" : "Lieu"}</dt>
+              <dd>{s.departure || (s.slug === "meurtre-au-chateau" ? "Dans un château" : "À définir ensemble selon le scénario")}</dd>
             </div>
             <div>
               <dt>Repas</dt>
@@ -118,7 +118,7 @@ export default async function Page({
             <em>Le format se précise.</em>
           </h2>
           <p>
-            Nos équipes se déplacent. Nous pouvons aussi vous proposer des lieux
+            {s.departure ? `Pour ${s.title}, le départ se fait depuis ${s.departure}.` : "Nos équipes se déplacent."} Nous pouvons aussi vous proposer des lieux
             partenaires et prendre en charge le repas. Selon le scénario et vos
             envies, nous réunissons les prestations retenues dans un devis sur
             mesure.

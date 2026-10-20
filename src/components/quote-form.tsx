@@ -71,6 +71,8 @@ function Form() {
   const recap = [
     ["Événement", data.kind || "À préciser"],
     ["Scénario souhaité", scenario],
+    ["Durée de l’enquête", selectedScenario ? `${selectedScenario.durationHours} h` : "Selon le scénario : 3 h, ou 4 h pour The Bikers"],
+    ...(selectedScenario?.departure ? [["Départ de l’enquête", selectedScenario.departure]] : []),
     ...(selectedScenario?.included
       ? [["Inclus", selectedScenario.included]]
       : []),
@@ -79,8 +81,8 @@ function Form() {
       "Date souhaitée",
       data.date ? data.date.split("-").reverse().join("/") : "À définir",
     ],
-    ["Lieu envisagé", data.location || "À définir"],
-    ["Organisation du lieu", data.venuePreference || "À définir ensemble"],
+    [selectedScenario?.departure ? "Lieu pour les prestations complémentaires" : "Lieu envisagé", data.location || "À définir"],
+    [selectedScenario?.departure ? "Organisation du lieu complémentaire" : "Organisation du lieu", data.venuePreference || "À définir ensemble"],
     ["Prise en charge du repas", data.meal || "À définir ensemble"],
     ["Votre nom", data.name],
     ["Organisation", data.company || "Non renseignée"],
@@ -203,7 +205,7 @@ function Form() {
                   {scenarios.map((s) => (
                     <option key={s.slug} value={s.slug}>
                       {s.title}
-                      {` · ${s.minParticipants}–${s.maxParticipants} pers.`}
+                      {` · ${s.minParticipants}–${s.maxParticipants} pers. · ${s.durationHours} h`}
                       {s.confirmed ? "" : " — à valider"}
                     </option>
                   ))}
@@ -213,6 +215,7 @@ function Form() {
                     {selectedScenario.included}.
                   </span>
                 )}
+                {selectedScenario?.departure && <span className="field-help">Départ depuis {selectedScenario.departure}.</span>}
               </label>
               <label>
                 Nombre de participants envisagé
@@ -253,7 +256,7 @@ function Form() {
                 </span>
               </label>
               <label>
-                Pour le lieu
+                {selectedScenario?.departure ? "Lieu pour les prestations complémentaires" : "Pour le lieu"}
                 <select
                   value={data.venuePreference}
                   onChange={(e) => update("venuePreference", e.target.value)}
@@ -275,7 +278,7 @@ function Form() {
                 </select>
               </label>
               <label className="full">
-                Ville, région ou lieu envisagé
+                {selectedScenario?.departure ? "Lieu complémentaire envisagé (facultatif)" : "Ville, région ou lieu envisagé"}
                 <input
                   maxLength={200}
                   value={data.location}

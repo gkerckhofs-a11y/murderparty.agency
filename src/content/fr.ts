@@ -13,11 +13,14 @@ export type Scenario = {
   format?: string;
   minParticipants: number;
   maxParticipants: number;
+  durationHours: number;
+  departure?: string;
   included?: string;
 };
 export const scenarios: Scenario[] = [
   {
     slug: "showbiz",
+    durationHours: 3,
     minParticipants: 15,
     maxParticipants: 40,
     title: "SHOWBIZ",
@@ -33,6 +36,7 @@ export const scenarios: Scenario[] = [
   },
   {
     slug: "meurtre-au-chateau",
+    durationHours: 3,
     minParticipants: 15,
     maxParticipants: 40,
     title: "MEURTRE AU CHÂTEAU",
@@ -52,6 +56,8 @@ export const scenarios: Scenario[] = [
   },
   {
     slug: "the-bikers",
+    durationHours: 4,
+    departure: "Hony (Esneux)",
     minParticipants: 10,
     maxParticipants: 15,
     title: "THE BIKERS",
@@ -59,9 +65,9 @@ export const scenarios: Scenario[] = [
     era: "Enquête en fatbike électrique",
     eyebrow: "Chaque arrêt devient une scène",
     pitch:
-      "Des vélos électriques au look de moto, une bande de bikers et une enquête à vivre sur la route.",
+      "Des vélos électriques Uni MK au look de moto, une bande de bikers et une enquête à vivre sur la route.",
     intro:
-      "Enfourchez des fatbikes électriques au look de moto et entrez dans l’univers d’un club de bikers traversé par les tensions et les secrets. Votre groupe progresse d’une étape à l’autre : de nouveaux indices, des personnages à interroger et des versions à confronter. Entre deux arrêts, les discussions font avancer l’enquête.",
+      "Au départ de Hony (Esneux), enfourchez des fatbikes électriques Uni MK au look de moto et entrez dans l’univers d’un club de bikers traversé par les tensions et les secrets. Votre groupe progresse d’une étape à l’autre : de nouveaux indices, des personnages à interroger et des versions à confronter. Entre deux arrêts, les discussions font avancer l’enquête.",
     theme: "bikers",
     tagline: "La route avance. Les versions se croisent.",
     confirmed: true,
@@ -70,6 +76,7 @@ export const scenarios: Scenario[] = [
   },
   {
     slug: "black-velvet",
+    durationHours: 3,
     minParticipants: 15,
     maxParticipants: 40,
     title: "BLACK VELVET",

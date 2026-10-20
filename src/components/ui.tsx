@@ -88,8 +88,9 @@ export function ScenarioCard({
         <Link href={`/scenarios/${scenario.slug}/`}>{scenario.title}</Link>
       </h3>
       <p className="capacity-label">
-        {scenario.minParticipants} à {scenario.maxParticipants} participants
+        {scenario.minParticipants} à {scenario.maxParticipants} participants · {scenario.durationHours} h
       </p>
+      {scenario.departure && <p className="inclusion-label">Départ depuis {scenario.departure}</p>}
       <p>{scenario.pitch}</p>
       {scenario.included && (
         <p className="inclusion-label">{scenario.included}</p>

@@ -1,0 +1,10 @@
+The Bikers — Uni MK — 20 octobre 2026
+Mode : outil intégré image_gen, édition avec deux références.
+Fichier intégré : /workspace/sites/murderparty-agency/public/images/the-bikers-unimk.webp
+Référence 1 : photo des vélos 204 Adventures, https://204adventures.bike/wp-content/uploads/2026/02/images-1024x683.jpg
+Page source : https://204adventures.bike/fatbike/ (consultée le 20 octobre 2026).
+Référence 2 : public/images/the-bikers.webp, illustration d’ambiance précédente.
+Le modèle utilisé, Uni MK, est confirmé par l’utilisateur ; le décor est fictif.
+
+Prompt exact :
+Use case: compositing. Edit Image 1: the real black 204 Adventures UNI MK / Unimoke electric bicycle. Image 2 is ONLY a reference for the cinematic country-lane background, color grading and portrait composition. Create a portrait 4:5 website poster background with the EXACT bicycle from Image 1, placed on a quiet wooded country lane at dusk in the style of Image 2. Product fidelity is critical: preserve Image 1's straight horizontal tubular frame, very long flat BLACK saddle and rear seat extension, rectangular black side panel with red 204 ADVENTURES insignia, rigid straight front fork (no suspension), upright battery immediately ahead of the rear wheel, round large headlight, short fenders, fat bicycle tires, chainring, visible pedals and bicycle proportions. Do not use the bicycle design from Image 2; do not invent another frame, fuel tank, engine, exhaust, suspension, brown saddle or diagonal battery. Keep the bike's Image 1 orientation, with front wheel to the left and rear wheel to the right. Fit the whole bicycle and both wheels in the lower 60 percent of the portrait, with modest space around it. Upper area quiet dark woodland, ample room for a website title overlay. Refined cinematic amber and olive lighting, charcoal shadows, gentle photographic grain. Fictional backdrop, no claim this is Hony itself. No people, no added text, no watermark. Opaque image. Retain the authentic bike branding already on the bicycle, no extra words.

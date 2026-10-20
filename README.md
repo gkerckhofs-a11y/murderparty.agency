@@ -1,4 +1,4 @@
-# murderparty.agency — Maquette V0.3
+# murderparty.agency — Maquette V0.4
 
 Maquette commerciale navigable du 20 octobre 2026. Next.js 16.4.2, TypeScript, React 19.2.4. Le site est indépendant des moteurs de jeu.
 
@@ -8,7 +8,9 @@ Maquette commerciale navigable du 20 octobre 2026. Next.js 16.4.2, TypeScript, R
 - Marque dédiée, tarifs uniquement sur devis sur mesure.
 - Déplacement de nos équipes, proposition de lieux partenaires et prise en charge du repas possibles (confirmé par l’utilisateur le 20 octobre 2026).
 - The Bikers : 10 à 15 participants inclus. SHOWBIZ, Meurtre au Château et Black Velvet : 15 à 40 participants inclus (confirmation utilisateur du 20 octobre 2026).
-- The Bikers : fatbikes électriques au look de moto, location du vélo comprise dans le prix indiqué au devis (confirmation utilisateur du 20 octobre 2026).
+- Durée des enquêtes : 3 h pour SHOWBIZ, Meurtre au Château et Black Velvet ; 4 h pour The Bikers (confirmation utilisateur du 20 octobre 2026). Durées centralisées dans `src/content/fr.ts`, affichées sur les cartes, les fiches, le choix du scénario et le récapitulatif du devis.
+- The Bikers : fatbikes électriques Uni MK au look de moto, location du vélo comprise dans le prix indiqué au devis (confirmation utilisateur du 20 octobre 2026).
+- The Bikers : départ depuis Hony (Esneux), confirmé par l’utilisateur le 20 octobre 2026. Affiché sur la carte, la fiche, le formulaire et son récapitulatif ; les autres choix de lieu concernent les prestations complémentaires.
 - Meurtre au Château : immersion médiévale exceptionnelle dans un château, costumes médiévaux fournis et compris dans le prix (confirmation utilisateur du 20 octobre 2026).
 - Français au lancement ; anglais ensuite.
 - Aucun achat immédiat, paiement ou réservation automatique en V1.
@@ -53,7 +55,7 @@ Les tests interactifs et visuels dans un navigateur n’ont pas été exécutés
 
 ## Étapes suivantes
 
-1. Finaliser identité et textes ; confirmer les fiches encore provisoires. Fournir formats, durées, lieux précis, menus, zones d’intervention, autres inclusions et coordonnées.
+1. Finaliser identité et textes ; confirmer les fiches encore provisoires. Fournir formats, lieux précis, menus, zones d’intervention, autres inclusions et coordonnées.
 2. Configurer l’accès de déploiement Firebase pour `murderparty-e4278` ; arrêter l’hébergement, la région et les limites de coûts avant activation. Aucun déploiement automatique n’est configuré.
 3. Concevoir le traitement des demandes : validation serveur, anti-abus, réception fiable, notifications, gestion des erreurs et des doublons, droits d’accès et conservation.
 4. Préparer les contenus légaux, le référencement, l’accessibilité et les contrôles de performance. Réaliser une recette multi-écrans.
@@ -70,6 +72,7 @@ Les tests interactifs et visuels dans un navigateur n’ont pas été exécutés
 - [Coûts Firebase App Hosting](https://firebase.google.com/docs/app-hosting/costs), documentation consultée le 20 octobre 2026 : nécessite Blaze, services facturés au-delà des quotas gratuits.
 - `public/images/salon-noir.webp` : illustration générée avec l’outil intégré de génération d’images, 20 octobre 2026 ; scène fictive, pas une photographie d’un événement réel. Prompt conservé dans `docs/asset-prompt.txt`. Conversion WebP pour le web.
 - `public/images/chateau-medieval.webp`, `public/images/the-bikers.webp`, `public/images/black-velvet.webp` : fonds supplémentaires générés avec l’outil intégré le 20 octobre 2026, demandés par l’utilisateur. Illustrations conceptuelles, sans prétention de représenter un lieu, un événement ou un modèle de vélo fourni. Prompts exacts dans `docs/scenario-image-prompts.txt`. Conversion WebP, dimensions 960 × 1200 ; fonds partagés par les cartes et fiches, superposition sombre pour la lisibilité. Showbiz conserve son visuel.
+- `public/images/the-bikers-unimk.webp` remplace le premier fond The Bikers en V0.4. Illustration générée par l’outil intégré à partir de la photo des vélos [204 Adventures](https://204adventures.bike/fatbike/) ; le modèle Uni MK utilisé est confirmé par l’utilisateur. Décor fictif, pas une photographie de Hony ni d’un événement. Photo de référence : `https://204adventures.bike/wp-content/uploads/2026/02/images-1024x683.jpg`. Prompt exact et références dans `docs/unimk-image-prompt.txt`.
 - DM Sans : police auto-hébergée, paquet `@fontsource-variable/dm-sans` 5.3.0. Licence OFL fournie dans `public/fonts/OFL-DM-Sans.txt`. Aucun appel Google Fonts.
 
 Ne pas activer de collecte réelle ni retirer les mentions provisoires des contenus non confirmés sans validation.
