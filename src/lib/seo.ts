@@ -39,7 +39,7 @@ export const organizationData = {
       "@id": `${siteUrl}/#organization`,
       name: siteName,
       url: `${siteUrl}/`,
-      description: "Murder parties événementielles animées par nos équipes, pour les entreprises et les événements privés, sur devis.",
+      description: "Murder parties et soirées enquête animées pour les entreprises et les groupes privés en Wallonie et à Bruxelles. Lieu et déplacements confirmés sur devis selon le scénario.",
       email: "guillaume@leludificateur.be",
       telephone: "+32472950345",
       founder: {

@@ -4,8 +4,8 @@ import { scenarios } from "@/content/fr";
 import { pageMetadata, organizationData } from "@/lib/seo";
 import { StructuredData } from "@/components/structured-data";
 export const metadata = pageMetadata(
-  "Murder party & soirée enquête",
-  "Organisez une murder party ou une soirée mystère animée par nos équipes. Quatre scénarios pour entreprises et groupes privés, lieu et repas sur devis.",
+  "Murder party en Wallonie et à Bruxelles",
+  "Votre soirée enquête ou soirée mystère en Wallonie et à Bruxelles. Quatre murder parties animées pour entreprises et groupes privés. Organisation sur devis.",
   "/",
 );
 export default function Home() {
@@ -183,11 +183,13 @@ export default function Home() {
       <section className="wrap detail-copy" aria-labelledby="enquete-title">
         <span className="eyebrow">PRÉPARER VOTRE SOIRÉE</span>
         <div>
-          <h2 id="enquete-title">Soirée enquête,<br /><em>soirée mystère.</em></h2>
-          <p>Vous cherchez une animation pour réunir vos collègues ou votre groupe privé ?
+          <h2 id="enquete-title">Votre soirée mystère<br /><em>en Wallonie et à Bruxelles.</em></h2>
+          <p>Un projet de soirée enquête à Liège, ailleurs en Wallonie ou à Bruxelles ?
+            Réunissez vos collègues ou votre groupe privé autour d’une intrigue.
             Choisissez un univers, précisez le nombre de participants et laissez nos
-            équipes vous accompagner dans l’organisation. L’animation, le lieu et
-            le repas sont définis dans votre devis.</p>
+            équipes vous accompagner dans l’organisation. Indiquez-nous la commune
+            envisagée : le lieu, les déplacements, l’animation et le repas éventuel
+            sont confirmés dans votre devis selon le scénario.</p>
           <p>Pour une murder party près de Liège, <Link href="/scenarios/the-bikers/">The Bikers</Link> propose
             une enquête en fatbike électrique au départ de Hony, à Esneux.
             Pour les autres scénarios, le lieu est convenu avec vous selon le projet.</p>

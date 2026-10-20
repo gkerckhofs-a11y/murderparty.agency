@@ -31,10 +31,11 @@ export default function Page() {
           </p>
         </div>
         <p className="small-note">
-          Nous nous déplaçons et pouvons vous proposer un lieu partenaire.
+          Pour votre événement en Wallonie ou à Bruxelles, indiquez la commune
+          envisagée. Le lieu et les déplacements sont confirmés selon le scénario.
           <br />
-          Nous pouvons aussi prendre en charge le repas : indiquez-nous vos
-          envies.
+          Un lieu partenaire et le repas peuvent aussi être proposés :
+          indiquez-nous vos envies.
         </p>
       </aside>
       <QuoteForm />

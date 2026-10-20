@@ -3,11 +3,11 @@ import { Header, Footer } from "@/components/shell";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "Murder party & soirée enquête | Murder Party Agency",
+    default: "Murder party en Wallonie et à Bruxelles | Murder Party Agency",
     template: "%s | Murder Party Agency",
   },
   description:
-    "Organisez une murder party, une soirée enquête ou une soirée mystère animée par nos équipes. Événements d’entreprise et privés, sur devis.",
+    "Votre soirée enquête ou soirée mystère en Wallonie et à Bruxelles. Quatre murder parties animées pour entreprises et groupes privés. Organisation sur devis.",
   metadataBase: new URL("https://murderparty.agency"),
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
   openGraph: { type: "website", locale: "fr_BE", siteName: "Murder Party Agency" },

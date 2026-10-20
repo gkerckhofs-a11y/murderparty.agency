@@ -9,7 +9,7 @@ La version initiale disposait d’un export HTML statique, d’un sitemap, d’u
 - Titres et descriptions distincts pour les 10 pages publiques ; mention de la marque et du sujet de chaque page.
 - Accueil précisé autour de la murder party, de la soirée enquête et de la soirée mystère, pour les entreprises et les groupes privés.
 - Nouvelle page `/soiree-enquete/` : fonctionnement, organisation, capacités, durées, choix du scénario, lieu, repas et questions pratiques. Liens depuis l’accueil, les fiches et le pied de page.
-- Ciblage géographique factuel pour The Bikers : Hony, Esneux, près de Liège. Aucune promesse de couverture de toute la Belgique ni implantation fictive dans d’autres villes.
+- Ciblage commercial retenu avec l’accord de l’utilisateur le 20 octobre : Wallonie et Bruxelles, avec mise en avant de Liège. Présent dans les métadonnées de l’accueil et du guide, les textes d’accueil, le catalogue et le devis. Le lieu et les déplacements restent à confirmer sur devis selon le scénario. The Bikers conserve son départ fixe à Hony, Esneux, près de Liège ; Meurtre au Château nécessite un château. Aucune implantation dans une autre ville n’est revendiquée et aucune page locale répétitive n’a été créée.
 - Données structurées JSON-LD Organization et WebSite sur l’accueil ; BreadcrumbList associé à un fil d’Ariane visible sur le catalogue, les fiches et le guide.
 - Métadonnées Open Graph et Twitter cohérentes avec la page et son illustration ; ces métadonnées servent au partage, sans promesse de gain de classement Google.
 - Préchargement de l’image principale de l’accueil. Les images WebP et la police locale existaient déjà.

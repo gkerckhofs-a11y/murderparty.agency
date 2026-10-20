@@ -21,9 +21,9 @@ export default function Page() {
             Quatre scénarios de soirées enquête animées par nos équipes.
           </p>
           <p className="editorial-note">
-            Nos équipes se déplacent. Nous pouvons aussi proposer un lieu
-            partenaire et prendre en charge le repas. Le tout sur devis sur
-            mesure.
+            Votre projet en Wallonie ou à Bruxelles : nous précisons le lieu et
+            les déplacements selon le scénario. Un lieu partenaire et le repas
+            peuvent aussi être proposés, sur devis sur mesure.
           </p>
         </div>
       </section>

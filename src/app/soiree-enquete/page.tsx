@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(
   "Organiser une soirée enquête ou soirée mystère",
-  "Comment organiser une soirée enquête pour une entreprise ou un groupe privé ? Découvrez le principe d’une murder party, les scénarios, durées et prestations.",
+  "Préparez votre soirée enquête en Wallonie ou à Bruxelles : principe de la murder party, scénarios, durées et lieux. Entreprises et groupes privés, sur devis.",
   "/soiree-enquete/",
 );
 
@@ -22,7 +22,8 @@ export default function MysteryEvening() {
           changer leur lecture des événements.</p>
         <p className="editorial-note">Murder Party Agency organise des soirées enquête
           animées par ses équipes, pour les entreprises et les groupes privés.
-          Le scénario, le lieu et les prestations sont réunis dans un devis sur mesure.</p>
+          Pour votre projet en Wallonie ou à Bruxelles, le scénario, le lieu et
+          les déplacements sont confirmés dans un devis sur mesure.</p>
       </div>
     </section>
     <section className="wrap detail-copy">
@@ -100,6 +101,12 @@ export default function MysteryEvening() {
             indiquez la commune et le lieu envisagés dans votre demande : nous
             confirmons les possibilités de déplacement et les lieux partenaires
             selon votre projet.</p></details>
+        <details><summary>Et pour une soirée enquête en Wallonie ou à Bruxelles ? <span>+</span></summary>
+          <p>Présentez-nous votre projet en précisant la commune, la date et le groupe.
+            Nous confirmons avec vous les possibilités de déplacement et le lieu
+            adapté au scénario, sur devis. Meurtre au Château nécessite un château ;
+            The Bikers conserve son départ à Hony, à Esneux. Le repas et un éventuel
+            lieu partenaire peuvent également faire partie de votre demande.</p></details>
         <details><summary>Comment demander un devis ? <span>+</span></summary>
           <p>Complétez le <Link href="/devis/">formulaire de demande</Link>, vérifiez
             le récapitulatif, puis envoyez l’e-mail préparé depuis votre messagerie.
