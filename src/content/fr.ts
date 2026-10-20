@@ -8,7 +8,6 @@ export type Scenario = {
   intro: string;
   theme: string;
   tagline: string;
-  confirmed?: boolean;
   posterTitle?: string[];
   format?: string;
   minParticipants: number;
@@ -49,7 +48,6 @@ export const scenarios: Scenario[] = [
       "Poussez les portes du château et plongez dans une ambiance médiévale immersive. Le cadre du château, les costumes médiévaux fournis et les personnages composent une expérience d’immersion exceptionnelle. Incarnez votre rôle, avec ses secrets et ses objectifs : interrogez les autres invités, confrontez les indices et négociez pour comprendre l’intrigue. Ici, le lieu fait pleinement partie de l’histoire.",
     theme: "chateau",
     tagline: "Un château. Une ambiance médiévale. Une immersion exceptionnelle.",
-    confirmed: true,
     posterTitle: ["MEURTRE", "AU CHÂTEAU"],
     format: "Enquête médiévale en personnages",
     included: "Costumes médiévaux fournis et compris dans le prix",
@@ -70,7 +68,6 @@ export const scenarios: Scenario[] = [
       "Au départ de Hony (Esneux), enfourchez des fatbikes électriques Uni MK au look de moto et entrez dans l’univers d’un club de bikers traversé par les tensions et les secrets. Votre groupe progresse d’une étape à l’autre : de nouveaux indices, des personnages à interroger et des versions à confronter. Entre deux arrêts, les discussions font avancer l’enquête.",
     theme: "bikers",
     tagline: "La route avance. Les versions se croisent.",
-    confirmed: true,
     format: "Murder Party en fatbike électrique",
     included: "Location du vélo comprise dans le prix",
   },
@@ -91,5 +88,3 @@ export const scenarios: Scenario[] = [
     tagline: "Les portes se ferment. Les ambitions s’éveillent.",
   },
 ];
-export const reviewNotice =
-  "Maquette de validation · Nom et textes à valider ; modalités précisées sur devis.";

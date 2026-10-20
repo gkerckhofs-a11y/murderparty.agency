@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Catalogue from "@/components/catalogue";
 import { EndCta } from "@/components/ui";
-export const metadata: Metadata = { title: "Les scénarios" };
+export const metadata: Metadata = { title: "Les scénarios", alternates: { canonical: "/scenarios/" } };
 export default function Page() {
   return (
     <>
@@ -40,8 +40,7 @@ export default function Page() {
           Château et Black Velvet accueillent de 15 à 40 participants. Indiquez
           le nombre de participants envisagé, vos souhaits pour le lieu et le
           repas. Le format, les conditions pratiques et les prestations retenues
-          seront précisés dans votre devis. Les fiches marquées « À valider »
-          restent provisoires.
+          seront précisés dans votre devis.
         </p>
       </section>
       <EndCta />

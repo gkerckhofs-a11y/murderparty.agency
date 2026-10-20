@@ -12,7 +12,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const s = scenarios.find((s) => s.slug === slug);
-  return { title: s?.title || "Scénario" };
+  return { title: s?.title || "Scénario", description: s?.pitch, alternates: { canonical: `/scenarios/${slug}/` } };
 }
 export default async function Page({
   params,
@@ -33,7 +33,7 @@ export default async function Page({
         <div className="scenario-poster">
           <Poster scenario={s} large />
           <span className="image-credit">
-            Illustration d’ambiance · Visuel conceptuel à valider
+            Illustration d’ambiance
           </span>
         </div>
         <div className="scenario-info">
@@ -49,9 +49,7 @@ export default async function Page({
           </h1>
           <p className="scenario-tagline">{s.tagline}</p>
           <span className="status-pill">
-            {s.confirmed
-              ? "MURDER PARTY ANIMÉE · SUR DEVIS"
-              : "SCÉNARIO PRESSENTI · À VALIDER"}
+            MURDER PARTY ANIMÉE · SUR DEVIS
           </span>
           <div className="scenario-intro">
             <span className="eyebrow">
@@ -103,9 +101,7 @@ export default async function Page({
             Parlons de ce scénario <Arrow />
           </Link>
           <p className="small-note">
-            {s.confirmed
-              ? "Modalités et disponibilité à préciser dans votre devis."
-              : "Présentation éditoriale provisoire, sans engagement de disponibilité."}
+            Modalités et disponibilité à préciser dans votre devis.
           </p>
         </div>
       </section>
@@ -166,9 +162,7 @@ export default async function Page({
               Où peut se dérouler l’événement ? <span>+</span>
             </summary>
             <p>
-              Nous nous déplaçons et pouvons proposer des lieux partenaires. Le
-              lieu ou le parcours adapté à votre scénario est défini avec vous,
-              selon votre projet et les disponibilités.
+              {s.departure ? `Le départ de ${s.title} se fait depuis ${s.departure}. Un lieu partenaire peut être proposé pour les prestations complémentaires, notamment le repas.` : s.slug === "meurtre-au-chateau" ? "L’enquête se déroule dans un château, dans une ambiance médiévale. Le lieu et les disponibilités sont précisés dans votre devis." : "Nous nous déplaçons et pouvons proposer des lieux partenaires. Le lieu adapté à votre scénario est défini avec vous, selon votre projet et les disponibilités."}
             </p>
           </details>
           <details>
@@ -186,9 +180,9 @@ export default async function Page({
               Comment organiser cette Murder Party ? <span>+</span>
             </summary>
             <p>
-              Le formulaire prépare une demande de devis. Dans cette maquette,
-              vous pouvez tester les étapes et consulter le récapitulatif, sans
-              envoi réel.
+              Complétez le formulaire, vérifiez votre récapitulatif puis ouvrez
+              votre messagerie pour nous envoyer votre demande. Notre équipe
+              prépare votre devis sur mesure.
             </p>
           </details>
         </div>

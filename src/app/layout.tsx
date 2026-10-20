@@ -3,12 +3,14 @@ import { Header, Footer } from "@/components/shell";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "Murder Party Agency — Maquette",
+    default: "Murder Party Agency — Murder Parties sur mesure",
     template: "%s · Murder Party Agency",
   },
   description:
-    "Maquette de validation pour des Murder Parties événementielles animées par nos équipes. Prestations uniquement sur devis.",
-  robots: { index: false, follow: false },
+    "Des Murder Parties événementielles animées par nos équipes. Scénarios immersifs, lieux partenaires et repas sur demande. Devis sur mesure.",
+  metadataBase: new URL("https://murderparty.agency"),
+  robots: { index: true, follow: true },
+  openGraph: { type: "website", locale: "fr_BE", siteName: "Murder Party Agency" },
   icons: { icon: "/icon.svg" },
 };
 export default function RootLayout({

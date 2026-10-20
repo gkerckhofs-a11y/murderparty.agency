@@ -3,6 +3,7 @@ import { Arrow, EndCta } from "@/components/ui";
 
 export const metadata = {
   title: "Le créateur — Guillaume Kerckhofs",
+  alternates: { canonical: "/le-createur/" },
   description:
     "Découvrez Guillaume Kerckhofs, à l’origine du Ludificateur, et sa démarche de création d’expériences immersives.",
 };

@@ -3,19 +3,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Mark, Arrow } from "./ui";
-import { reviewNotice } from "@/content/fr";
 export function Header() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   useEffect(() => setOpen(false), [path]);
   return (
     <>
-      <div className="review-bar">
-        <span>{reviewNotice}</span>
-        <Link href="/validation/">
-          Notes de validation <Arrow diagonal />
-        </Link>
-      </div>
       <header className="header">
         <div className="wrap header-inner">
           <Link
@@ -95,12 +88,12 @@ export function Footer() {
             <Link href="/scenarios/">Les scénarios</Link>
             <Link href="/le-createur/">Le créateur</Link>
             <Link href="/devis/">Demander un devis</Link>
-            <Link href="/validation/">À propos de cette maquette</Link>
+            <Link href="/contact/">Contact & confidentialité</Link>
           </div>
         </div>
         <div className="footer-bottom">
-          <span>murderparty.agency · Nom de travail à valider</span>
-          <span>Français · Version anglaise prévue ensuite</span>
+          <span>Murder Party Agency · Le Ludificateur</span>
+          <span>Événements animés · Devis sur mesure</span>
         </div>
       </div>
     </footer>

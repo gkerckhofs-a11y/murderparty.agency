@@ -81,7 +81,7 @@ export function ScenarioCard({
           {String(index + 1).padStart(2, "0")} / {scenario.universe}
         </span>
         <span className="status-label">
-          {scenario.confirmed ? "SUR DEVIS" : "À VALIDER"}
+          SUR DEVIS
         </span>
       </div>
       <h3>

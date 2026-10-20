@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import QuoteForm from "@/components/quote-form";
-export const metadata: Metadata = { title: "Votre événement" };
+export const metadata: Metadata = { title: "Votre événement", alternates: { canonical: "/devis/" } };
 export default function Page() {
   return (
     <section className="wrap quote-page">

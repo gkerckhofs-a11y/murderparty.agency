@@ -1,7 +1,6 @@
 "use client";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import Link from "next/link";
 import { scenarios } from "@/content/fr";
 import { Arrow } from "./ui";
 type Quote = {
@@ -36,7 +35,7 @@ function Form() {
   const params = useSearchParams();
   const [data, setData] = useState<Quote>(initial);
   const [step, setStep] = useState(1);
-  const [done, setDone] = useState(false);
+  const [copyStatus, setCopyStatus] = useState("");
   const heading = useRef<HTMLHeadingElement>(null);
   const mounted = useRef(false);
   useEffect(() => {
@@ -47,7 +46,7 @@ function Form() {
   useEffect(() => {
     if (mounted.current) heading.current?.focus();
     mounted.current = true;
-  }, [step, done]);
+  }, [step]);
   function update(key: keyof Quote, value: string) {
     setData((d) => ({ ...d, [key]: value }));
   }
@@ -90,13 +89,11 @@ function Form() {
     ["Téléphone", data.phone || "Non renseigné"],
     ["Votre projet", data.message || "Non renseigné"],
   ];
+  const emailBody = `Bonjour,\n\nJe souhaite un devis pour une Murder Party.\n\n${recap.map(([label, value]) => `${label} : ${value}`).join("\n")}\n\nMerci et à bientôt.`;
+  const mailHref = `mailto:guillaume@leludificateur.be?subject=${encodeURIComponent(`Demande de devis — ${scenario}`)}&body=${encodeURIComponent(emailBody)}`;
   return (
     <div className="quote-form">
-      <div className="form-notice">
-        <span className="notice-dot" />
-        Mode démonstration : aucune demande ni donnée de formulaire n’est
-        transmise. Utilisez des informations fictives pour tester.
-      </div>
+      <p className="form-notice">Votre demande sera préparée pour un envoi depuis votre messagerie.</p>
       <ol className="steps" aria-label="Étapes du formulaire">
         {["Votre événement", "Vos coordonnées", "Récapitulatif"].map((s, i) => (
           <li
@@ -111,42 +108,6 @@ function Form() {
           </li>
         ))}
       </ol>
-      {done ? (
-        <div className="demo-success">
-          <span className="success-mark">✓</span>
-          <p className="eyebrow">PARCOURS DE DÉMONSTRATION TERMINÉ</p>
-          <h2 ref={heading} tabIndex={-1}>
-            Votre projet prend <em>forme.</em>
-          </h2>
-          <p>
-            Le parcours de demande de devis a été simulé.
-            <br />
-            <strong>Aucune demande n’a été envoyée.</strong>
-          </p>
-          <p>
-            Dans le site final, cette étape sera reliée à la réception et au
-            suivi des demandes par l’équipe.
-          </p>
-          <div className="form-actions">
-            <button className="button outline" onClick={() => setDone(false)}>
-              Revoir mon récapitulatif
-            </button>
-            <Link className="text-link" href="/scenarios/">
-              Retour aux scénarios <Arrow />
-            </Link>
-          </div>
-          <button
-            className="reset-link"
-            onClick={() => {
-              setData({ ...initial });
-              setDone(false);
-              setStep(1);
-            }}
-          >
-            Effacer les données et recommencer
-          </button>
-        </div>
-      ) : (
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -155,7 +116,7 @@ function Form() {
               return;
             }
             if (step < 3) setStep(step + 1);
-            else setDone(true);
+
           }}
         >
           <h2 ref={heading} tabIndex={-1}>
@@ -178,7 +139,7 @@ function Form() {
               ? "Une date ou un lieu encore incertains ? Laissez ces champs vides."
               : step === 2
                 ? "Les champs marqués d’un astérisque sont obligatoires."
-                : "Vérifiez les informations avant de terminer la simulation."}
+                : "Vérifiez les informations, puis envoyez votre demande depuis votre messagerie."}
           </p>
           {step === 1 && (
             <div className="field-grid">
@@ -206,7 +167,6 @@ function Form() {
                     <option key={s.slug} value={s.slug}>
                       {s.title}
                       {` · ${s.minParticipants}–${s.maxParticipants} pers. · ${s.durationHours} h`}
-                      {s.confirmed ? "" : " — à valider"}
                     </option>
                   ))}
                 </select>
@@ -342,10 +302,7 @@ function Form() {
                 />
               </label>
               <p className="full privacy-note">
-                Dans cette maquette, les données restent uniquement en mémoire
-                dans cette page. Elles ne sont pas enregistrées dans une base de
-                données. La notice de confidentialité du futur site reste à
-                rédiger.
+                Ces informations permettront à Guillaume Kerckhofs, Le Ludificateur, de vous répondre. Elles restent dans cette page jusqu’à votre envoi par e-mail. <a href="/contact/#confidentialite">En savoir plus sur vos données</a>.
               </p>
             </div>
           )}
@@ -360,8 +317,7 @@ function Form() {
                 ))}
               </dl>
               <p className="privacy-note">
-                Cette simulation ne vaut ni devis, ni réservation, ni
-                confirmation de disponibilité.
+                Votre demande ne vaut ni réservation ni confirmation de disponibilité. Le devis est établi par notre équipe.
               </p>
             </>
           )}
@@ -379,17 +335,32 @@ function Form() {
                 Votre devis sera établi par notre équipe.
               </span>
             )}
-            <button className="button primary" type="submit">
-              {step === 3
-                ? "Terminer la simulation"
-                : step === 1
-                  ? "Vos coordonnées"
-                  : "Vérifier mon projet"}{" "}
-              <Arrow />
-            </button>
+            {step < 3 ? (
+              <button className="button primary" type="submit">
+                {step === 1 ? "Vos coordonnées" : "Vérifier mon projet"} <Arrow />
+              </button>
+            ) : (
+              <a className="button primary" href={mailHref}>
+                Ouvrir ma messagerie <Arrow />
+              </a>
+            )}
           </div>
+          {step === 3 && (
+            <div className="email-handoff">
+              <p>L’e-mail est adressé à <a href="mailto:guillaume@leludificateur.be">guillaume@leludificateur.be</a>. Vérifiez-le et cliquez sur « Envoyer » dans votre messagerie.</p>
+              <details>
+                <summary>Votre messagerie ne s’ouvre pas ?</summary>
+                <p>Copiez ce récapitulatif dans un e-mail à guillaume@leludificateur.be, avec l’objet « Demande de devis — Murder Party Agency ».</p>
+                <textarea aria-label="Récapitulatif à copier" readOnly rows={12} value={emailBody} onFocus={(e) => e.target.select()} />
+                <button className="button outline" type="button" onClick={async () => {
+                  try { await navigator.clipboard.writeText(emailBody); setCopyStatus("Récapitulatif copié."); }
+                  catch { setCopyStatus("Sélectionnez et copiez le récapitulatif ci-dessus."); }
+                }}>Copier le récapitulatif</button>
+                <p role="status">{copyStatus}</p>
+              </details>
+            </div>
+          )}
         </form>
-      )}
     </div>
   );
 }

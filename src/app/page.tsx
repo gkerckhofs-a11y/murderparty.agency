@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow, ScenarioCard, EndCta } from "@/components/ui";
 import { scenarios } from "@/content/fr";
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 export default function Home() {
   return (
     <>
@@ -75,10 +77,6 @@ export default function Home() {
             Voir le catalogue <Arrow />
           </Link>
         </div>
-        <p className="editorial-note">
-          Meurtre au Château et The Bikers rejoignent le catalogue. Les fiches
-          marquées « À valider » restent provisoires.
-        </p>
         <div className="cards">
           {scenarios.map((s, i) => (
             <ScenarioCard key={s.slug} scenario={s} index={i} />
@@ -142,7 +140,7 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Un parcours proposé pour la prise de contact.
+              Partagez vos envies avec notre équipe.
               <br />
               Les modalités se précisent dans votre devis.
             </p>
