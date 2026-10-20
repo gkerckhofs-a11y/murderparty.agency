@@ -34,7 +34,7 @@ Le contenu français des scénarios est dans `src/content/fr.ts`. Les textes d�
 ## Accès et production
 
 - GitHub : dépôt privé `gkerckhofs-a11y/murderparty.agency`, droits de lecture et écriture vérifiés le 20 octobre 2026.
-- Firebase : projet créé en Blaze d’après la confirmation de l’utilisateur, identifiant et accès technique non encore vérifiés. Aucun service Firebase déployé ni configuration de projet inventée.
+- Firebase : accès direct à la console vérifié. Projet `murderparty-e4278` (« murderparty »), forfait Blaze confirmé visuellement le 20 octobre 2026. Aucun service déployé ; accès CLI non connecté.
 - Présentation privée temporaire : https://murderparty-agency-maquette.swiftclove64.chatgpt.site
 - La maquette statique ne remplace pas la cible de production Firebase. Le manifest `.openai/hosting.json` appartient à l’environnement de présentation et n’est pas requis pour le développement Next.js.
 - Aucun DNS, compte de facturation ou dépôt de moteur n’est modifié.
@@ -48,7 +48,7 @@ Les tests interactifs et visuels dans un navigateur n’ont pas été exécutés
 ## Étapes suivantes
 
 1. Valider identité, mise en page, catalogue et textes. Fournir formats, capacités, durées, lieux, zones d’intervention, inclusions et coordonnées.
-2. Vérifier l’identifiant et l’accès Firebase ; arrêter l’hébergement, la région et les limites de coûts avant activation. Aucun déploiement automatique n’est configuré.
+2. Configurer l’accès de déploiement Firebase pour `murderparty-e4278` ; arrêter l’hébergement, la région et les limites de coûts avant activation. Aucun déploiement automatique n’est configuré.
 3. Concevoir le traitement des demandes : validation serveur, anti-abus, réception fiable, notifications, gestion des erreurs et des doublons, droits d’accès et conservation.
 4. Préparer les contenus légaux, le référencement, l’accessibilité et les contrôles de performance. Réaliser une recette multi-écrans.
 5. Lancer le français après validation, avec accord explicite préalable pour DNS et dépenses.
