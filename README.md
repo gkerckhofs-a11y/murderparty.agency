@@ -53,7 +53,13 @@ La configuration de domaine doit reprendre les valeurs exactes de l’assistant 
 - Informations légales de l’activité à compléter avec les données confirmées de l’exploitant ; aucune adresse légale ou numéro d’entreprise inventé.
 - Évolutions : envoi serveur et suivi des demandes avec anti-abus et politique de conservation validée, puis traduction anglaise.
 
-Dépôt GitHub privé : `gkerckhofs-a11y/murderparty.agency`. Prévisualisation privée de travail gérée séparément par Sites ; `.openai/hosting.json` n’intervient pas dans le déploiement Firebase.
+Dépôt GitHub : `gkerckhofs-a11y/murderparty.agency`. Prévisualisation privée de travail gérée séparément par Sites ; `.openai/hosting.json` n’intervient pas dans le déploiement Firebase.
+
+## Autorisation unique via GitHub
+
+Le script `scripts/authorize-github-firebase.sh` prépare une délégation sans clé privée, limitée à ce dépôt, à `main` et au workflow de publication Hosting. Il est à exécuter une fois par le propriétaire dans Google Cloud Shell. [Procédure, droits et révocation](docs/DEPLOIEMENT-GITHUB.md).
+
+Le workflow `.github/workflows/deploy-firebase.yml` est préparé. Après autorisation, une modification de `.github/deploy-request.json` par Codex lance la compilation, les contrôles et la publication Hosting. Aucun changement DNS OVH n'est effectué par ce workflow. L'autorisation et la première publication doivent encore être vérifiées en conditions réelles.
 
 ## Sources et assets
 

@@ -1,0 +1,50 @@
+name: Publier Murder Party Agency
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/deploy-request.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: murderparty-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.repository == 'gkerckhofs-a11y/murderparty.agency' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - run: npm run typecheck
+      - name: Installer Firebase CLI
+        run: npm install --global firebase-tools@15.34.0 --no-audit --no-fund
+      - name: Obtenir une identité Google temporaire
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
+        with:
+          project_id: murderparty-e4278
+          workload_identity_provider: projects/447999018941/locations/global/workloadIdentityPools/murderparty-github/providers/murderparty-main
+          service_account: murderparty-deployer@murderparty-e4278.iam.gserviceaccount.com
+          create_credentials_file: true
+      - name: Vérifier ou créer le site Hosting
+        run: node scripts/ensure-hosting.mjs
+      - name: Publier uniquement Hosting
+        run: firebase deploy --only hosting --project murderparty-e4278 --non-interactive
+      - name: Vérifier les pages publiées
+        run: node scripts/verify-hosting.mjs
