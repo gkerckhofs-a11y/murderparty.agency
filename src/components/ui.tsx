@@ -38,14 +38,16 @@ export function Poster({
         MURDER PARTY AGENCY<span>UNE INTRIGUE À VIVRE</span>
       </div>
       <div className="poster-symbol">
-        {scenario.theme === "western"
-          ? "✦"
-          : scenario.theme === "velvet"
-            ? "◇"
-            : "✧"}
+        {scenario.theme === "chateau"
+          ? "♜"
+          : scenario.theme === "bikers"
+            ? "◎"
+            : scenario.theme === "velvet"
+              ? "◇"
+              : "✧"}
       </div>
       <div className="poster-name">
-        {scenario.title.split(" ").map((word, i) => (
+        {(scenario.posterTitle || scenario.title.split(" ")).map((word, i) => (
           <span key={i}>{word}</span>
         ))}
       </div>
@@ -66,7 +68,7 @@ export function ScenarioCard({
       <Link
         className="poster-link"
         href={`/scenarios/${scenario.slug}/`}
-        aria-label={`Découvrir ${scenario.title}, scénario pressenti`}
+        aria-label={`Découvrir ${scenario.title}`}
       >
         <Poster scenario={scenario} />
         <span className="poster-open">
@@ -77,7 +79,9 @@ export function ScenarioCard({
         <span>
           {String(index + 1).padStart(2, "0")} / {scenario.universe}
         </span>
-        <span className="status-label">À VALIDER</span>
+        <span className="status-label">
+          {scenario.confirmed ? "SUR DEVIS" : "À VALIDER"}
+        </span>
       </div>
       <h3>
         <Link href={`/scenarios/${scenario.slug}/`}>{scenario.title}</Link>
@@ -102,7 +106,11 @@ export function EndCta() {
         <Link className="button primary" href="/devis/">
           Parlons de votre événement <Arrow />
         </Link>
-        <p>Murder Parties animées par nos équipes · Sur devis</p>
+        <p>
+          Nous nous déplaçons · Lieux partenaires · Repas sur demande
+          <br />
+          Le tout sur devis sur mesure
+        </p>
       </div>
     </section>
   );

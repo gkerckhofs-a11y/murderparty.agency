@@ -27,13 +27,14 @@ export default function Page() {
           <p>
             Une prestation
             <br />
-            <strong>uniquement sur devis.</strong>
+            <strong>sur devis sur mesure.</strong>
           </p>
         </div>
         <p className="small-note">
-          Les scénarios présentés sont provisoires.
+          Nous nous déplaçons et pouvons vous proposer un lieu partenaire.
           <br />
-          Les modalités seront précisées avec l’équipe.
+          Nous pouvons aussi prendre en charge le repas : indiquez-nous vos
+          envies.
         </p>
       </aside>
       <QuoteForm />

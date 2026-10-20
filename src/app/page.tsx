@@ -41,8 +41,8 @@ export default function Home() {
         </div>
         <div className="hero-bottom wrap">
           <span>ANIMÉ PAR NOS ÉQUIPES</span>
-          <span>UNE EXPÉRIENCE ÉVÉNEMENTIELLE</span>
-          <span>UNIQUEMENT SUR DEVIS</span>
+          <span>CHEZ VOUS OU DANS UN LIEU PARTENAIRE</span>
+          <span>DEVIS SUR MESURE</span>
         </div>
       </section>
       <section className="intro-section wrap">
@@ -66,7 +66,7 @@ export default function Home() {
       <section className="catalogue-preview wrap">
         <div className="section-heading">
           <div>
-            <span className="eyebrow">LES UNIVERS PRESSENTIS</span>
+            <span className="eyebrow">LES UNIVERS</span>
             <h2>
               Choisissez votre <em>intrigue.</em>
             </h2>
@@ -76,14 +76,59 @@ export default function Home() {
           </Link>
         </div>
         <p className="editorial-note">
-          Sélection proposée à partir de vos scénarios. Offre commerciale et
-          formats à valider.
+          Meurtre au Château et The Bikers rejoignent le catalogue. Les fiches
+          marquées « À valider » restent provisoires.
         </p>
         <div className="cards">
           {scenarios.map((s, i) => (
             <ScenarioCard key={s.slug} scenario={s} index={i} />
           ))}
         </div>
+      </section>
+      <section className="services-section wrap">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">VOTRE ÉVÉNEMENT, SUR MESURE</span>
+            <h2>
+              L’intrigue, le lieu,
+              <br />
+              <em>et le plaisir de recevoir.</em>
+            </h2>
+          </div>
+          <p>
+            Nous construisons votre devis autour de vos envies : animation, lieu
+            et repas.
+          </p>
+        </div>
+        <div className="process-grid">
+          <div>
+            <span>01</span>
+            <h3>Nous venons à vous.</h3>
+            <p>
+              Nos équipes se déplacent pour animer votre Murder Party dans le
+              lieu que vous envisagez.
+            </p>
+          </div>
+          <div>
+            <span>02</span>
+            <h3>Un lieu à trouver ?</h3>
+            <p>
+              Nous pouvons vous proposer des lieux partenaires pour accueillir
+              votre événement.
+            </p>
+          </div>
+          <div>
+            <span>03</span>
+            <h3>Et le repas aussi.</h3>
+            <p>
+              Nous pouvons également prendre en charge le repas. Les prestations
+              retenues sont réunies dans un devis sur mesure.
+            </p>
+          </div>
+        </div>
+        <Link href="/devis/" className="text-link">
+          Composer votre événement <Arrow />
+        </Link>
       </section>
       <section className="process">
         <div className="wrap">
@@ -107,12 +152,12 @@ export default function Home() {
               [
                 "01",
                 "Votre projet",
-                "Partagez vos envies, votre lieu et le nombre de participants envisagé.",
+                "Partagez vos envies, votre lieu ou votre besoin d’un lieu partenaire, et le nombre de participants envisagé.",
               ],
               [
                 "02",
                 "Votre devis",
-                "Les contours de la prestation se définissent avec notre équipe.",
+                "Animation, lieu partenaire et repas selon vos besoins : nous préparons un devis sur mesure.",
               ],
               [
                 "03",

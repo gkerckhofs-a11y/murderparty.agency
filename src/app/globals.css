@@ -420,7 +420,7 @@ p {
 }
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 30px;
 }
 .poster-link {
@@ -463,7 +463,7 @@ p {
     url("/images/salon-noir.webp") 77% center/auto 100%;
   color: #e3cbaa;
 }
-.poster.western {
+.poster.chateau {
   background:
     radial-gradient(ellipse at 50% 10%, #967b4f88, transparent 60%),
     linear-gradient(155deg, #54472d, #302e22 60%, #282b21);
@@ -525,7 +525,7 @@ p {
   margin-top: 8px;
   color: #ccad78;
 }
-.western .poster-symbol {
+.chateau .poster-symbol {
   font-size: 7.4rem;
 }
 .velvet .poster-symbol {
@@ -1422,7 +1422,7 @@ p {
   .poster-symbol {
     font-size: 4rem;
   }
-  .western .poster-symbol {
+  .chateau .poster-symbol {
     font-size: 5rem;
   }
   .velvet .poster-symbol {
@@ -1679,7 +1679,7 @@ p {
   .poster-symbol {
     font-size: 6.2rem;
   }
-  .western .poster-symbol {
+  .chateau .poster-symbol {
     font-size: 7.2rem;
   }
   .velvet .poster-symbol {
@@ -1966,5 +1966,76 @@ p {
   *:after {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* Catalogue à quatre univers et services confirmés. */
+.services-section {
+  padding-block: 65px 90px;
+  border-top: 1px solid var(--line);
+}
+.services-section > .text-link {
+  margin-top: 30px;
+}
+.poster.bikers {
+  background:
+    repeating-linear-gradient(
+      125deg,
+      transparent 0,
+      transparent 44px,
+      #b3a27c12 45px,
+      #b3a27c12 47px
+    ),
+    linear-gradient(160deg, #55594b, #222c27 65%, #151c19);
+  color: #d9d8bd;
+}
+.bikers .poster-symbol {
+  color: #b4b89c;
+}
+.scenario-card .poster-name {
+  font-size: clamp(1.75rem, 2.65vw, 2.85rem);
+}
+.scenario-card .chateau .poster-name {
+  font-size: clamp(1.5rem, 2.2vw, 2.45rem);
+  line-height: 1.1;
+}
+.scenario-card .chateau .poster-symbol {
+  font-size: 5.8rem;
+}
+.poster-large.chateau .poster-name {
+  font-size: clamp(2rem, 3.6vw, 4rem);
+  line-height: 1.1;
+}
+.scenario-info h1.long-title {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+}
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .scenario-card .poster-name {
+    font-size: clamp(2.6rem, 5.1vw, 4rem);
+  }
+  .scenario-card .chateau .poster-name {
+    font-size: clamp(2.2rem, 4.2vw, 3.3rem);
+  }
+}
+@media (max-width: 800px) {
+  .services-section {
+    padding-block: 55px 65px;
+  }
+}
+@media (max-width: 560px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .scenario-card .poster-name {
+    font-size: clamp(2.9rem, 10vw, 4rem);
+  }
+  .scenario-card .chateau .poster-name {
+    font-size: clamp(2.2rem, 7.8vw, 3rem);
+  }
+  .poster-large.chateau .poster-name {
+    font-size: 2.4rem;
   }
 }

@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <section className="page-intro wrap">
-        <span className="eyebrow">LE CATALOGUE · SÉLECTION PROVISOIRE</span>
+        <span className="eyebrow">LE CATALOGUE</span>
         <h1>
           À chaque univers,
           <br />
@@ -14,14 +14,14 @@ export default function Page() {
         </h1>
         <div className="intro-columns">
           <p>
-            Hollywood, Far West, Prohibition…
+            Hollywood, château, bikers, Prohibition…
             <br />
             Explorez les ambiances de vos prochaines intrigues.
           </p>
           <p className="editorial-note">
-            Ces scénarios sont issus de vos projets. Leur présence au catalogue,
-            leurs formats et leurs conditions de commercialisation restent à
-            valider.
+            Nos équipes se déplacent. Nous pouvons aussi proposer un lieu
+            partenaire et prendre en charge le repas. Le tout sur devis sur
+            mesure.
           </p>
         </div>
       </section>
@@ -36,9 +36,10 @@ export default function Page() {
           </h2>
         </div>
         <p>
-          Les durées, capacités d’accueil et conditions pratiques ne sont pas
-          encore confirmées pour ce catalogue. Décrivez votre projet dans le
-          formulaire pour préparer l’échange.
+          Indiquez le nombre de participants envisagé, vos souhaits pour le lieu
+          et le repas. Le format, les conditions pratiques et les prestations
+          retenues seront précisés dans votre devis. Les fiches marquées « À
+          valider » restent provisoires.
         </p>
       </section>
       <EndCta />

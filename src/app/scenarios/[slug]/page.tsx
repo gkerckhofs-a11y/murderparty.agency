@@ -40,9 +40,19 @@ export default async function Page({
           <span className="eyebrow">
             {s.universe} · {s.era}
           </span>
-          <h1>{s.title}</h1>
+          <h1
+            className={
+              s.slug === "meurtre-au-chateau" ? "long-title" : undefined
+            }
+          >
+            {s.title}
+          </h1>
           <p className="scenario-tagline">{s.tagline}</p>
-          <span className="status-pill">SCÉNARIO PRESSENTI · À VALIDER</span>
+          <span className="status-pill">
+            {s.confirmed
+              ? "MURDER PARTY ANIMÉE · SUR DEVIS"
+              : "SCÉNARIO PRESSENTI · À VALIDER"}
+          </span>
           <div className="scenario-intro">
             <span className="eyebrow">LE POINT DE DÉPART</span>
             <p>{s.intro}</p>
@@ -54,23 +64,34 @@ export default async function Page({
             </div>
             <div>
               <dt>Tarif</dt>
-              <dd>Sur devis</dd>
+              <dd>Devis sur mesure</dd>
             </div>
+            {s.format && (
+              <div>
+                <dt>Format</dt>
+                <dd>{s.format}</dd>
+              </div>
+            )}
             <div>
               <dt>Durée et participants</dt>
               <dd>À confirmer</dd>
             </div>
             <div>
-              <dt>Lieu et conditions</dt>
-              <dd>À confirmer</dd>
+              <dt>Lieu</dt>
+              <dd>À définir ensemble selon le scénario</dd>
+            </div>
+            <div>
+              <dt>Repas</dt>
+              <dd>Prise en charge possible sur demande</dd>
             </div>
           </dl>
           <Link href={`/devis/?scenario=${s.slug}`} className="button primary">
             Parlons de ce scénario <Arrow />
           </Link>
           <p className="small-note">
-            Présentation éditoriale provisoire, sans engagement de
-            disponibilité.
+            {s.confirmed
+              ? "Modalités et disponibilité à préciser dans votre devis."
+              : "Présentation éditoriale provisoire, sans engagement de disponibilité."}
           </p>
         </div>
       </section>
@@ -83,18 +104,30 @@ export default async function Page({
             <em>Le format se précise.</em>
           </h2>
           <p>
-            Votre lieu, la date souhaitée et le nombre de participants envisagé
-            permettent d’ouvrir la discussion. Le devis précisera les modalités
-            de la prestation.
+            Nos équipes se déplacent. Nous pouvons aussi vous proposer des lieux
+            partenaires et prendre en charge le repas. Selon le scénario et vos
+            envies, nous réunissons les prestations retenues dans un devis sur
+            mesure.
           </p>
           <details>
             <summary>
               Que comprend la prestation ? <span>+</span>
             </summary>
             <p>
-              L’animation par nos équipes est confirmée. Le détail du matériel,
-              des préparatifs et des éventuelles options doit encore être validé
-              pour cette fiche.
+              La Murder Party est animée par nos équipes. Vous pouvez également
+              nous confier la recherche d’un lieu partenaire et l’organisation
+              du repas. Le détail des prestations et des conditions figure dans
+              votre devis.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Où peut se dérouler l’événement ? <span>+</span>
+            </summary>
+            <p>
+              Nous nous déplaçons et pouvons proposer des lieux partenaires. Le
+              lieu ou le parcours adapté à votre scénario est défini avec vous,
+              selon votre projet et les disponibilités.
             </p>
           </details>
           <details>

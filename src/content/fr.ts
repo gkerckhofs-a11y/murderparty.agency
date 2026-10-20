@@ -8,6 +8,9 @@ export type Scenario = {
   intro: string;
   theme: string;
   tagline: string;
+  confirmed?: boolean;
+  posterTitle?: string[];
+  format?: string;
 };
 export const scenarios: Scenario[] = [
   {
@@ -24,17 +27,35 @@ export const scenarios: Scenario[] = [
     tagline: "Le premier rôle se mérite. La vérité aussi.",
   },
   {
-    slug: "hot-spring",
-    title: "HOT SPRING",
-    universe: "Far West",
-    era: "Montana · 1876",
-    eyebrow: "Derrière les portes du saloon",
+    slug: "meurtre-au-chateau",
+    title: "MEURTRE AU CHÂTEAU",
+    universe: "Château",
+    era: "Secrets & intrigues",
+    eyebrow: "Les murs ont leurs secrets",
     pitch:
-      "Un banquet au saloon. Un contrat ferroviaire. Des intérêts qui s’affrontent.",
+      "Un château, des personnages et des secrets. Entrez dans une enquête où chacun a un rôle à jouer.",
     intro:
-      "Hot Spring, Montana, 1876. Au saloon, le banquet est interrompu par la mort de Cornelius Thorne. La signature d’un contrat ferroviaire approche. Derrière les conversations, les intérêts s’entrecroisent.",
-    theme: "western",
-    tagline: "Dans cette ville, chacun a quelque chose à cacher.",
+      "Dans le cadre d’un château, vous incarnez un personnage avec ses secrets et ses objectifs. Interrogez les autres invités, confrontez les indices et négociez pour comprendre l’intrigue. Une Murder Party conçue autour du lieu, de son atmosphère et des échanges entre participants.",
+    theme: "chateau",
+    tagline: "Derrière chaque porte, une autre version des faits.",
+    confirmed: true,
+    posterTitle: ["MEURTRE", "AU CHÂTEAU"],
+    format: "Enquête en personnages",
+  },
+  {
+    slug: "the-bikers",
+    title: "THE BIKERS",
+    universe: "Bikers",
+    era: "Enquête itinérante à vélo",
+    eyebrow: "Chaque arrêt devient une scène",
+    pitch:
+      "Une balade à vélo devient une enquête. Secrets, rivalités et loyautés fragiles rythment le parcours.",
+    intro:
+      "Entrez dans l’univers d’un club de bikers traversé par les tensions et les secrets. À vélo, votre groupe progresse d’une étape à l’autre : de nouveaux indices, des personnages à interroger et des versions à confronter. Entre deux arrêts, les discussions font avancer l’enquête.",
+    theme: "bikers",
+    tagline: "La route avance. Les versions se croisent.",
+    confirmed: true,
+    format: "Murder Party à vélo",
   },
   {
     slug: "black-velvet",
@@ -51,4 +72,4 @@ export const scenarios: Scenario[] = [
   },
 ];
 export const reviewNotice =
-  "Maquette de validation · Nom, textes et sélection de scénarios provisoires.";
+  "Maquette de validation · Nom et textes à valider ; modalités précisées sur devis.";

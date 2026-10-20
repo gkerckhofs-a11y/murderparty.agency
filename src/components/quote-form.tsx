@@ -10,6 +10,8 @@ type Quote = {
   participants: string;
   date: string;
   location: string;
+  venuePreference: string;
+  meal: string;
   message: string;
   name: string;
   company: string;
@@ -22,6 +24,8 @@ const initial: Quote = {
   participants: "",
   date: "",
   location: "",
+  venuePreference: "",
+  meal: "",
   message: "",
   name: "",
   company: "",
@@ -52,13 +56,15 @@ function Form() {
     "À définir ensemble";
   const recap = [
     ["Événement", data.kind || "À préciser"],
-    ["Scénario pressenti", scenario],
+    ["Scénario souhaité", scenario],
     ["Participants envisagés", data.participants || "À préciser"],
     [
       "Date souhaitée",
       data.date ? data.date.split("-").reverse().join("/") : "À définir",
     ],
     ["Lieu envisagé", data.location || "À définir"],
+    ["Organisation du lieu", data.venuePreference || "À définir ensemble"],
+    ["Prise en charge du repas", data.meal || "À définir ensemble"],
     ["Votre nom", data.name],
     ["Organisation", data.company || "Non renseignée"],
     ["E-mail", data.email],
@@ -167,7 +173,7 @@ function Form() {
                 </select>
               </label>
               <label>
-                Scénario pressenti
+                Scénario souhaité
                 <select
                   value={data.scenario}
                   onChange={(e) => update("scenario", e.target.value)}
@@ -175,7 +181,8 @@ function Form() {
                   <option value="">À définir ensemble</option>
                   {scenarios.map((s) => (
                     <option key={s.slug} value={s.slug}>
-                      {s.title} — à valider
+                      {s.title}
+                      {s.confirmed ? "" : " — à valider"}
                     </option>
                   ))}
                 </select>
@@ -206,8 +213,30 @@ function Form() {
                   N’entraîne aucune réservation.
                 </span>
               </label>
+              <label>
+                Pour le lieu
+                <select
+                  value={data.venuePreference}
+                  onChange={(e) => update("venuePreference", e.target.value)}
+                >
+                  <option value="">À définir ensemble</option>
+                  <option>Nous avons un lieu</option>
+                  <option>Proposez-nous un lieu partenaire</option>
+                </select>
+              </label>
+              <label>
+                Souhaitez-vous nous confier le repas ?
+                <select
+                  value={data.meal}
+                  onChange={(e) => update("meal", e.target.value)}
+                >
+                  <option value="">À définir ensemble</option>
+                  <option>Oui, avec prise en charge du repas</option>
+                  <option>Non, sans prise en charge du repas</option>
+                </select>
+              </label>
               <label className="full">
-                Ville ou lieu envisagé
+                Ville, région ou lieu envisagé
                 <input
                   maxLength={200}
                   value={data.location}
@@ -222,7 +251,7 @@ function Form() {
                   rows={4}
                   value={data.message}
                   onChange={(e) => update("message", e.target.value)}
-                  placeholder="L’occasion, vos envies, vos questions…"
+                  placeholder="L’occasion, l’ambiance, vos souhaits pour le lieu et le repas…"
                 />
               </label>
             </div>

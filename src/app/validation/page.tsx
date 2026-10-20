@@ -3,7 +3,7 @@ export const metadata = { title: "Notes de validation" };
 export default function Page() {
   return (
     <article className="wrap validation-page">
-      <span className="eyebrow">MAQUETTE V0.1 · 20 OCTOBRE 2026</span>
+      <span className="eyebrow">MAQUETTE V0.2 · 20 OCTOBRE 2026</span>
       <h1>
         Ce qui est prêt.
         <br />
@@ -20,7 +20,15 @@ export default function Page() {
             Murder Parties événementielles exclusivement, animées par vos
             équipes.
           </li>
-          <li>Marque dédiée ; tarifs uniquement sur devis.</li>
+          <li>Marque dédiée ; tarifs uniquement sur devis sur mesure.</li>
+          <li>
+            Nos équipes se déplacent. Proposition de lieux partenaires et prise
+            en charge du repas possibles.
+          </li>
+          <li>
+            Ajout de Meurtre au Château et The Bikers au catalogue, confirmé le
+            20 octobre 2026.
+          </li>
           <li>Français au lancement, anglais prévu ensuite.</li>
           <li>
             Aucun achat immédiat, paiement en ligne ou réservation automatique
@@ -44,21 +52,23 @@ export default function Page() {
             accroches.
           </li>
           <li>
-            La direction sombre, ivoire et cuivre, les affiches et le visuel
-            d’ambiance généré.
+            Les nouvelles affiches conceptuelles de Meurtre au Château et The
+            Bikers. La direction générale est conservée après votre retour
+            positif.
           </li>
           <li>
-            La sélection SHOWBIZ, Hot Spring, Black Velvet. Ces univers
-            proviennent de vos projets ; leur mise au catalogue n’est pas encore
-            confirmée.
+            La sélection SHOWBIZ et Black Velvet reste identifiée comme
+            provisoire. Meurtre au Château et The Bikers sont confirmés au
+            catalogue.
           </li>
           <li>
             Les textes de présentation sont des propositions éditoriales sans
             révélation des solutions.
           </li>
           <li>
-            Les durées, capacités, zones d’intervention, lieux, inclusions,
-            options et conditions pratiques restent à fournir.
+            Les durées, capacités, zones d’intervention, lieux précis, menus,
+            inclusions et conditions pratiques restent à définir pour chaque
+            devis.
           </li>
           <li>
             Les coordonnées professionnelles, l’identité de l’exploitant et les
@@ -70,12 +80,13 @@ export default function Page() {
         <h2>Réalisé dans cette version</h2>
         <ul>
           <li>
-            Accueil, catalogue filtrable, trois fiches scénario et formulaire de
-            devis en trois étapes.
+            Accueil, catalogue filtrable, quatre fiches scénario et formulaire
+            de devis en trois étapes.
           </li>
           <li>
             Menu mobile, liens entre pages, préselection du scénario, contrôles
-            des champs et récapitulatif modifiable.
+            des champs et récapitulatif modifiable, avec choix du lieu et de la
+            prise en charge du repas.
           </li>
           <li>
             Confirmation explicitement simulée ; aucun envoi d’e-mail, paiement,
@@ -106,7 +117,9 @@ export default function Page() {
           <div>
             <dt>Firebase</dt>
             <dd>
-              Accès direct à la console confirmé. Projet murderparty-e4278 (« murderparty »), forfait Blaze vérifié. Aucun service déployé ; accès CLI non connecté.
+              Accès direct à la console confirmé. Projet murderparty-e4278 («
+              murderparty »), forfait Blaze vérifié. Aucun service déployé ;
+              accès CLI non connecté.
             </dd>
           </div>
           <div>
@@ -131,9 +144,9 @@ export default function Page() {
           </li>
           <li>
             <strong>Établir le socle dédié.</strong> Synchroniser le dépôt
-            GitHub dédié ; vérifier l’identifiant et l’accès au projet Firebase
-            créé en Blaze ; confirmer la configuration d’hébergement avant
-            activation.
+            GitHub dédié ; configurer le déploiement du projet Firebase
+            murderparty-e4278, déjà identifié en Blaze ; confirmer la
+            configuration d’hébergement avant activation.
           </li>
           <li>
             <strong>Rendre le devis opérationnel.</strong> Validation côté
@@ -194,9 +207,23 @@ export default function Page() {
         <h2>Sources de contenu</h2>
         <p>
           Vos décisions dans ce projet et votre demande du 20 octobre 2026.
-          Cadres narratifs SHOWBIZ, Hot Spring et Black Velvet issus du contexte
-          du projet Ludificateur ; ils ne constituent pas une validation
-          commerciale du catalogue.
+          Cadres narratifs SHOWBIZ et Black Velvet issus du contexte du projet
+          Ludificateur. Les deux nouvelles offres, le déplacement, les lieux
+          partenaires et la prise en charge du repas sont confirmés par votre
+          demande du 20 octobre 2026.
+        </p>
+        <p>
+          Présentations sources, Le Ludificateur, consultées le 20 octobre 2026
+          :{" "}
+          <a href="https://leludificateur.be/meurtre-au-chateau/">
+            Meurtre au Château
+          </a>{" "}
+          et{" "}
+          <a href="https://leludificateur.be/sons-of-misery-balade-velo-murder-party/">
+            Sons of Misery
+          </a>
+          , renommé « The Bikers » à votre demande. Aucun témoignage ni capacité
+          repris.
         </p>
         <p>
           Références techniques :{" "}
