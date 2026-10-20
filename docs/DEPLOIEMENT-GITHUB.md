@@ -2,6 +2,8 @@
 
 Le propriétaire exécute `scripts/authorize-github-firebase.sh` dans Google Cloud Shell. Il vérifie le projet `murderparty-e4278` et son numéro `447999018941` avant toute modification. Le script est relançable ; en cas d'erreur, les opérations déjà réussies ne sont pas annulées.
 
+Le script utilise le numéro numérique du projet pour les ressources WIF et attend jusqu'à cinq minutes lorsqu'une ressource créée retourne temporairement `NOT_FOUND`. Les autres erreurs ne sont pas masquées. Une réponse `ALREADY_EXISTS` permet la reprise ; les conditions restrictives du fournisseur sont réappliquées avant la délégation.
+
 Il active les API d'identité, de projet, de clés API et de Firebase Hosting, crée le compte `murderparty-deployer`, le pool `murderparty-github` et le fournisseur `murderparty-main`. Aucun serveur applicatif, base de données, clé privée ou secret GitHub n'est créé.
 
 ## Périmètre des droits
