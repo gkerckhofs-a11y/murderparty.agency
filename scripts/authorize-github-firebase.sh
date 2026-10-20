@@ -86,32 +86,32 @@ for role in roles/firebasehosting.admin roles/serviceusage.apiKeysViewer roles/s
     --role="$role" --condition=None --quiet >/dev/null
 done
 
-if ! gcloud iam workload-identity-pools describe "$POOL" --location=global --project="$PROJECT_NUMBER" >/dev/null 2>&1; then
+if ! gcloud iam workload-identity-pools describe "$POOL" --location=global --project="$PROJECT_ID" >/dev/null 2>&1; then
   create_or_reuse iam workload-identity-pools create "$POOL" --location=global \
-    --display-name='Murder Party GitHub' --project="$PROJECT_NUMBER" --quiet
+    --display-name='Murder Party GitHub' --project="$PROJECT_ID" --quiet
 fi
-pool_state="$(wait_for_resource iam workload-identity-pools describe "$POOL" --location=global --project="$PROJECT_NUMBER" --format='value(state)')"
-pool_disabled="$(wait_for_resource iam workload-identity-pools describe "$POOL" --location=global --project="$PROJECT_NUMBER" --format='value(disabled)')"
+pool_state="$(wait_for_resource iam workload-identity-pools describe "$POOL" --location=global --project="$PROJECT_ID" --format='value(state)')"
+pool_disabled="$(wait_for_resource iam workload-identity-pools describe "$POOL" --location=global --project="$PROJECT_ID" --format='value(disabled)')"
 [[ "$pool_state" == 'ACTIVE' && "${pool_disabled,,}" != 'true' ]] || { echo 'Fédération désactivée ou supprimée : arrêt.'; exit 1; }
 
 mapping='google.subject=assertion.sub,attribute.repository_id=assertion.repository_id,attribute.repository_owner_id=assertion.repository_owner_id,attribute.ref=assertion.ref,attribute.workflow_ref=assertion.workflow_ref,attribute.event_name=assertion.event_name'
 condition="assertion.repository_id == '$REPOSITORY_ID' && assertion.repository_owner_id == '$OWNER_ID' && assertion.ref == 'refs/heads/main' && assertion.workflow_ref == '${REPOSITORY}/.github/workflows/deploy-firebase.yml@refs/heads/main' && (assertion.event_name == 'push' || assertion.event_name == 'workflow_dispatch')"
 provider_action=create-oidc
-if gcloud iam workload-identity-pools providers describe "$PROVIDER" --workload-identity-pool="$POOL" --location=global --project="$PROJECT_NUMBER" >/dev/null 2>&1; then
+if gcloud iam workload-identity-pools providers describe "$PROVIDER" --workload-identity-pool="$POOL" --location=global --project="$PROJECT_ID" >/dev/null 2>&1; then
   provider_action=update-oidc
 fi
 create_or_reuse iam workload-identity-pools providers "$provider_action" "$PROVIDER" \
-  --workload-identity-pool="$POOL" --location=global --project="$PROJECT_NUMBER" \
+  --workload-identity-pool="$POOL" --location=global --project="$PROJECT_ID" \
   --issuer-uri='https://token.actions.githubusercontent.com' \
   --attribute-mapping="$mapping" --attribute-condition="$condition" --quiet
-provider_state="$(wait_for_resource iam workload-identity-pools providers describe "$PROVIDER" --workload-identity-pool="$POOL" --location=global --project="$PROJECT_NUMBER" --format='value(state)')"
-provider_disabled="$(wait_for_resource iam workload-identity-pools providers describe "$PROVIDER" --workload-identity-pool="$POOL" --location=global --project="$PROJECT_NUMBER" --format='value(disabled)')"
+provider_state="$(wait_for_resource iam workload-identity-pools providers describe "$PROVIDER" --workload-identity-pool="$POOL" --location=global --project="$PROJECT_ID" --format='value(state)')"
+provider_disabled="$(wait_for_resource iam workload-identity-pools providers describe "$PROVIDER" --workload-identity-pool="$POOL" --location=global --project="$PROJECT_ID" --format='value(disabled)')"
 [[ "$provider_state" == 'ACTIVE' && "${provider_disabled,,}" != 'true' ]] || { echo 'Fournisseur désactivé ou supprimé : arrêt.'; exit 1; }
 
 # Appliquer les restrictions même si create-oidc a retrouvé une création récente.
 if [[ "$provider_action" == 'create-oidc' ]]; then
   gcloud iam workload-identity-pools providers update-oidc "$PROVIDER" \
-    --workload-identity-pool="$POOL" --location=global --project="$PROJECT_NUMBER" \
+    --workload-identity-pool="$POOL" --location=global --project="$PROJECT_ID" \
     --issuer-uri='https://token.actions.githubusercontent.com' \
     --attribute-mapping="$mapping" --attribute-condition="$condition" --quiet
 fi
