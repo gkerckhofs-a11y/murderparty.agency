@@ -33,6 +33,7 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npm run build
       - run: npm run typecheck
+      - run: npm run verify:seo
       - name: Installer Firebase CLI
         run: npm install --global firebase-tools@15.34.0 --no-audit --no-fund
       - name: Obtenir une identité Google temporaire
@@ -48,3 +49,5 @@ jobs:
         run: firebase deploy --only hosting --project murderparty-e4278 --non-interactive
       - name: Vérifier les pages publiées
         run: node scripts/verify-hosting.mjs
+      - name: Vérifier le référencement publié
+        run: node scripts/verify-seo.mjs https://murderparty-e4278.web.app

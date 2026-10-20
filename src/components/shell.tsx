@@ -86,6 +86,7 @@ export function Footer() {
           </p>
           <div>
             <Link href="/scenarios/">Les scénarios</Link>
+            <Link href="/soiree-enquete/">Organiser une soirée enquête</Link>
             <Link href="/le-createur/">Le créateur</Link>
             <Link href="/devis/">Demander un devis</Link>
             <Link href="/contact/">Contact & confidentialité</Link>

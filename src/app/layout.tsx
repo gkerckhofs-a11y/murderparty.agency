@@ -3,13 +3,13 @@ import { Header, Footer } from "@/components/shell";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "Murder Party Agency — Murder Parties sur mesure",
-    template: "%s · Murder Party Agency",
+    default: "Murder party & soirée enquête | Murder Party Agency",
+    template: "%s | Murder Party Agency",
   },
   description:
-    "Des Murder Parties événementielles animées par nos équipes. Scénarios immersifs, lieux partenaires et repas sur demande. Devis sur mesure.",
+    "Organisez une murder party, une soirée enquête ou une soirée mystère animée par nos équipes. Événements d’entreprise et privés, sur devis.",
   metadataBase: new URL("https://murderparty.agency"),
-  robots: { index: true, follow: true },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
   openGraph: { type: "website", locale: "fr_BE", siteName: "Murder Party Agency" },
   icons: { icon: "/icon.svg" },
 };

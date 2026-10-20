@@ -2,6 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { scenarios } from "@/content/fr";
 import { Poster, Arrow, EndCta } from "@/components/ui";
+import { pageMetadata } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/structured-data";
 export function generateStaticParams() {
   return scenarios.map((s) => ({ slug: s.slug }));
 }
@@ -12,7 +14,8 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const s = scenarios.find((s) => s.slug === slug);
-  return { title: s?.title || "Scénario", description: s?.pitch, alternates: { canonical: `/scenarios/${slug}/` } };
+  if (!s) notFound();
+  return pageMetadata(s.seoTitle, s.seoDescription, `/scenarios/${slug}/`, s.image);
 }
 export default async function Page({
   params,
@@ -24,11 +27,7 @@ export default async function Page({
   if (!s) notFound();
   return (
     <>
-      <div className="wrap breadcrumb">
-        <Link href="/scenarios/">Les scénarios</Link>
-        <span aria-hidden="true">/</span>
-        <span>{s.title}</span>
-      </div>
+      <Breadcrumbs items={[{ name: "Scénarios de murder party", path: "/scenarios/" }, { name: s.title, path: `/scenarios/${s.slug}/` }]} />
       <section className="wrap scenario-hero">
         <div className="scenario-poster">
           <Poster scenario={s} large />
@@ -103,6 +102,7 @@ export default async function Page({
           <p className="small-note">
             Modalités et disponibilité à préciser dans votre devis.
           </p>
+          <Link href="/soiree-enquete/" className="text-link">Préparer votre soirée enquête <Arrow /></Link>
         </div>
       </section>
       <section className="wrap detail-copy">

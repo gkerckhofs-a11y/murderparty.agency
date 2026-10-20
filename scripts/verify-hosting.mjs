@@ -1,5 +1,5 @@
 const origin = 'https://murderparty-e4278.web.app';
-for (const path of ['/', '/devis/', '/le-createur/', '/scenarios/the-bikers/', '/scenarios/meurtre-au-chateau/', '/scenarios/black-velvet/', '/scenarios/showbiz/']) {
+for (const path of ['/', '/soiree-enquete/', '/scenarios/', '/contact/', '/devis/', '/le-createur/', '/scenarios/the-bikers/', '/scenarios/meurtre-au-chateau/', '/scenarios/black-velvet/', '/scenarios/showbiz/']) {
   const response = await fetch(`${origin}${path}`, { signal: AbortSignal.timeout(20000) });
   const html = await response.text();
   if (!response.ok || !html.includes('Murder Party Agency')) {

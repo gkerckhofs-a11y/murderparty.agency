@@ -1,11 +1,18 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow, ScenarioCard, EndCta } from "@/components/ui";
 import { scenarios } from "@/content/fr";
-export const metadata: Metadata = { alternates: { canonical: "/" } };
+import { pageMetadata, organizationData } from "@/lib/seo";
+import { StructuredData } from "@/components/structured-data";
+export const metadata = pageMetadata(
+  "Murder party & soirée enquête",
+  "Organisez une murder party ou une soirée mystère animée par nos équipes. Quatre scénarios pour entreprises et groupes privés, lieu et repas sur devis.",
+  "/",
+);
 export default function Home() {
   return (
     <>
+      <StructuredData data={organizationData} />
+      <link rel="preload" as="image" href="/images/salon-noir.webp" fetchPriority="high" />
       <section className="hero">
         <div className="hero-image" />
         <div className="wrap hero-inner">
@@ -15,17 +22,16 @@ export default function Home() {
               MURDER PARTIES ÉVÉNEMENTIELLES
             </p>
             <h1>
-              Ce soir,
+              Murder party.
               <br />
-              tout le monde
-              <br />a <em>un secret.</em>
+              Ce soir,
+              <br /><em>tout se joue.</em>
             </h1>
             <p className="hero-desc">
-              Une intrigue à vivre ensemble.
+              Une soirée enquête, des personnages, des secrets.
               <br />
-              Des Murder Parties animées par nos équipes,
-              <br className="desktop-break" /> pour faire de votre événement une
-              histoire.
+              Nos équipes animent votre soirée mystère,
+              <br className="desktop-break" /> pour un événement d’entreprise ou privé.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/scenarios/">
@@ -51,14 +57,16 @@ export default function Home() {
         <span className="eyebrow">L’EXPÉRIENCE</span>
         <div>
           <h2>
-            Une soirée à vivre.
+            Une murder party à vivre.
             <br />
             <em>Une vérité à découvrir.</em>
           </h2>
           <p>
             Entrez dans une intrigue, échangez avec les autres participants et
             cherchez ce qui se cache derrière les apparences. Nos équipes
-            animent votre Murder Party.
+            animent votre murder party : une soirée enquête dans laquelle
+            les invités incarnent des personnages, confrontent leurs indices
+            et font avancer l’histoire ensemble.
           </p>
           <Link href="/devis/" className="text-link">
             Imaginer votre événement <Arrow />
@@ -170,6 +178,20 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="wrap detail-copy" aria-labelledby="enquete-title">
+        <span className="eyebrow">PRÉPARER VOTRE SOIRÉE</span>
+        <div>
+          <h2 id="enquete-title">Soirée enquête,<br /><em>soirée mystère.</em></h2>
+          <p>Vous cherchez une animation pour réunir vos collègues ou votre groupe privé ?
+            Choisissez un univers, précisez le nombre de participants et laissez nos
+            équipes vous accompagner dans l’organisation. L’animation, le lieu et
+            le repas sont définis dans votre devis.</p>
+          <p>Pour une murder party près de Liège, <Link href="/scenarios/the-bikers/">The Bikers</Link> propose
+            une enquête en fatbike électrique au départ de Hony, à Esneux.
+            Pour les autres scénarios, le lieu est convenu avec vous selon le projet.</p>
+          <Link className="text-link" href="/soiree-enquete/">Comment organiser une soirée enquête ? <Arrow /></Link>
         </div>
       </section>
       <EndCta />

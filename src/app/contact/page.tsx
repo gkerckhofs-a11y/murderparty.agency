@@ -1,8 +1,5 @@
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "Contact et confidentialité",
-  alternates: { canonical: "/contact/" },
-};
+import { pageMetadata } from "@/lib/seo";
+export const metadata = pageMetadata("Contact et confidentialité", "Contactez Guillaume Kerckhofs pour organiser votre murder party. Coordonnées, préparation des demandes de devis et informations sur vos données personnelles.", "/contact/");
 export default function Contact() {
   return <section className="page-intro wrap contact-page">
     <p className="eyebrow">UNE QUESTION, UN PROJET</p>

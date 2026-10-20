@@ -1,12 +1,8 @@
 import Link from "next/link";
 import { Arrow, EndCta } from "@/components/ui";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Le créateur — Guillaume Kerckhofs",
-  alternates: { canonical: "/le-createur/" },
-  description:
-    "Découvrez Guillaume Kerckhofs, à l’origine du Ludificateur, et sa démarche de création d’expériences immersives.",
-};
+export const metadata = pageMetadata("Guillaume Kerckhofs, créateur d’enquêtes", "Découvrez Guillaume Kerckhofs, Le Ludificateur : son parcours dans le tourisme, la culture et la création de jeux, et sa démarche pour vos murder parties.", "/le-createur/", "/images/guillaume-kerckhofs.webp");
 
 export default function CreatorPage() {
   return (

@@ -26,6 +26,8 @@ Routes : accueil, catalogue, quatre fiches, devis, créateur, contact/confidenti
 
 Métadonnées, URLs canoniques, robots.txt et sitemap ciblent `https://murderparty.agency`. Les illustrations d’ambiance conservent leur mention explicative.
 
+Référencement : page `/soiree-enquete/`, métadonnées propres aux 10 pages publiques, données structurées et contrôles automatisés. Voir [l’audit et les étapes d’indexation](docs/REFERENCEMENT.md). `npm run verify:seo` vérifie l’export après compilation ; `node scripts/verify-seo.mjs https://murderparty-e4278.web.app` contrôle les pages publiées.
+
 ## Firebase Hosting
 
 Projet et site cible : `murderparty-e4278`. Configuration dans `firebase.json` et `.firebaserc`, export statique `out/`. Aucun service App Hosting, Functions, Firestore ou Cloud Run à créer pour cette version.

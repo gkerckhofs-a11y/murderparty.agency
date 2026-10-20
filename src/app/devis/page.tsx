@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import QuoteForm from "@/components/quote-form";
-export const metadata: Metadata = { title: "Votre événement", alternates: { canonical: "/devis/" } };
+export const metadata = pageMetadata("Devis pour votre murder party", "Préparez votre demande de devis pour une murder party animée : scénario, groupe, date, lieu et repas. Envoyez votre récapitulatif depuis votre messagerie.", "/devis/");
 export default function Page() {
   return (
     <section className="wrap quote-page">
       <aside className="quote-aside">
         <span className="eyebrow">PARLONS DE VOTRE ÉVÉNEMENT</span>
         <h1>
-          Tout commence
+          Votre devis
           <br />
-          par <em>vous.</em>
+          <em>murder party.</em>
         </h1>
         <p>
           Une envie, une occasion, un groupe.

@@ -8,6 +8,9 @@ export type Scenario = {
   intro: string;
   theme: string;
   tagline: string;
+  seoTitle: string;
+  seoDescription: string;
+  image: string;
   posterTitle?: string[];
   format?: string;
   minParticipants: number;
@@ -23,6 +26,9 @@ export const scenarios: Scenario[] = [
     minParticipants: 15,
     maxParticipants: 40,
     title: "SHOWBIZ",
+    seoTitle: "SHOWBIZ : murder party Hollywood",
+    seoDescription: "Une soirée enquête à Hollywood dans les années 1930 : casting, secrets et meurtre. SHOWBIZ, murder party animée pour 15 à 40 personnes, 3 h, sur devis.",
+    image: "/images/salon-noir.webp",
     universe: "Hollywood",
     era: "Années 1930",
     eyebrow: "Sous les projecteurs",
@@ -39,6 +45,9 @@ export const scenarios: Scenario[] = [
     minParticipants: 15,
     maxParticipants: 40,
     title: "MEURTRE AU CHÂTEAU",
+    seoTitle: "Meurtre au Château : murder party médiévale",
+    seoDescription: "Vivez une murder party médiévale dans un château, avec costumes fournis. Enquête animée pour 15 à 40 participants, 3 h, organisation sur devis.",
+    image: "/images/chateau-medieval.webp",
     universe: "Château",
     era: "Ambiance médiévale",
     eyebrow: "Les murs ont leurs secrets",
@@ -59,6 +68,9 @@ export const scenarios: Scenario[] = [
     minParticipants: 10,
     maxParticipants: 15,
     title: "THE BIKERS",
+    seoTitle: "Murder party à vélo près de Liège — The Bikers",
+    seoDescription: "The Bikers : murder party en fatbike électrique au départ de Hony, Esneux, près de Liège. 10 à 15 participants, 4 h, location du vélo incluse, sur devis.",
+    image: "/images/the-bikers-unimk.webp",
     universe: "Bikers",
     era: "Enquête en fatbike électrique",
     eyebrow: "Chaque arrêt devient une scène",
@@ -77,6 +89,9 @@ export const scenarios: Scenario[] = [
     minParticipants: 15,
     maxParticipants: 40,
     title: "BLACK VELVET",
+    seoTitle: "Black Velvet : soirée mystère à New York",
+    seoDescription: "Plongez dans un club clandestin à New York en 1928. Black Velvet, murder party animée sur fond de Prohibition, pour 15 à 40 personnes, 3 h, sur devis.",
+    image: "/images/black-velvet.webp",
     universe: "Prohibition",
     era: "New York · 1928",
     eyebrow: "À huis clos",

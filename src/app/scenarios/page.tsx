@@ -1,22 +1,24 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/structured-data";
 import Catalogue from "@/components/catalogue";
 import { EndCta } from "@/components/ui";
-export const metadata: Metadata = { title: "Les scénarios", alternates: { canonical: "/scenarios/" } };
+export const metadata = pageMetadata("Scénarios de murder party", "Comparez nos quatre murder parties animées : Hollywood, château médiéval, Prohibition et enquête en fatbike. Groupes de 10 à 40 selon le scénario.", "/scenarios/");
 export default function Page() {
   return (
     <>
+      <Breadcrumbs items={[{ name: "Scénarios de murder party", path: "/scenarios/" }]} />
       <section className="page-intro wrap">
         <span className="eyebrow">LE CATALOGUE</span>
         <h1>
-          À chaque univers,
+          Nos murder parties,
           <br />
-          <em>ses secrets.</em>
+          <em>vos prochaines intrigues.</em>
         </h1>
         <div className="intro-columns">
           <p>
             Hollywood, château, bikers, Prohibition…
             <br />
-            Explorez les ambiances de vos prochaines intrigues.
+            Quatre scénarios de soirées enquête animées par nos équipes.
           </p>
           <p className="editorial-note">
             Nos équipes se déplacent. Nous pouvons aussi proposer un lieu
