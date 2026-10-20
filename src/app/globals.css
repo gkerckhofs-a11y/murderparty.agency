@@ -465,20 +465,14 @@ p {
 }
 .poster.chateau {
   background:
-    radial-gradient(ellipse at 50% 10%, #967b4f88, transparent 60%),
-    linear-gradient(155deg, #54472d, #302e22 60%, #282b21);
+    linear-gradient(0deg, #17150fd1, #17150f42),
+    url("/images/chateau-medieval.webp") center/cover;
   color: #dbc9a3;
 }
 .poster.velvet {
   background:
-    repeating-linear-gradient(
-      80deg,
-      #4c292d22 0px,
-      #4c292d22 3px,
-      #1a182000 9px,
-      #1a182000 27px
-    ),
-    linear-gradient(160deg, #5a333a, #271e24 65%, #171618);
+    linear-gradient(0deg, #1b1118c9, #1b11183d),
+    url("/images/black-velvet.webp") center/cover;
   color: #dac2b4;
 }
 .poster-lines {
@@ -1979,14 +1973,8 @@ p {
 }
 .poster.bikers {
   background:
-    repeating-linear-gradient(
-      125deg,
-      transparent 0,
-      transparent 44px,
-      #b3a27c12 45px,
-      #b3a27c12 47px
-    ),
-    linear-gradient(160deg, #55594b, #222c27 65%, #151c19);
+    linear-gradient(0deg, #13201bc7, #13201b4d),
+    url("/images/the-bikers.webp") center/cover;
   color: #d9d8bd;
 }
 .bikers .poster-symbol {
@@ -2038,4 +2026,26 @@ p {
   .poster-large.chateau .poster-name {
     font-size: 2.4rem;
   }
+}
+
+.scenario-card > .capacity-label {
+  color: var(--copper);
+  font-size: 0.72rem;
+  letter-spacing: 0.025em;
+  margin: 13px 0 8px;
+}
+.field-error {
+  font-size: 0.68rem;
+  color: #f4b4a1;
+  line-height: 1.6;
+}
+.field-error:empty {
+  display: none;
+}
+
+.scenario-card > .inclusion-label {
+  color: var(--paper);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  margin-top: 12px;
 }

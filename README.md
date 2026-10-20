@@ -1,4 +1,4 @@
-# murderparty.agency — Maquette V0.2
+# murderparty.agency — Maquette V0.3
 
 Maquette commerciale navigable du 20 octobre 2026. Next.js 16.4.2, TypeScript, React 19.2.4. Le site est indépendant des moteurs de jeu.
 
@@ -7,6 +7,9 @@ Maquette commerciale navigable du 20 octobre 2026. Next.js 16.4.2, TypeScript, R
 - Exclusivement des Murder Parties événementielles animées par les équipes.
 - Marque dédiée, tarifs uniquement sur devis sur mesure.
 - Déplacement de nos équipes, proposition de lieux partenaires et prise en charge du repas possibles (confirmé par l’utilisateur le 20 octobre 2026).
+- The Bikers : 10 à 15 participants inclus. SHOWBIZ, Meurtre au Château et Black Velvet : 15 à 40 participants inclus (confirmation utilisateur du 20 octobre 2026).
+- The Bikers : fatbikes électriques au look de moto, location du vélo comprise dans le prix indiqué au devis (confirmation utilisateur du 20 octobre 2026).
+- Meurtre au Château : immersion médiévale exceptionnelle dans un château, costumes médiévaux fournis et compris dans le prix (confirmation utilisateur du 20 octobre 2026).
 - Français au lancement ; anglais ensuite.
 - Aucun achat immédiat, paiement ou réservation automatique en V1.
 - Domaine OVH : aucune modification DNS dans ce livrable.
@@ -23,6 +26,8 @@ Node.js 22 recommandé. Installer avec `npm ci`, démarrer avec `npm run dev`, c
 - `/devis/` : trois étapes, validation HTML des champs, récapitulatif modifiable avec préférence de lieu et prise en charge du repas, confirmation de simulation et remise à zéro.
 - `/validation/` : décisions, contenus provisoires, accès, suite et critères de recette.
 - Page 404 et métadonnées de non-indexation.
+
+Les capacités sont centralisées dans `src/content/fr.ts`, affichées sur les cartes et fiches et appliquées au champ de participants du formulaire. Le nombre reste facultatif ; s’il est renseigné, il doit être entier et dans les bornes inclusives du scénario. Sans scénario choisi : 10 à 40, avec explication des capacités distinctes.
 
 Le formulaire ne transmet rien. Son état reste en mémoire du composant React ; il n’utilise ni Firestore, ni e-mail, ni stockage local. Les champs ne sont pas des réservations. Les données de test sont perdues lorsque le formulaire est démonté ou rechargé.
 
@@ -48,7 +53,7 @@ Les tests interactifs et visuels dans un navigateur n’ont pas été exécutés
 
 ## Étapes suivantes
 
-1. Finaliser identité et textes ; confirmer les fiches encore provisoires. Fournir formats, capacités, durées, lieux précis, menus, zones d’intervention, inclusions et coordonnées.
+1. Finaliser identité et textes ; confirmer les fiches encore provisoires. Fournir formats, durées, lieux précis, menus, zones d’intervention, autres inclusions et coordonnées.
 2. Configurer l’accès de déploiement Firebase pour `murderparty-e4278` ; arrêter l’hébergement, la région et les limites de coûts avant activation. Aucun déploiement automatique n’est configuré.
 3. Concevoir le traitement des demandes : validation serveur, anti-abus, réception fiable, notifications, gestion des erreurs et des doublons, droits d’accès et conservation.
 4. Préparer les contenus légaux, le référencement, l’accessibilité et les contrôles de performance. Réaliser une recette multi-écrans.
@@ -60,9 +65,11 @@ Les tests interactifs et visuels dans un navigateur n’ont pas été exécutés
 - Brief de l’utilisateur et décisions du projet, 20 octobre 2026 ; ajout de deux offres, déplacement, lieux partenaires et repas.
 - [Meurtre au Château — Le Ludificateur](https://leludificateur.be/meurtre-au-chateau/), consulté le 20 octobre 2026 : enquête en personnages, secrets, objectifs et indices, immersion dans le château.
 - [Sons of Misery — Le Ludificateur](https://leludificateur.be/sons-of-misery-balade-velo-murder-party/), consulté le 20 octobre 2026 : enquête itinérante à vélo inspirée des clubs de bikers. Titre commercial « The Bikers » demandé par l’utilisateur. Aucun récit de crime précis, durée, capacité ou prestation matériel inventé.
+- [Murder Party Ride — 204 Adventures](https://204adventures.bike/murder-party-ride/), consulté le 20 octobre 2026 : vélos électriques fatbike au look de moto. Location incluse confirmée par l’utilisateur. La page source affiche un minimum de 8 et un prix public ; ne pas les reprendre : le brief actuel impose 10–15 participants et uniquement un devis.
 - [Export statique Next.js](https://nextjs.org/docs/app/guides/static-exports), documentation consultée le 20 octobre 2026.
 - [Coûts Firebase App Hosting](https://firebase.google.com/docs/app-hosting/costs), documentation consultée le 20 octobre 2026 : nécessite Blaze, services facturés au-delà des quotas gratuits.
 - `public/images/salon-noir.webp` : illustration générée avec l’outil intégré de génération d’images, 20 octobre 2026 ; scène fictive, pas une photographie d’un événement réel. Prompt conservé dans `docs/asset-prompt.txt`. Conversion WebP pour le web.
+- `public/images/chateau-medieval.webp`, `public/images/the-bikers.webp`, `public/images/black-velvet.webp` : fonds supplémentaires générés avec l’outil intégré le 20 octobre 2026, demandés par l’utilisateur. Illustrations conceptuelles, sans prétention de représenter un lieu, un événement ou un modèle de vélo fourni. Prompts exacts dans `docs/scenario-image-prompts.txt`. Conversion WebP, dimensions 960 × 1200 ; fonds partagés par les cartes et fiches, superposition sombre pour la lisibilité. Showbiz conserve son visuel.
 - DM Sans : police auto-hébergée, paquet `@fontsource-variable/dm-sans` 5.3.0. Licence OFL fournie dans `public/fonts/OFL-DM-Sans.txt`. Aucun appel Google Fonts.
 
 Ne pas activer de collecte réelle ni retirer les mentions provisoires des contenus non confirmés sans validation.

@@ -36,10 +36,12 @@ export default function Page() {
           </h2>
         </div>
         <p>
-          Indiquez le nombre de participants envisagé, vos souhaits pour le lieu
-          et le repas. Le format, les conditions pratiques et les prestations
-          retenues seront précisés dans votre devis. Les fiches marquées « À
-          valider » restent provisoires.
+          The Bikers accueille de 10 à 15 participants. SHOWBIZ, Meurtre au
+          Château et Black Velvet accueillent de 15 à 40 participants. Indiquez
+          le nombre de participants envisagé, vos souhaits pour le lieu et le
+          repas. Le format, les conditions pratiques et les prestations retenues
+          seront précisés dans votre devis. Les fiches marquées « À valider »
+          restent provisoires.
         </p>
       </section>
       <EndCta />

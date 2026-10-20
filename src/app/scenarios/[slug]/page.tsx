@@ -33,7 +33,7 @@ export default async function Page({
         <div className="scenario-poster">
           <Poster scenario={s} large />
           <span className="image-credit">
-            Affiche conceptuelle · Direction visuelle à valider
+            Illustration d’ambiance · Visuel conceptuel à valider
           </span>
         </div>
         <div className="scenario-info">
@@ -54,7 +54,9 @@ export default async function Page({
               : "SCÉNARIO PRESSENTI · À VALIDER"}
           </span>
           <div className="scenario-intro">
-            <span className="eyebrow">LE POINT DE DÉPART</span>
+            <span className="eyebrow">
+              {s.slug === "meurtre-au-chateau" ? "AU CŒUR D’UN CHÂTEAU" : "LE POINT DE DÉPART"}
+            </span>
             <p>{s.intro}</p>
           </div>
           <dl className="facts">
@@ -72,13 +74,25 @@ export default async function Page({
                 <dd>{s.format}</dd>
               </div>
             )}
+            {s.included && (
+              <div>
+                <dt>Inclus</dt>
+                <dd>{s.included}</dd>
+              </div>
+            )}
             <div>
-              <dt>Durée et participants</dt>
+              <dt>Participants</dt>
+              <dd>
+                {s.minParticipants} à {s.maxParticipants} personnes
+              </dd>
+            </div>
+            <div>
+              <dt>Durée</dt>
               <dd>À confirmer</dd>
             </div>
             <div>
               <dt>Lieu</dt>
-              <dd>À définir ensemble selon le scénario</dd>
+              <dd>{s.slug === "meurtre-au-chateau" ? "Dans un château" : "À définir ensemble selon le scénario"}</dd>
             </div>
             <div>
               <dt>Repas</dt>
@@ -114,12 +128,39 @@ export default async function Page({
               Que comprend la prestation ? <span>+</span>
             </summary>
             <p>
-              La Murder Party est animée par nos équipes. Vous pouvez également
-              nous confier la recherche d’un lieu partenaire et l’organisation
-              du repas. Le détail des prestations et des conditions figure dans
+              La Murder Party est animée par nos équipes.{" "}
+              {s.included && `${s.included}. `}Vous pouvez également nous
+              confier la recherche d’un lieu partenaire et l’organisation du
+              repas. Le détail des prestations et des conditions figure dans
               votre devis.
             </p>
           </details>
+          {s.slug === "the-bikers" && s.included && (
+            <details>
+              <summary>
+                Faut-il apporter son vélo ? <span>+</span>
+              </summary>
+              <p>
+                Non : la location du fatbike électrique est comprise dans le
+                prix de The Bikers. Ces vélos au look de moto font partie de
+                l’expérience. Le tarif de votre événement est précisé dans votre
+                devis sur mesure.
+              </p>
+            </details>
+          )}
+          {s.slug === "meurtre-au-chateau" && (
+            <details>
+              <summary>
+                Faut-il prévoir un costume ? <span>+</span>
+              </summary>
+              <p>
+                Non : les costumes médiévaux sont fournis et compris dans le
+                prix de Meurtre au Château. Ils accompagnent l’ambiance
+                médiévale de l’enquête. Le tarif de votre événement est précisé
+                dans votre devis sur mesure.
+              </p>
+            </details>
+          )}
           <details>
             <summary>
               Où peut se dérouler l’événement ? <span>+</span>
@@ -135,8 +176,9 @@ export default async function Page({
               Combien de personnes peuvent participer ? <span>+</span>
             </summary>
             <p>
-              La capacité commerciale de ce scénario n’est pas encore confirmée.
-              Aucune limite n’est annoncée dans cette maquette.
+              {s.title} accueille de {s.minParticipants} à {s.maxParticipants}{" "}
+              participants. Le nombre maximal est de {s.maxParticipants}{" "}
+              personnes.
             </p>
           </details>
           <details>

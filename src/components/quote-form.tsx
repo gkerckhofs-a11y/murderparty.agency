@@ -51,12 +51,29 @@ function Form() {
   function update(key: keyof Quote, value: string) {
     setData((d) => ({ ...d, [key]: value }));
   }
-  const scenario =
-    scenarios.find((s) => s.slug === data.scenario)?.title ||
-    "À définir ensemble";
+  const selectedScenario = scenarios.find((s) => s.slug === data.scenario);
+  const scenario = selectedScenario?.title || "À définir ensemble";
+  const minParticipants =
+    selectedScenario?.minParticipants ??
+    Math.min(...scenarios.map((s) => s.minParticipants));
+  const maxParticipants =
+    selectedScenario?.maxParticipants ??
+    Math.max(...scenarios.map((s) => s.maxParticipants));
+  const participantCount = Number(data.participants);
+  const participantsInvalid =
+    data.participants !== "" &&
+    (!Number.isInteger(participantCount) ||
+      participantCount < minParticipants ||
+      participantCount > maxParticipants);
+  const capacityHint = selectedScenario
+    ? `${selectedScenario.title} : de ${minParticipants} à ${maxParticipants} participants.`
+    : "The Bikers : 10 à 15 participants. Les autres scénarios : 15 à 40 participants.";
   const recap = [
     ["Événement", data.kind || "À préciser"],
     ["Scénario souhaité", scenario],
+    ...(selectedScenario?.included
+      ? [["Inclus", selectedScenario.included]]
+      : []),
     ["Participants envisagés", data.participants || "À préciser"],
     [
       "Date souhaitée",
@@ -131,6 +148,10 @@ function Form() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            if (participantsInvalid) {
+              setStep(1);
+              return;
+            }
             if (step < 3) setStep(step + 1);
             else setDone(true);
           }}
@@ -182,24 +203,42 @@ function Form() {
                   {scenarios.map((s) => (
                     <option key={s.slug} value={s.slug}>
                       {s.title}
+                      {` · ${s.minParticipants}–${s.maxParticipants} pers.`}
                       {s.confirmed ? "" : " — à valider"}
                     </option>
                   ))}
                 </select>
+                {selectedScenario?.included && (
+                  <span className="field-help">
+                    {selectedScenario.included}.
+                  </span>
+                )}
               </label>
               <label>
                 Nombre de participants envisagé
                 <input
                   inputMode="numeric"
                   type="number"
-                  min="1"
+                  min={minParticipants}
+                  max={maxParticipants}
                   step="1"
+                  aria-describedby="participant-capacity participant-error"
+                  aria-invalid={participantsInvalid || undefined}
                   value={data.participants}
                   onChange={(e) => update("participants", e.target.value)}
                   placeholder="Votre estimation"
                 />
-                <span className="field-help">
-                  Une estimation, sans capacité d’accueil garantie.
+                <span className="field-help" id="participant-capacity">
+                  {capacityHint}
+                </span>
+                <span
+                  id="participant-error"
+                  className="field-error"
+                  role="alert"
+                >
+                  {participantsInvalid
+                    ? `Indiquez un nombre entier entre ${minParticipants} et ${maxParticipants}${selectedScenario ? " pour ce scénario" : ""}, ou laissez ce champ vide si votre groupe n’est pas encore défini.`
+                    : ""}
                 </span>
               </label>
               <label>

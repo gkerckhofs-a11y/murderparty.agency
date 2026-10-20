@@ -3,7 +3,7 @@ export const metadata = { title: "Notes de validation" };
 export default function Page() {
   return (
     <article className="wrap validation-page">
-      <span className="eyebrow">MAQUETTE V0.2 · 20 OCTOBRE 2026</span>
+      <span className="eyebrow">MAQUETTE V0.3 · 20 OCTOBRE 2026</span>
       <h1>
         Ce qui est prêt.
         <br />
@@ -29,6 +29,20 @@ export default function Page() {
             Ajout de Meurtre au Château et The Bikers au catalogue, confirmé le
             20 octobre 2026.
           </li>
+          <li>
+            The Bikers : 10 à 15 participants. SHOWBIZ, Meurtre au Château et
+            Black Velvet : 15 à 40 participants. Limites confirmées le 20
+            octobre 2026.
+          </li>
+          <li>
+            The Bikers se joue sur des fatbikes électriques au look de moto ; la
+            location du vélo est comprise dans le prix du devis.
+          </li>
+          <li>
+            Meurtre au Château : immersion médiévale dans un château, costumes médiévaux fournis
+            et compris dans le prix, selon votre confirmation du 20 octobre
+            2026.
+          </li>
           <li>Français au lancement, anglais prévu ensuite.</li>
           <li>
             Aucun achat immédiat, paiement en ligne ou réservation automatique
@@ -52,8 +66,8 @@ export default function Page() {
             accroches.
           </li>
           <li>
-            Les nouvelles affiches conceptuelles de Meurtre au Château et The
-            Bikers. La direction générale est conservée après votre retour
+            Les fonds illustrés de Meurtre au Château, The Bikers et Black
+            Velvet. Ce sont des illustrations d’ambiance générées, et non des photos de lieux, de matériel ou d’événements réels. La direction générale est conservée après votre retour
             positif.
           </li>
           <li>
@@ -66,9 +80,8 @@ export default function Page() {
             révélation des solutions.
           </li>
           <li>
-            Les durées, capacités, zones d’intervention, lieux précis, menus,
-            inclusions et conditions pratiques restent à définir pour chaque
-            devis.
+            Les durées, zones d’intervention, lieux précis, menus, autres inclusions et
+            conditions pratiques restent à définir pour chaque devis.
           </li>
           <li>
             Les coordonnées professionnelles, l’identité de l’exploitant et les
@@ -82,6 +95,10 @@ export default function Page() {
           <li>
             Accueil, catalogue filtrable, quatre fiches scénario et formulaire
             de devis en trois étapes.
+          </li>
+          <li>
+            Un fond cinématographique propre à chaque scénario, optimisé en WebP
+            et partagé entre les cartes et les fiches. Visuels d’ambiance signalés.
           </li>
           <li>
             Menu mobile, liens entre pages, préselection du scénario, contrôles
@@ -185,8 +202,10 @@ export default function Page() {
             données en avançant et en revenant.
           </li>
           <li>
-            Les champs obligatoires et l’e-mail invalide bloquent la
-            progression.
+            Les champs obligatoires, l’e-mail invalide et un effectif hors des
+            limites du scénario bloquent la progression. Sans scénario choisi :
+            10 à 40 participants ; les limites précises s’appliquent dès la
+            sélection.
           </li>
           <li>
             Sur ordinateur et mobile : texte lisible, aucun débordement
@@ -222,8 +241,18 @@ export default function Page() {
           <a href="https://leludificateur.be/sons-of-misery-balade-velo-murder-party/">
             Sons of Misery
           </a>
-          , renommé « The Bikers » à votre demande. Aucun témoignage ni capacité
-          repris.
+          , renommé « The Bikers » à votre demande. Aucun témoignage repris. Les
+          capacités proviennent de votre confirmation du 20 octobre 2026.
+        </p>
+        <p>
+          The Bikers :{" "}
+          <a href="https://204adventures.bike/murder-party-ride/">
+            204 Adventures, Murder Party Ride
+          </a>
+          , consulté le 20 octobre 2026, pour les fatbikes électriques au look
+          de moto. Location comprise confirmée par votre demande. Vos
+          indications actuelles priment : 10 à 15 participants et tarifs sur
+          devis, sans reprise du tarif affiché sur la page source.
         </p>
         <p>
           Références techniques :{" "}
