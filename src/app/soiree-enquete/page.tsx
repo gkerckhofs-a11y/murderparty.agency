@@ -87,6 +87,22 @@ export default function MysteryEvening() {
       <span className="eyebrow">LES QUESTIONS PRATIQUES</span>
       <div>
         <h2>Avant de<br /><em>mener l’enquête.</em></h2>
+        <div className="partner-venues" id="lieux-partenaires">
+          <span className="eyebrow">DES LIEUX IMMERSIFS PARTENAIRES</span>
+          <h3>Un cadre à la hauteur <em>de votre intrigue.</em></h3>
+          <p>Sur demande, nous vous proposons des lieux partenaires qui donnent
+            toute leur atmosphère à votre soirée enquête.</p>
+          <ul>
+            <li><strong>Pour une ambiance années 1930</strong>
+              Le château de la Louveterie et le domaine de Bronromme.</li>
+            <li><strong>Pour une immersion au Moyen Âge</strong>
+              Le château de l’Avouerie d’Anthisnes.</li>
+          </ul>
+          <p>Nous pouvons également vous proposer d’autres lieux sélectionnés
+            par nos soins. Nous précisons ensemble le cadre adapté à votre
+            scénario, selon vos envies et les disponibilités, dans votre devis.</p>
+          <Link href="/devis/" className="text-link">Trouvons le lieu de votre enquête <Arrow /></Link>
+        </div>
         <details><summary>Combien de temps dure une murder party ? <span>+</span></summary>
           <p>La durée de l’enquête est de 3 heures pour SHOWBIZ, Meurtre au Château et
             Black Velvet, et de 4 heures pour The Bikers. L’organisation d’un éventuel

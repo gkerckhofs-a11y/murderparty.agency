@@ -2146,8 +2146,21 @@ p {
 }
 .about-creator h2 { font-size: clamp(2rem, 3.6vw, 3.4rem); margin: 22px 0; }
 .about-creator p { font-size: .93rem; line-height: 1.9; margin-bottom: 24px; }
+.partner-venues {
+  margin: 32px 0;
+  padding: 30px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--copper);
+}
+.partner-venues h3 { font-family: var(--serif); font-size: clamp(1.6rem, 2.5vw, 2rem); line-height: 1.25; margin: 18px 0; }
+.partner-venues p { margin-bottom: 20px; }
+.partner-venues ul { list-style: none; padding: 0; margin: 24px 0; display: grid; gap: 22px; }
+.partner-venues li { font-size: .88rem; line-height: 1.8; color: var(--muted); }
+.partner-venues li strong { display: block; color: var(--paper); font-weight: 500; margin-bottom: 4px; }
 @media (max-width: 800px) {
   .about-intro { padding-bottom: 50px; }
   .about-creator-inner { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 50px; }
   .about-creator .creator-portrait { max-width: 180px; }
+  .partner-venues { padding: 24px 20px; }
 }
