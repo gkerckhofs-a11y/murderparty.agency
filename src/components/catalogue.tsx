@@ -4,13 +4,13 @@ import { scenarios } from "@/content/fr";
 import { ScenarioCard } from "./ui";
 export default function Catalogue() {
   const [filter, setFilter] = useState("Tous les univers");
-  const filters = ["Tous les univers", ...scenarios.map((s) => s.universe)];
+  const filters = ["Tous les univers", ...new Set(scenarios.flatMap((s) => [s.universe, ...(s.keywords || [])]))];
   const visible = scenarios.filter(
-    (s) => filter === filters[0] || s.universe === filter,
+    (s) => filter === filters[0] || s.universe === filter || s.keywords?.includes(filter),
   );
   return (
     <>
-      <div className="filter-row" role="group" aria-label="Filtrer les univers">
+      <div className="filter-row" role="group" aria-label="Filtrer les univers et les mots-clés">
         {filters.map((f) => (
           <button
             key={f}
@@ -22,7 +22,7 @@ export default function Catalogue() {
         ))}
       </div>
       <p className="results-count" role="status">
-        {visible.length} univers
+        {visible.length} {visible.length === 1 ? "scénario" : "scénarios"}
       </p>
       <div className="cards">
         {visible.map((s) => (

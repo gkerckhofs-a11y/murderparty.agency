@@ -47,11 +47,11 @@ export function Header() {
               Les scénarios
             </Link>
             <Link
-              aria-current={path.startsWith("/le-createur") ? "page" : undefined}
-              href="/le-createur/#guillaume-kerckhofs"
+              aria-current={path.startsWith("/a-propos") ? "page" : undefined}
+              href="/a-propos/"
               onClick={() => setOpen(false)}
             >
-              Le créateur
+              À propos
             </Link>
             <Link
               className="button outline small"
@@ -88,7 +88,7 @@ export function Footer() {
           <div>
             <Link href="/scenarios/">Les scénarios</Link>
             <Link href="/soiree-enquete/">Organiser une soirée enquête</Link>
-            <Link href="/le-createur/#guillaume-kerckhofs">Le créateur</Link>
+            <Link href="/a-propos/">À propos</Link>
             <Link href="/devis/">Demander un devis</Link>
             <Link href="/contact/">Contact & confidentialité</Link>
           </div>

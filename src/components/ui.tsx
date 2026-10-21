@@ -79,6 +79,7 @@ export function ScenarioCard({
       <div className="card-meta">
         <span>
           {String(index + 1).padStart(2, "0")} / {scenario.universe}
+          {scenario.keywords?.length ? ` · ${scenario.keywords.join(" · ")}` : ""}
         </span>
         <span className="status-label">
           SUR DEVIS

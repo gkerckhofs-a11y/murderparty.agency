@@ -10,7 +10,7 @@ Murder Parties exclusivement animées par les équipes, prix uniquement sur devi
 - The Bikers : 10–15 participants, 4 h, départ Hony (Esneux), vélos Uni MK au look de moto, location incluse dans le devis.
 - Meurtre au Château : immersion médiévale dans un château, costumes médiévaux fournis et compris dans le prix.
 - Déplacement des équipes, lieux partenaires et repas possibles selon le projet ; le départ de The Bikers reste Hony.
-- Présentation du créateur Guillaume Kerckhofs / Le Ludificateur et contact professionnel vérifié sur son site.
+- Page À propos : principe de la soirée enquête, fiche reçue à l’avance, préparation et interprétation du personnage ; courte présentation de Guillaume Kerckhofs / Le Ludificateur.
 
 ## Parcours de devis
 
@@ -22,7 +22,7 @@ Aucun stockage local, base de données, SDK Firebase, outil publicitaire ou mesu
 
 `npm ci`, puis `npm run dev` pour le développement ou `npm run build` pour générer `out/`. `npm run typecheck` vérifie les types. Node.js 22 ou version compatible recommandé.
 
-Routes : accueil, catalogue, quatre fiches, devis, créateur, contact/confidentialité et 404. L’ancienne page publique `/validation/` est retirée ; son historique reste dans `docs/validation-maquette.tsx.txt`.
+Routes : accueil, catalogue, quatre fiches, devis, À propos, guide soirée enquête, contact/confidentialité et 404. Depuis le 21 octobre 2026, `/a-propos/` remplace la page créateur ; Firebase redirige définitivement `/le-createur/` vers cette nouvelle page. L’ancre `#guillaume-kerckhofs` y est conservée. L’ancienne page publique `/validation/` est retirée ; son historique reste dans `docs/validation-maquette.tsx.txt`.
 
 Métadonnées, URLs canoniques, robots.txt et sitemap ciblent `https://murderparty.agency`. Les illustrations d’ambiance conservent leur mention explicative.
 

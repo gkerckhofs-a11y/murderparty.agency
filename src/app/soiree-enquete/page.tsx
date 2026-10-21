@@ -34,7 +34,9 @@ export default function MysteryEvening() {
           désignent nos murder parties animées. Vous entrez dans un univers de fiction
           avec des personnages, des secrets et des indices à confronter.
           L’enquête progresse grâce aux échanges entre les invités : interroger,
-          écouter, négocier et recouper les versions font partie de l’expérience.</p>
+          écouter, négocier et recouper les versions font partie de l’expérience.
+          Notre page <Link href="/a-propos/">À propos</Link> explique comment
+          recevoir, préparer et interpréter votre personnage.</p>
         <p>Pour une soirée d’entreprise ou un projet de team building, indiquez-nous
           ce que vous souhaitez proposer à vos collègues et la taille du groupe.
           Pour un événement privé, partagez l’occasion, vos envies et le cadre envisagé.

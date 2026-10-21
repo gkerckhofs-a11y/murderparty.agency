@@ -2133,3 +2133,21 @@ p {
 .contact-privacy { margin-top: 4rem; }
 .contact-privacy p { line-height: 1.8; margin-top: 1.5rem; }
 .contact-page a, .privacy-note a, .email-handoff a:not(.button) { text-underline-offset: .2em; }
+
+.about-intro { padding-bottom: 72px; }
+.about-intro .intro-columns a { text-decoration: underline; text-underline-offset: .2em; }
+.about-creator { border-top: 1px solid var(--line); background: var(--panel); }
+.about-creator-inner {
+  display: grid;
+  grid-template-columns: minmax(160px, 240px) minmax(0, 650px);
+  gap: 70px;
+  align-items: center;
+  padding-block: 70px;
+}
+.about-creator h2 { font-size: clamp(2rem, 3.6vw, 3.4rem); margin: 22px 0; }
+.about-creator p { font-size: .93rem; line-height: 1.9; margin-bottom: 24px; }
+@media (max-width: 800px) {
+  .about-intro { padding-bottom: 50px; }
+  .about-creator-inner { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 50px; }
+  .about-creator .creator-portrait { max-width: 180px; }
+}

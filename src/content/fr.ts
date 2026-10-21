@@ -2,6 +2,7 @@ export type Scenario = {
   slug: string;
   title: string;
   universe: string;
+  keywords?: string[];
   era: string;
   eyebrow: string;
   pitch: string;
@@ -33,6 +34,7 @@ export const scenarios: Scenario[] = [
     seoDescription: "Glamour, cinéma et casting à Hollywood dans les années 1930. SHOWBIZ : une murder party animée pour 15 à 40 personnes, 3 h, sur devis.",
     image: "/images/salon-noir.webp",
     universe: "Hollywood",
+    keywords: ["Glamour"],
     era: "Années 1930",
     eyebrow: "Glamour, cinéma et ambitions",
     pitch:
@@ -59,6 +61,7 @@ export const scenarios: Scenario[] = [
     seoDescription: "Un château assiégé, un banquet médiéval et un meurtre à élucider. Murder party avec costumes fournis, 15 à 40 personnes, 3 h. Repas sur devis.",
     image: "/images/chateau-medieval.webp",
     universe: "Château",
+    keywords: ["Moyen Âge"],
     era: "Ambiance médiévale",
     eyebrow: "Siège, banquet et secrets",
     pitch:
@@ -89,6 +92,7 @@ export const scenarios: Scenario[] = [
     seoDescription: "Enquête, paysages et fatbikes électriques au départ de Hony, Esneux, près de Liège. The Bikers : 10 à 15 personnes, 4 h, location du vélo incluse.",
     image: "/images/the-bikers-unimk.webp",
     universe: "Bikers",
+    keywords: ["Extérieur"],
     era: "Enquête en fatbike électrique",
     eyebrow: "La route, les paysages, l’enquête",
     pitch:

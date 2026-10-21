@@ -45,7 +45,7 @@ export const organizationData = {
       founder: {
         "@type": "Person",
         name: "Guillaume Kerckhofs",
-        url: `${siteUrl}/le-createur/`,
+        url: `${siteUrl}/a-propos/#guillaume-kerckhofs`,
       },
     },
     {
