@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { type Scenario, participantLabel, durationLabel } from "@/content/fr";
+import { ScenarioIcon } from "./scenario-icon";
 export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>;
 }
@@ -38,13 +39,7 @@ export function Poster({
         MURDER PARTY AGENCY<span>UNE INTRIGUE À VIVRE</span>
       </div>
       <div className="poster-symbol">
-        {scenario.theme === "chateau"
-          ? "♜"
-          : scenario.theme === "bikers"
-            ? "◎"
-            : scenario.theme === "velvet"
-              ? "◇"
-              : "✧"}
+        <ScenarioIcon theme={scenario.theme} />
       </div>
       <div className="poster-name">
         {(scenario.posterTitle || scenario.title.split(" ")).map((word, i) => (

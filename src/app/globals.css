@@ -2195,3 +2195,18 @@ p {
 .scenario-subtitle { margin-top: 18px; color: var(--copper); font-family: var(--serif); font-size: clamp(1.4rem, 2.3vw, 2rem); font-style: italic; }
 .scenario-intro p + p { margin-top: 16px; }
 .cards { row-gap: 48px; }
+
+.poster .poster-symbol {
+  display: grid;
+  place-items: center;
+  width: 1em;
+  height: 1.15em;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.poster-symbol svg {
+  display: block;
+  width: 0.78em;
+  height: 0.78em;
+  filter: drop-shadow(0 2px 5px #0008);
+}
