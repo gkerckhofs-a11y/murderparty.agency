@@ -14,9 +14,11 @@ Murder Parties exclusivement animées par les équipes, prix uniquement sur devi
 
 ## Parcours de devis
 
-Le formulaire vérifie les champs, applique les capacités, prépare un récapitulatif et ouvre un e-mail prérempli vers `guillaume@leludificateur.be`. Le visiteur doit envoyer cet e-mail depuis sa messagerie. Un texte intégral à copier est disponible si le lien mailto ne fonctionne pas ou est trop long. Aucun faux message de réception.
+Cette branche prépare l’envoi direct via FormSubmit vers `guillaume@leludificateur.be`. Ne la publier qu’après validation du destinataire et réception du test décrit dans [la procédure d’activation](docs/FORMULAIRE-DIRECT.md). La version publique conserve son envoi par messagerie en attendant cette validation.
 
-Aucun stockage local, base de données, SDK Firebase, outil publicitaire ou mesure d’audience ajouté. Les données restent en mémoire jusqu’au transfert choisi vers la messagerie du visiteur. La page `/contact/` décrit ce fonctionnement. L’automatisation de la réception et du suivi des demandes reste une évolution distincte.
+Le formulaire vérifie les champs, applique les capacités et prépare un récapitulatif avant le bouton « Envoyer ma demande ». La confirmation exige une réponse positive du prestataire. Les erreurs laissent le récapitulatif disponible ; ouverture de la messagerie et copie du texte restent possibles. Les tests simulés de transport se lancent avec `node --experimental-strip-types --test scripts/test-quote-send.mjs`.
+
+Aucun stockage local, base de données, SDK Firebase, outil publicitaire ou mesure d’audience ajouté. Lors de l’envoi direct, les données passent par FormSubmit, qui annonce une conservation de 30 jours. La page `/contact/` décrit ce fonctionnement. Le suivi des demandes reste une évolution distincte.
 
 ## Développement et export
 

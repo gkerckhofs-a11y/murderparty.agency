@@ -2125,6 +2125,7 @@ p {
 }
 
 .email-handoff { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.quote-honeypot { display: none; }
 .email-handoff p { font-size: .9rem; line-height: 1.7; overflow-wrap: anywhere; }
 .email-handoff summary { cursor: pointer; margin-block: 1.2rem; }
 .email-handoff textarea { width: 100%; margin-bottom: 1rem; background: #161a18; color: #f2eadf; border: 1px solid #53564b; padding: 1rem; font: inherit; line-height: 1.6; }

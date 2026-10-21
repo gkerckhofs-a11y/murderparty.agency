@@ -200,8 +200,8 @@ export default async function Page({
               Comment organiser cette Murder Party ? <span>+</span>
             </summary>
             <p>
-              Complétez le formulaire, vérifiez votre récapitulatif puis ouvrez
-              votre messagerie pour nous envoyer votre demande. Notre équipe
+              Complétez le formulaire, vérifiez votre récapitulatif puis cliquez
+              sur « Envoyer ma demande ». Notre équipe
               prépare votre devis sur mesure.
             </p>
           </details>

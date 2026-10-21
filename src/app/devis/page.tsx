@@ -1,6 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
 import QuoteForm from "@/components/quote-form";
-export const metadata = pageMetadata("Devis pour votre murder party", "Préparez votre demande de devis pour une murder party animée : scénario, groupe, date, lieu et repas. Envoyez votre récapitulatif depuis votre messagerie.", "/devis/");
+export const metadata = pageMetadata("Devis pour votre murder party", "Demandez votre devis pour une murder party animée : scénario, groupe, date, lieu et repas. Vérifiez le récapitulatif et envoyez votre demande en ligne.", "/devis/");
 export default function Page() {
   return (
     <section className="wrap quote-page">

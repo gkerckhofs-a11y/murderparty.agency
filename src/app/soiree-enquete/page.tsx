@@ -110,7 +110,7 @@ export default function MysteryEvening() {
             lieu partenaire peuvent également faire partie de votre demande.</p></details>
         <details><summary>Comment demander un devis ? <span>+</span></summary>
           <p>Complétez le <Link href="/devis/">formulaire de demande</Link>, vérifiez
-            le récapitulatif, puis envoyez l’e-mail préparé depuis votre messagerie.
+            le récapitulatif, puis cliquez sur « Envoyer ma demande ».
             Vous pouvez aussi <Link href="/contact/">nous contacter directement</Link>.</p></details>
       </div>
     </section>

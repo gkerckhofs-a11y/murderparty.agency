@@ -3,6 +3,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { scenarios } from "@/content/fr";
 import { Arrow } from "./ui";
+import { sendQuote } from "@/lib/send-quote";
 type Quote = {
   kind: string;
   scenario: string;
@@ -36,6 +37,11 @@ function Form() {
   const [data, setData] = useState<Quote>(initial);
   const [step, setStep] = useState(1);
   const [copyStatus, setCopyStatus] = useState("");
+  const [sendState, setSendState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [sendError, setSendError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+  const sending = useRef(false);
+  const confirmation = useRef<HTMLDivElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const mounted = useRef(false);
   useEffect(() => {
@@ -47,6 +53,9 @@ function Form() {
     if (mounted.current) heading.current?.focus();
     mounted.current = true;
   }, [step]);
+  useEffect(() => {
+    if (sendState === "sent") confirmation.current?.focus();
+  }, [sendState]);
   function update(key: keyof Quote, value: string) {
     setData((d) => ({ ...d, [key]: value }));
   }
@@ -91,9 +100,33 @@ function Form() {
   ];
   const emailBody = `Bonjour,\n\nJe souhaite un devis pour une Murder Party.\n\n${recap.map(([label, value]) => `${label} : ${value}`).join("\n")}\n\nMerci et à bientôt.`;
   const mailHref = `mailto:guillaume@leludificateur.be?subject=${encodeURIComponent(`Demande de devis — ${scenario}`)}&body=${encodeURIComponent(emailBody)}`;
+  async function submitQuote() {
+    if (sending.current || sendState === "sent") return;
+    sending.current = true;
+    setSendState("sending");
+    setSendError("");
+    try {
+      await sendQuote({ name: data.name, email: data.email, scenario, message: emailBody, honeypot });
+      setSendState("sent");
+    } catch (error) {
+      setSendError(error instanceof Error ? error.message : "Impossible de confirmer l’envoi. Utilisez le récapitulatif ci-dessous pour nous écrire.");
+      setSendState("error");
+    } finally {
+      sending.current = false;
+    }
+  }
+  if (sendState === "sent") {
+    return <div className="quote-form demo-success" ref={confirmation} tabIndex={-1}>
+      <span className="eyebrow">DEMANDE TRANSMISE</span>
+      <h2>Votre projet est <em>en route.</em></h2>
+      <p>Votre demande a été transmise à Guillaume Kerckhofs, à l’adresse <a href="mailto:guillaume@leludificateur.be">guillaume@leludificateur.be</a>.</p>
+      <p>Nous pourrons vous répondre à <strong>{data.email}</strong> pour préciser votre projet et préparer votre devis. Aucune réservation n’est confirmée à ce stade.</p>
+      <a href="/scenarios/" className="text-link">Revenir aux scénarios <Arrow /></a>
+    </div>;
+  }
   return (
     <div className="quote-form">
-      <p className="form-notice">Votre demande sera préparée pour un envoi depuis votre messagerie.</p>
+      <p className="form-notice">Vérifiez votre récapitulatif puis envoyez votre demande directement depuis le site.</p>
       <ol className="steps" aria-label="Étapes du formulaire">
         {["Votre événement", "Vos coordonnées", "Récapitulatif"].map((s, i) => (
           <li
@@ -109,14 +142,15 @@ function Form() {
         ))}
       </ol>
         <form
-          onSubmit={(e) => {
+          aria-busy={sendState === "sending"}
+          onSubmit={async (e) => {
             e.preventDefault();
             if (participantsInvalid) {
               setStep(1);
               return;
             }
             if (step < 3) setStep(step + 1);
-
+            else await submitQuote();
           }}
         >
           <h2 ref={heading} tabIndex={-1}>
@@ -139,8 +173,12 @@ function Form() {
               ? "Une date ou un lieu encore incertains ? Laissez ces champs vides."
               : step === 2
                 ? "Les champs marqués d’un astérisque sont obligatoires."
-                : "Vérifiez les informations, puis envoyez votre demande depuis votre messagerie."}
+                : "Vérifiez les informations, puis cliquez sur « Envoyer ma demande »."}
           </p>
+          <label className="quote-honeypot" aria-hidden="true">
+            Laissez ce champ vide
+            <input name="_honey" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+          </label>
           {step === 1 && (
             <div className="field-grid">
               <label>
@@ -302,7 +340,7 @@ function Form() {
                 />
               </label>
               <p className="full privacy-note">
-                Ces informations permettront à Guillaume Kerckhofs, Le Ludificateur, de vous répondre. Elles restent dans cette page jusqu’à votre envoi par e-mail. <a href="/contact/#confidentialite">En savoir plus sur vos données</a>.
+                Ces informations permettront à Guillaume Kerckhofs, Le Ludificateur, de vous répondre. Elles sont transmises lors de l’envoi par le service FormSubmit. <a href="/contact/#confidentialite">En savoir plus sur vos données</a>.
               </p>
             </div>
           )}
@@ -325,6 +363,7 @@ function Form() {
             {step > 1 ? (
               <button
                 type="button"
+                disabled={sendState === "sending"}
                 className="text-link back-button"
                 onClick={() => setStep(step - 1)}
               >
@@ -340,16 +379,18 @@ function Form() {
                 {step === 1 ? "Vos coordonnées" : "Vérifier mon projet"} <Arrow />
               </button>
             ) : (
-              <a className="button primary" href={mailHref}>
-                Ouvrir ma messagerie <Arrow />
-              </a>
+              <button className="button primary" type="submit" disabled={sendState === "sending"}>
+                {sendState === "sending" ? "Envoi en cours…" : "Envoyer ma demande"} <Arrow />
+              </button>
             )}
           </div>
+          {sendError && <p className="field-error" role="alert">{sendError}</p>}
           {step === 3 && (
             <div className="email-handoff">
-              <p>L’e-mail est adressé à <a href="mailto:guillaume@leludificateur.be">guillaume@leludificateur.be</a>. Vérifiez-le et cliquez sur « Envoyer » dans votre messagerie.</p>
+              <p role="status">{sendState === "sending" ? "Transmission en cours, merci de patienter." : "Votre demande sera adressée à guillaume@leludificateur.be."}</p>
               <details>
-                <summary>Votre messagerie ne s’ouvre pas ?</summary>
+                <summary>Un problème d’envoi ? Une autre façon de nous écrire.</summary>
+                <a className="text-link" href={mailHref}>Ouvrir ma messagerie <Arrow /></a>
                 <p>Copiez ce récapitulatif dans un e-mail à guillaume@leludificateur.be, avec l’objet « Demande de devis — Murder Party Agency ».</p>
                 <textarea aria-label="Récapitulatif à copier" readOnly rows={12} value={emailBody} onFocus={(e) => e.target.select()} />
                 <button className="button outline" type="button" onClick={async () => {
