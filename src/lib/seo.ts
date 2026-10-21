@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { localizedPath } from "./i18n";
 
 export const siteUrl = "https://murderparty.agency";
 export const siteName = "Murder Party Agency";
@@ -9,18 +10,20 @@ export function pageMetadata(
   path: string,
   image = "/images/salon-noir.webp",
 ): Metadata {
+  const en = path.startsWith("/en/");
   return {
     title: { absolute: `${title} | ${siteName}` },
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: path, languages: { "fr-BE": localizedPath(path, "fr"), en: localizedPath(path, "en"), "x-default": localizedPath(path, "fr") } },
     openGraph: {
       title: `${title} | ${siteName}`,
       description,
       url: `${siteUrl}${path}`,
       type: "website",
-      locale: "fr_BE",
+      locale: en ? "en_GB" : "fr_BE",
+      alternateLocale: en ? ["fr_BE"] : ["en_GB"],
       siteName,
-      images: [{ url: image, alt: "Illustration d’ambiance — Murder Party Agency" }],
+      images: [{ url: image, alt: en ? "Atmosphere illustration — Murder Party Agency" : "Illustration d’ambiance — Murder Party Agency" }],
     },
     twitter: {
       card: "summary_large_image",
@@ -53,7 +56,7 @@ export const organizationData = {
       "@id": `${siteUrl}/#website`,
       name: siteName,
       url: `${siteUrl}/`,
-      inLanguage: "fr-BE",
+      inLanguage: ["fr-BE", "en"],
       publisher: { "@id": `${siteUrl}/#organization` },
     },
   ],

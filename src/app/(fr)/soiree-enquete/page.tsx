@@ -53,10 +53,9 @@ export default function MysteryEvening() {
         <div className="process-grid">
           <div><span>01</span><h3>Le groupe et la date.</h3>
             <p>Précisez le nombre de participants et la date souhaitée.
-              Les capacités varient selon le scénario : 15 à 40 personnes pour
-              SHOWBIZ, Meurtre au Château et Black Velvet ; 10 à 15 pour The Bikers ;
-              20 à 30 pour Disco Killer ; 15 à 20 pour London Requiem ; 15 pour Nid d’espions.
-              L’animation Spy Party accueille 30 à 120 participants.</p></div>
+              Nous adaptons les scénarios et la répartition des personnages à la
+              taille du groupe, à sa composition et à la diversité des genres.
+              Partagez vos besoins pour que nous préparions une expérience sur mesure.</p></div>
           <div><span>02</span><h3>L’univers de l’enquête.</h3>
             <p>Choisissez une ambiance qui vous attire : le glamour du cinéma à Hollywood,
               un banquet dans un château assiégé, une guerre de succession dans la mafia

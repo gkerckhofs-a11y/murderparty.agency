@@ -28,13 +28,29 @@ assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URLs');
 const robots = await read('/robots.txt');
 assert(robots.includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`), 'Wrong sitemap in robots.txt');
 assert(!/^Disallow:\s*\/\s*$/m.test(robots), 'Crawling blocked');
+assert.equal(urls.length, 28, 'Expected 14 public pages in each language');
+const routePairs = [
+  ['/', '/en/'], ['/scenarios/', '/en/scenarios/'],
+  ['/soiree-enquete/', '/en/murder-mystery-party/'],
+  ['/a-propos/', '/en/about/'], ['/devis/', '/en/quote/'], ['/contact/', '/en/contact/'],
+];
+function equivalents(path) {
+  return routePairs.find(pair => pair.includes(path)) || [path.replace(/^\/en\//, '/'), path.startsWith('/en/') ? path : `/en${path}`];
+}
 const titles = new Set();
 const descriptions = new Set();
 for (const url of urls) {
   assert(url.startsWith(`${canonicalOrigin}/`) && url.endsWith('/'), `Noncanonical sitemap URL: ${url}`);
   const path = new URL(url).pathname;
   const html = await read(path);
-  assert.match(html, /<html[^>]*lang="fr"/, `${path}: language missing`);
+  const language = path.startsWith('/en/') ? 'en' : 'fr';
+  assert.equal(tags(html, 'html')[0]?.lang, language, `${path}: language missing or wrong`);
+  const [frPath, enPath] = equivalents(path);
+  const alternates = tags(html, 'link').filter(l => l.rel === 'alternate');
+  for (const [code, target] of [['fr-BE', frPath], ['en', enPath], ['x-default', frPath]]) {
+    assert.equal(alternates.find(l => l.hrefLang === code || l.hreflang === code)?.href, canonicalOrigin + target, `${path}: ${code} alternate`);
+    assert(urls.includes(canonicalOrigin + target), `${path}: alternate absent from sitemap`);
+  }
   assert.equal((html.match(/<h1\b/g) || []).length, 1, `${path}: expected one H1`);
   const title = decode(html.match(/<title>([^<]+)<\/title>/)?.[1] || '');
   assert(title && !titles.has(title), `${path}: missing or duplicate title`);
@@ -63,4 +79,4 @@ for (const url of urls) {
   }
   console.log(`SEO OK ${path}`);
 }
-console.log(`${urls.length} pages: unique titles/descriptions, canonicals, H1, robots, social metadata and JSON-LD verified.`);
+console.log(`${urls.length} pages: language, reciprocal hreflang, unique titles/descriptions, canonicals, H1, robots, social metadata and JSON-LD verified.`);

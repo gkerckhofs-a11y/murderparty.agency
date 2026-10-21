@@ -2210,3 +2210,10 @@ p {
   height: 0.78em;
   filter: drop-shadow(0 2px 5px #0008);
 }
+
+/* Same-page language selection, also available in the mobile menu. */
+.language-switch { display: flex; align-items: center; white-space: nowrap; }
+.language-switch a { padding: 8px 2px; color: var(--muted); }
+.language-switch [aria-current="true"] { color: var(--copper); }
+.language-switch a:hover { color: var(--copper); }
+.language-divider { opacity: .45; padding: 0 4px; }

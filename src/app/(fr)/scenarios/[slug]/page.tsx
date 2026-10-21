@@ -79,7 +79,7 @@ export default async function Page({
               </div>
             )}
             <div>
-              <dt>Participants</dt>
+              <dt>Format indicatif</dt>
               <dd>
                 {participantLabel(s)} personnes
               </dd>
@@ -102,7 +102,7 @@ export default async function Page({
             {s.category === "animation" ? "Organisons votre Spy Party" : "Parlons de ce scénario"} <Arrow />
           </Link>
           <p className="small-note">
-            Modalités et disponibilité à préciser dans votre devis.
+            Les effectifs sont indicatifs. Nous adaptons les scénarios et les personnages à la taille de votre groupe, à sa composition et à la diversité des genres. Format et disponibilité à préciser dans votre devis.
           </p>
           {s.category !== "animation" && <Link href="/soiree-enquete/" className="text-link">Préparer votre soirée enquête <Arrow /></Link>}
         </div>
@@ -192,7 +192,7 @@ export default async function Page({
               Combien de personnes peuvent participer ? <span>+</span>
             </summary>
             <p>
-              {s.title} accueille {participantLabel(s)} participants.
+              Le format indicatif de {s.title} réunit {participantLabel(s)} participants. Nous travaillons sur mesure et adaptons les scénarios et la répartition des personnages à la taille de votre groupe, à sa composition et à la diversité des genres. Parlez-nous de votre groupe pour définir ensemble le format adapté.
             </p>
           </details>
           <details>

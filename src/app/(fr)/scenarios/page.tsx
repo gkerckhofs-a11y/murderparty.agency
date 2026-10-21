@@ -39,14 +39,12 @@ export default function Page() {
           </h2>
         </div>
         <p>
-          The Bikers accueille de 10 à 15 participants. SHOWBIZ, Meurtre au
-          Château et Black Velvet accueillent de 15 à 40 participants. Disco Killer
-          réunit 20 à 30 joueurs, London Requiem 15 à 20 et Nid d’espions 15.
-          Pour les grands groupes, Spy Party propose une animation d’espionnage
-          de 30 à 120 participants. Indiquez
-          le nombre de participants envisagé, vos souhaits pour le lieu et le
-          repas. Le format, les conditions pratiques et les prestations retenues
-          seront précisés dans votre devis.
+          Chaque groupe est différent : nous travaillons sur mesure. Nous adaptons
+          les scénarios et la répartition des personnages à la taille de votre
+          groupe, à sa composition et à la diversité des genres. Parlez-nous de
+          vos participants, de vos envies et de l’occasion : nous construisons
+          avec vous une expérience adaptée. Le format, le lieu et les prestations
+          retenues sont précisés ensemble dans votre devis.
         </p>
       </section>
       <EndCta />

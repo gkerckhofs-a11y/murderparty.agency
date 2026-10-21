@@ -27,13 +27,13 @@ export type Scenario = {
   departure?: string;
   included?: string;
 };
-export function participantLabel(scenario: Scenario) {
+export function participantLabel(scenario: Scenario, locale: "fr" | "en" = "fr") {
   return scenario.minParticipants === scenario.maxParticipants
     ? `${scenario.minParticipants}`
-    : `${scenario.minParticipants} à ${scenario.maxParticipants}`;
+    : `${scenario.minParticipants}${locale === "en" ? " to " : " à "}${scenario.maxParticipants}`;
 }
-export function durationLabel(scenario: Scenario) {
-  return scenario.durationHours ? `${scenario.durationHours} h` : "Durée à définir ensemble";
+export function durationLabel(scenario: Scenario, locale: "fr" | "en" = "fr") {
+  return scenario.durationHours ? `${scenario.durationHours} h` : (locale === "en" ? "Duration to be agreed" : "Durée à définir ensemble");
 }
 export const scenarios: Scenario[] = [
   {

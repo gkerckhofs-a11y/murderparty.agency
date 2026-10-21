@@ -32,7 +32,7 @@ Routes : accueil, catalogue, huit fiches (sept murder parties et une animation),
 
 Métadonnées, URLs canoniques, robots.txt et sitemap ciblent `https://murderparty.agency`. Les illustrations d’ambiance conservent leur mention explicative.
 
-Référencement : page `/soiree-enquete/`, métadonnées propres aux 10 pages publiques, données structurées et contrôles automatisés. Voir [l’audit et les étapes d’indexation](docs/REFERENCEMENT.md). `npm run verify:seo` vérifie l’export après compilation ; `node scripts/verify-seo.mjs https://murderparty-e4278.web.app` contrôle les pages publiées.
+Référencement : page `/soiree-enquete/`, métadonnées propres aux 28 pages publiques (14 par langue), données structurées et contrôles automatisés. Voir [l’audit et les étapes d’indexation](docs/REFERENCEMENT.md). `npm run verify:seo` vérifie l’export après compilation ; `node scripts/verify-seo.mjs https://murderparty-e4278.web.app` contrôle les pages publiées.
 
 ## Firebase Hosting
 
@@ -60,7 +60,7 @@ Les domaines `murderparty.agency` et `www.murderparty.agency` ont été ajoutés
 - Vérifiés en production : publication, pages principales, route 404, JavaScript et feuille de style de l’accueil (HTTP 200). L’accès de publication par identité temporaire fonctionne.
 - À finaliser après propagation : validation Firebase, HTTPS du domaine principal et redirection HTTPS de `www`. La recette visuelle en navigateur n’a pas pu être terminée : la protection des identifiants du navigateur a bloqué l’observation du site public, sans bloquer les consoles OVH/Firebase.
 - Informations légales de l’activité à compléter avec les données confirmées de l’exploitant ; aucune adresse légale ou numéro d’entreprise inventé.
-- Évolutions : envoi serveur et suivi des demandes avec anti-abus et politique de conservation validée, puis traduction anglaise.
+- Évolutions : envoi serveur et suivi des demandes avec anti-abus et politique de conservation validée, la traduction anglaise est disponible sous `/en/`.
 
 Dépôt GitHub : `gkerckhofs-a11y/murderparty.agency`. Prévisualisation privée de travail gérée séparément par Sites ; `.openai/hosting.json` n’intervient pas dans le déploiement Firebase.
 
@@ -85,3 +85,11 @@ Le workflow `.github/workflows/deploy-firebase.yml` est opérationnel. Une modif
 - DM Sans : police auto-hébergée, paquet `@fontsource-variable/dm-sans` 5.3.0. Licence OFL fournie dans `public/fonts/OFL-DM-Sans.txt`. Aucun appel Google Fonts.
 
 Ne pas ajouter de promesse commerciale, témoignage, capacité, inclusion ou collecte supplémentaire sans source confirmée.
+
+## Version française et anglaise
+
+Les 14 pages publiques sont disponibles en français à leurs adresses historiques et en anglais sous `/en/`. Le sélecteur FR / EN conserve la page, les ancres équivalentes et le scénario présélectionné dans le formulaire. Les données saisies ne sont pas conservées lors du changement de langue. Les fichiers de contenu sont `src/content/fr.ts` et `src/content/en.ts` ; les layouts distincts rendent les bons attributs `lang` sans JavaScript. Chaque page expose une canonique propre et des liens `hreflang` réciproques ; le sitemap contient 28 URL. La traduction du site ne constitue pas une promesse sur les langues d’animation disponibles.
+
+Les effectifs des fiches sont des formats indicatifs. Le catalogue et les demandes de devis mettent en avant le sur-mesure, l’adaptation à la taille du groupe, à sa composition et à la diversité des genres. Le formulaire accepte toute estimation entière positive : un effectif hors du format habituel ajoute une demande d’adaptation au récapitulatif sans bloquer le devis. Les conditions restent à définir avec l’équipe.
+
+Le formulaire est traduit jusqu’au récapitulatif et au message préparé. Il ouvre toujours la messagerie de l’utilisateur ; aucun envoi serveur n’a été activé. La page technique d’activation reste non indexée, hors navigation et hors sitemap.
