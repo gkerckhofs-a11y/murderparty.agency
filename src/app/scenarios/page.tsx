@@ -2,7 +2,7 @@ import { pageMetadata } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/structured-data";
 import Catalogue from "@/components/catalogue";
 import { EndCta } from "@/components/ui";
-export const metadata = pageMetadata("Scénarios de murder party", "Comparez nos quatre murder parties animées : Hollywood, château médiéval, Prohibition et enquête en fatbike. Groupes de 10 à 40 selon le scénario.", "/scenarios/");
+export const metadata = pageMetadata("Scénarios de murder party", "Glamour hollywoodien, mafia et succession, château assiégé ou enquête en fatbike : comparez quatre murder parties animées pour 10 à 40 selon le scénario.", "/scenarios/");
 export default function Page() {
   return (
     <>
@@ -16,7 +16,7 @@ export default function Page() {
         </h1>
         <div className="intro-columns">
           <p>
-            Hollywood, château, bikers, Prohibition…
+            Glamour hollywoodien, mafia, banquet médiéval ou paysages à découvrir…
             <br />
             Quatre scénarios de soirées enquête animées par nos équipes.
           </p>

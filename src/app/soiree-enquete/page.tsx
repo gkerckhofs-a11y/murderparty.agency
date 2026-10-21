@@ -53,9 +53,9 @@ export default function MysteryEvening() {
               Les capacités varient selon le scénario : 15 à 40 personnes pour
               SHOWBIZ, Meurtre au Château et Black Velvet ; 10 à 15 pour The Bikers.</p></div>
           <div><span>02</span><h3>L’univers de l’enquête.</h3>
-            <p>Choisissez une ambiance qui vous attire : Hollywood dans les années 1930,
-              un château médiéval, un club clandestin sous la Prohibition ou
-              une enquête itinérante en fatbike électrique.</p></div>
+            <p>Choisissez une ambiance qui vous attire : le glamour du cinéma à Hollywood,
+              un banquet dans un château assiégé, une guerre de succession dans la mafia
+              ou la découverte des paysages au fil d’une enquête en fatbike électrique.</p></div>
           <div><span>03</span><h3>Le lieu et le repas.</h3>
             <p>Nos équipes se déplacent et peuvent proposer un lieu partenaire.
               La prise en charge du repas est possible sur demande. Meurtre au Château
@@ -67,15 +67,16 @@ export default function MysteryEvening() {
       <span className="eyebrow">CHOISIR SON INTRIGUE</span>
       <div>
         <h2>Quatre univers,<br /><em>quatre façons d’enquêter.</em></h2>
-        <p><Link href="/scenarios/showbiz/">SHOWBIZ</Link> vous entraîne à Hollywood
-          lors d’un casting bouleversé par un meurtre.
+        <p><Link href="/scenarios/showbiz/">SHOWBIZ</Link> vous entraîne dans le glamour
+          d’Hollywood, entre ambitions de cinéma et casting bouleversé par un meurtre.
           Avec <Link href="/scenarios/meurtre-au-chateau/">Meurtre au Château</Link>,
-          le cadre médiéval et les costumes fournis font partie de l’immersion.</p>
+          le siège et le banquet médiéval donnent leur cadre à l’enquête, dans un château
+          et avec des costumes fournis. L’organisation du repas est précisée sur devis.</p>
         <p><Link href="/scenarios/black-velvet/">Black Velvet</Link> réunit les invités
-          dans l’univers d’un club clandestin new-yorkais en 1928, sur fond de succession
-          et de casting. Pour une murder party à vélo près de Liège,
+          dans la mafia new-yorkaise de 1928 : guerre de succession, alliances et
+          luttes de pouvoir dans un club clandestin. Pour une murder party à vélo près de Liège,
           <Link href="/scenarios/the-bikers/"> The Bikers</Link> mêle enquête et
-          déplacements en fatbike électrique au départ de Hony, à Esneux.
+          découverte des paysages en fatbike électrique au départ de Hony, à Esneux.
           La location du vélo est incluse.</p>
         <Link href="/scenarios/" className="text-link">Comparer les scénarios de murder party <Arrow /></Link>
       </div>

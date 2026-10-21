@@ -52,7 +52,7 @@ export default async function Page({
           </span>
           <div className="scenario-intro">
             <span className="eyebrow">
-              {s.slug === "meurtre-au-chateau" ? "AU CŒUR D’UN CHÂTEAU" : "LE POINT DE DÉPART"}
+              {s.eyebrow}
             </span>
             <p>{s.intro}</p>
           </div>
@@ -103,6 +103,26 @@ export default async function Page({
             Modalités et disponibilité à préciser dans votre devis.
           </p>
           <Link href="/soiree-enquete/" className="text-link">Préparer votre soirée enquête <Arrow /></Link>
+        </div>
+      </section>
+      <section className="creator-approach" aria-labelledby="scenario-experience-title">
+        <div className="wrap">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">L’EXPÉRIENCE {s.title}</span>
+              <h2 id="scenario-experience-title">{s.experienceTitle}</h2>
+            </div>
+            <p>{s.experienceIntro}</p>
+          </div>
+          <div className="process-grid">
+            {s.highlights.map((highlight, index) => (
+              <div key={highlight.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{highlight.title}</h3>
+                <p>{highlight.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section className="wrap detail-copy">

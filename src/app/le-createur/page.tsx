@@ -8,7 +8,7 @@ export default function CreatorPage() {
   return (
     <>
       <section className="wrap creator-hero" aria-labelledby="creator-title">
-        <div className="creator-copy">
+        <div className="creator-copy" id="guillaume-kerckhofs">
           <span className="eyebrow">L’HOMME DERRIÈRE LES INTRIGUES</span>
           <h1 id="creator-title">Guillaume<br /><em>Kerckhofs.</em></h1>
           <p className="creator-role">Le Ludificateur</p>
