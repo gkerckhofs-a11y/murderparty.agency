@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     template: "%s | Murder Party Agency",
   },
   description:
-    "Votre soirée enquête ou soirée mystère en Wallonie et à Bruxelles. Quatre murder parties animées pour entreprises et groupes privés. Organisation sur devis.",
+    "Votre soirée enquête ou soirée mystère en Wallonie et à Bruxelles. Murder parties et animation Spy Party pour entreprises et groupes privés. Organisation sur devis.",
   metadataBase: new URL("https://murderparty.agency"),
   verification: { google: "x8Xz7-qeGye6hmTsdIEmcCnW4SnwIaizj4y5zJ_ioik" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },

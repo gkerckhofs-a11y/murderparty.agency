@@ -1,6 +1,6 @@
 import { pageMetadata } from "@/lib/seo";
 import QuoteForm from "@/components/quote-form";
-export const metadata = pageMetadata("Devis pour votre murder party", "Préparez votre demande de devis pour une murder party animée : scénario, groupe, date, lieu et repas. Envoyez votre récapitulatif depuis votre messagerie.", "/devis/");
+export const metadata = pageMetadata("Devis murder party et animation Spy Party", "Préparez votre devis pour une murder party ou Spy Party : expérience, groupe, date, lieu et repas. Envoyez votre récapitulatif depuis votre messagerie.", "/devis/");
 export default function Page() {
   return (
     <section className="wrap quote-page">
@@ -9,17 +9,17 @@ export default function Page() {
         <h1>
           Votre devis
           <br />
-          <em>murder party.</em>
+          <em>sur mesure.</em>
         </h1>
         <p>
-          Une envie, une occasion, un groupe.
+          Une murder party ou une animation Spy Party, une occasion, un groupe.
           <br />
           Racontez-nous le début de l’histoire.
         </p>
         <div className="quote-promise">
           <span>01</span>
           <p>
-            Une Murder Party
+            Une expérience
             <br />
             <strong>animée par nos équipes.</strong>
           </p>

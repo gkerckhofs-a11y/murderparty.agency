@@ -6,7 +6,7 @@ import { StructuredData } from "@/components/structured-data";
 import { PartnerCta } from "@/components/partner-cta";
 export const metadata = pageMetadata(
   "Murder party en Wallonie et à Bruxelles",
-  "Votre soirée enquête ou soirée mystère en Wallonie et à Bruxelles. Quatre murder parties animées pour entreprises et groupes privés. Organisation sur devis.",
+  "Votre soirée enquête ou soirée mystère en Wallonie et à Bruxelles. Murder parties et animation Spy Party pour entreprises et groupes privés. Organisation sur devis.",
   "/",
 );
 export default function Home() {
@@ -86,6 +86,7 @@ export default function Home() {
             Voir le catalogue <Arrow />
           </Link>
         </div>
+        <p className="editorial-note">Sept murder parties en personnages et l’animation d’espionnage Spy Party pour 30 à 120 participants.</p>
         <div className="cards">
           {scenarios.map((s, i) => (
             <ScenarioCard key={s.slug} scenario={s} index={i} />
@@ -169,7 +170,7 @@ export default function Home() {
               ],
               [
                 "03",
-                "Votre Murder Party",
+                "Votre expérience",
                 "Une expérience événementielle animée par nos équipes.",
               ],
             ].map(([n, t, p]) => (

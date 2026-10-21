@@ -54,11 +54,14 @@ export default function MysteryEvening() {
           <div><span>01</span><h3>Le groupe et la date.</h3>
             <p>Précisez le nombre de participants et la date souhaitée.
               Les capacités varient selon le scénario : 15 à 40 personnes pour
-              SHOWBIZ, Meurtre au Château et Black Velvet ; 10 à 15 pour The Bikers.</p></div>
+              SHOWBIZ, Meurtre au Château et Black Velvet ; 10 à 15 pour The Bikers ;
+              20 à 30 pour Disco Killer ; 15 à 20 pour London Requiem ; 15 pour Nid d’espions.
+              L’animation Spy Party accueille 30 à 120 participants.</p></div>
           <div><span>02</span><h3>L’univers de l’enquête.</h3>
             <p>Choisissez une ambiance qui vous attire : le glamour du cinéma à Hollywood,
               un banquet dans un château assiégé, une guerre de succession dans la mafia
-              ou la découverte des paysages au fil d’une enquête en fatbike électrique.</p></div>
+              ou la découverte des paysages au fil d’une enquête en fatbike électrique.
+              Vous pouvez aussi choisir le disco, le mystère gothique ou l’espionnage.</p></div>
           <div><span>03</span><h3>Le lieu et le repas.</h3>
             <p>Nos équipes se déplacent et peuvent proposer un lieu partenaire.
               La prise en charge du repas est possible sur demande. Meurtre au Château
@@ -69,7 +72,7 @@ export default function MysteryEvening() {
     <section className="wrap detail-copy">
       <span className="eyebrow">CHOISIR SON INTRIGUE</span>
       <div>
-        <h2>Quatre univers,<br /><em>quatre façons d’enquêter.</em></h2>
+        <h2>Sept murder parties,<br /><em>autant de façons d’enquêter.</em></h2>
         <p><Link href="/scenarios/showbiz/">SHOWBIZ</Link> vous entraîne dans le glamour
           d’Hollywood, entre ambitions de cinéma et casting bouleversé par un meurtre.
           Avec <Link href="/scenarios/meurtre-au-chateau/">Meurtre au Château</Link>,
@@ -81,7 +84,20 @@ export default function MysteryEvening() {
           <Link href="/scenarios/the-bikers/"> The Bikers</Link> mêle enquête et
           découverte des paysages en fatbike électrique au départ de Hony, à Esneux.
           La location du vélo est incluse.</p>
-        <Link href="/scenarios/" className="text-link">Comparer les scénarios de murder party <Arrow /></Link>
+        <p><Link href="/scenarios/disco-killer/">Disco Killer</Link> mêle enquête et
+          véritable soirée dansante dans le New York de 1978. Avec
+          <Link href="/scenarios/london-requiem/"> London Requiem</Link>, entrez dans
+          une vente privée londonienne en 1912, entre investigation à la Sherlock Holmes
+          et mystères gothiques. <Link href="/scenarios/nid-d-espions/">Nid d’espions</Link>
+          vous invite dans un hôtel-casino où le bluff et l’humour de l’espionnage
+          se mêlent à une affaire de meurtre.</p>
+        <h3>Une animation pour les grands groupes : Spy Party.</h3>
+        <p>Pour 30 à 120 participants, <Link href="/scenarios/spy-party/">Spy Party</Link>
+          propose des missions secrètes, des agences rivales et des informations
+          à négocier au fil d’un cocktail ou d’un repas. Cette animation d’espionnage
+          se joue à votre rythme, sans personnage théâtral imposé. Sa durée et son
+          intégration à votre événement se définissent ensemble.</p>
+        <Link href="/scenarios/" className="text-link">Comparer les expériences <Arrow /></Link>
       </div>
     </section>
     <section className="wrap detail-copy">
@@ -106,8 +122,10 @@ export default function MysteryEvening() {
         </div>
         <PartnerCta compact />
         <details><summary>Combien de temps dure une murder party ? <span>+</span></summary>
-          <p>La durée de l’enquête est de 3 heures pour SHOWBIZ, Meurtre au Château et
-            Black Velvet, et de 4 heures pour The Bikers. L’organisation d’un éventuel
+          <p>Comptez environ 3 heures pour SHOWBIZ, Meurtre au Château, Black Velvet,
+            Disco Killer, London Requiem et Nid d’espions, et 4 heures pour The Bikers.
+            La durée de l’animation Spy Party est définie selon votre événement.
+            L’organisation d’un éventuel
             repas est précisée séparément dans votre devis.</p></details>
         <details><summary>Quel est le prix d’une soirée enquête ? <span>+</span></summary>
           <p>Les tarifs sont uniquement sur devis. Indiquez votre scénario, votre groupe,

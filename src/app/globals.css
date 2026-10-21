@@ -1964,7 +1964,7 @@ p {
   }
 }
 
-/* Catalogue à quatre univers et services confirmés. */
+/* Catalogue et services confirmés. */
 .services-section {
   padding-block: 65px 90px;
   border-top: 1px solid var(--line);
@@ -2185,3 +2185,13 @@ p {
   .partner-invitation.is-compact { padding: 24px 20px; }
   .partner-invitation .button, .partner-contact .button { max-width: 100%; white-space: normal; }
 }
+
+/* Nouvelles expériences : illustrations et sous-titres. */
+.poster.disco { background: linear-gradient(0deg, #21151c91, #21151c20), url("/images/disco-killer.webp") center/cover; color: #f0d6b9; }
+.poster.london { background: linear-gradient(0deg, #10192391, #10192320), url("/images/london-requiem.webp") center/cover; color: #e2d7c2; }
+.poster.espions { background: linear-gradient(0deg, #10201991, #10201920), url("/images/nid-d-espions.webp") center/cover; color: #e4d8b6; }
+.poster.spy { background: linear-gradient(0deg, #10201e91, #10201e20), url("/images/spy-party.webp") center/cover; color: #d9d9c3; }
+.scenario-card > .card-subtitle { margin-top: 8px; margin-bottom: 12px; color: var(--copper); font-style: italic; }
+.scenario-subtitle { margin-top: 18px; color: var(--copper); font-family: var(--serif); font-size: clamp(1.4rem, 2.3vw, 2rem); font-style: italic; }
+.scenario-intro p + p { margin-top: 16px; }
+.cards { row-gap: 48px; }

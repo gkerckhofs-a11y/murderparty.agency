@@ -1,5 +1,8 @@
+import { readFile } from 'node:fs/promises';
+const sitemap = await readFile(new URL('../public/sitemap.xml', import.meta.url), 'utf8');
+const paths = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => new URL(match[1]).pathname);
 const origin = 'https://murderparty-e4278.web.app';
-for (const path of ['/', '/soiree-enquete/', '/scenarios/', '/contact/', '/devis/', '/a-propos/', '/scenarios/the-bikers/', '/scenarios/meurtre-au-chateau/', '/scenarios/black-velvet/', '/scenarios/showbiz/']) {
+for (const path of paths) {
   const response = await fetch(`${origin}${path}`, { signal: AbortSignal.timeout(20000) });
   const html = await response.text();
   if (!response.ok || !html.includes('Murder Party Agency')) {

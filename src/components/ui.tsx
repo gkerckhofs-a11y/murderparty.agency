@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Scenario } from "@/content/fr";
+import { type Scenario, participantLabel, durationLabel } from "@/content/fr";
 export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
   return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>;
 }
@@ -82,14 +82,15 @@ export function ScenarioCard({
           {scenario.keywords?.length ? ` · ${scenario.keywords.join(" · ")}` : ""}
         </span>
         <span className="status-label">
-          SUR DEVIS
+          {scenario.category === "animation" ? "ANIMATION" : "MURDER PARTY"}
         </span>
       </div>
       <h3>
         <Link href={`/scenarios/${scenario.slug}/`}>{scenario.title}</Link>
       </h3>
+      {scenario.subtitle && <p className="card-subtitle">{scenario.subtitle}</p>}
       <p className="capacity-label">
-        {scenario.minParticipants} à {scenario.maxParticipants} participants · {scenario.durationHours} h
+        {participantLabel(scenario)} participants · {durationLabel(scenario)}
       </p>
       {scenario.departure && <p className="inclusion-label">Départ depuis {scenario.departure}</p>}
       <p>{scenario.pitch}</p>
@@ -97,7 +98,7 @@ export function ScenarioCard({
         <p className="inclusion-label">{scenario.included}</p>
       )}
       <Link href={`/scenarios/${scenario.slug}/`} className="text-link">
-        Explorer l’intrigue <Arrow />
+        {scenario.category === "animation" ? "Découvrir l’animation" : "Explorer l’intrigue"} <Arrow />
       </Link>
     </article>
   );

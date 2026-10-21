@@ -1,6 +1,8 @@
 export type Scenario = {
   slug: string;
   title: string;
+  subtitle?: string;
+  category?: "animation";
   universe: string;
   keywords?: string[];
   era: string;
@@ -19,10 +21,20 @@ export type Scenario = {
   format?: string;
   minParticipants: number;
   maxParticipants: number;
-  durationHours: number;
+  durationHours?: number;
+  venue?: string;
+  dressCode?: string;
   departure?: string;
   included?: string;
 };
+export function participantLabel(scenario: Scenario) {
+  return scenario.minParticipants === scenario.maxParticipants
+    ? `${scenario.minParticipants}`
+    : `${scenario.minParticipants} à ${scenario.maxParticipants}`;
+}
+export function durationLabel(scenario: Scenario) {
+  return scenario.durationHours ? `${scenario.durationHours} h` : "Durée à définir ensemble";
+}
 export const scenarios: Scenario[] = [
   {
     slug: "showbiz",
@@ -136,5 +148,172 @@ export const scenarios: Scenario[] = [
       { title: "Des alliances à négocier.", text: "Soutenir un camp, convaincre un interlocuteur, protéger une information : les échanges donnent tout son relief à cette soirée de pouvoir et de méfiance." },
       { title: "New York sous la Prohibition.", text: "En 1928, le Black Velvet rassemble les invités dans l’atmosphère d’un tripot clandestin. Une ambiance de mafia et de secrets, où les belles manières n’effacent pas les rivalités." },
     ],
+  },
+  {
+    "slug": "disco-killer",
+    "title": "DISCO KILLER",
+    "subtitle": "Meurtre sur le dancefloor",
+    "minParticipants": 20,
+    "maxParticipants": 30,
+    "durationHours": 3,
+    "universe": "Disco",
+    "keywords": [
+      "Seventies",
+      "Soirée dansante"
+    ],
+    "era": "New York · 1978",
+    "eyebrow": "Paillettes, danse et humour noir",
+    "theme": "disco",
+    "image": "/images/disco-killer.webp",
+    "tagline": "Saurez-vous démasquer le tueur avant le dernier slow ?",
+    "pitch": "New York, 1978. Sous les boules à facettes, un tueur rôde. Une murder party qui se danse autant qu’elle se joue : enquête, paillettes et tubes des seventies.",
+    "intro": "New York, 1978. Les nuits sont électriques, les pantalons sont à pattes d’éléphant et les boules à facettes font tourner les têtes. Au Starship Discovery One, la discothèque la plus déjantée de Manhattan, tout le monde rêve de gloire, de paillettes et de nuits sans lendemain.\n\nMais depuis quelques semaines, un mystérieux assassin sème la terreur dans les clubs new-yorkais. La presse l’a surnommé le Disco Killer. Ses victimes ont toutes été poignardées au beau milieu de la piste de danse. Et ce soir, malgré la menace, la fête promet d’être mémorable…\n\nProducteurs véreux, stars capricieuses, DJs mégalomanes, danseurs survoltés et policiers infiltrés : chacun a ses secrets, ses ambitions et quelques cadavres dans le placard.",
+    "experienceTitle": "Une murder party qui se danse autant qu’elle se joue.",
+    "experienceIntro": "Ici, l’enquête se mêle à une véritable soirée disco. Entre deux révélations compromettantes, les joueurs s’affrontent sur le dancefloor, négocient sous les boules à facettes et se déhanchent sur les tubes des seventies.",
+    "highlights": [
+      {
+        "title": "Le dancefloor fait partie du jeu.",
+        "text": "Une véritable soirée dansante s’intègre à l’enquête. Les tubes des seventies rythment les rencontres, les négociations et les révélations."
+      },
+      {
+        "title": "Des ego sous les projecteurs.",
+        "text": "Producteurs, stars, DJs et danseurs poursuivent leurs ambitions. Les policiers infiltrés se mêlent à la fête : derrière les paillettes, chacun a quelque chose à cacher."
+      },
+      {
+        "title": "Le New York de 1978.",
+        "text": "Pattes d’éléphant, tenues extravagantes et boules à facettes : laissez libre cours à votre créativité pour incarner votre personnage dans une ambiance disco et humour noir."
+      }
+    ],
+    "venue": "Une discothèque ou une salle aménagée en dancefloor",
+    "dressCode": "Années 70, disco et tenues extravagantes",
+    "format": "Soirée enquête avec soirée dansante intégrée",
+    "seoTitle": "Disco Killer : murder party disco et soirée dansante",
+    "seoDescription": "New York, 1978 : enquêtez sous les boules à facettes. Disco Killer mêle murder party et soirée disco pour 20 à 30 joueurs, environ 3 h. Sur devis."
+  },
+  {
+    "slug": "london-requiem",
+    "title": "LONDON REQUIEM",
+    "subtitle": "La vente des âmes",
+    "minParticipants": 15,
+    "maxParticipants": 20,
+    "durationHours": 3,
+    "universe": "Londres",
+    "keywords": [
+      "Sherlock Holmes",
+      "Gothique"
+    ],
+    "era": "Londres · 1912",
+    "eyebrow": "Enquête gothique et mystères",
+    "theme": "london",
+    "image": "/images/london-requiem.webp",
+    "tagline": "Et si certaines vérités avaient mieux fait de rester enterrées ?",
+    "pitch": "Londres, 1912. Une vente privée, un maître de maison mort et un corps disparu. Une enquête à la manière de Sherlock Holmes, entre secrets de famille et mystères occultes.",
+    "intro": "Londres, 1912. Le brouillard enveloppe les rues de la capitale britannique. Dans les salons feutrés de la bonne société, on parle encore des terribles crimes de Whitechapel, des mystères de l’Orient et de ces étranges expériences qui prétendent repousser les frontières de la mort.\n\nCe soir, le mystérieux docteur Edmund Rowland a convié une poignée de privilégiés à une vente privée exceptionnelle. Objets précieux rapportés des Indes, œuvres d’art mystérieuses et antiquités inestimables doivent passer entre les mains de collectionneurs fortunés.\n\nMais le maître de maison est mort. Et son corps a disparu.\n\nLa vente aura pourtant lieu. Car dans la bonne société londonienne, il serait inconvenant de laisser un décès gâcher une réception.",
+    "experienceTitle": "Une enquête digne de Sherlock Holmes.",
+    "experienceIntro": "Aristocrates décadents, détectives obstinés, médiums inquiétants et marchands d’art sans scrupules se croisent dans une intrigue où chaque découverte soulève de nouvelles questions. Meurtre, spiritisme, héritages maudits et ombres de Jack l’Éventreur : plusieurs mystères intimement liés attendent les joueurs.",
+    "highlights": [
+      {
+        "title": "Le raffinement du Londres édouardien.",
+        "text": "La vente privée réunit une société élégante autour d’œuvres d’art et d’antiquités. Les bonnes manières résistent même à la disparition du corps du maître de maison."
+      },
+      {
+        "title": "Des mystères à plusieurs niveaux.",
+        "text": "Recoupez les découvertes, confrontez les versions et démêlez des intrigues personnelles. L’investigation classique rencontre les mystères occultes."
+      },
+      {
+        "title": "Une atmosphère gothique.",
+        "text": "Brouillard londonien, spiritisme et secrets inavouables composent une soirée inspirée des grands romans policiers britanniques."
+      }
+    ],
+    "venue": "Château, manoir, demeure historique ou salon d’époque",
+    "dressCode": "Élégance britannique du début du XXe siècle : aristocrates, détectives et personnages mystérieux",
+    "format": "Enquête à plusieurs niveaux, mystères occultes et intrigues personnelles",
+    "seoTitle": "London Requiem : murder party Sherlock Holmes et gothique",
+    "seoDescription": "Londres, 1912 : une vente privée, un mort et un corps disparu. Une murder party gothique inspirée de Sherlock Holmes, 15 à 20 joueurs, environ 3 h."
+  },
+  {
+    "slug": "nid-d-espions",
+    "title": "NID D’ESPIONS",
+    "subtitle": "Bons baisers de nulle part",
+    "posterTitle": [
+      "NID",
+      "D’ESPIONS"
+    ],
+    "minParticipants": 15,
+    "maxParticipants": 15,
+    "durationHours": 3,
+    "universe": "Espionnage",
+    "keywords": [
+      "James Bond",
+      "Humour"
+    ],
+    "era": "Hôtel-casino · Secrets internationaux",
+    "eyebrow": "Bluff, diplomatie et faux-semblants",
+    "theme": "espions",
+    "image": "/images/nid-d-espions.webp",
+    "tagline": "Votre mission : découvrir la vérité. Et surtout, ne faire confiance à personne.",
+    "pitch": "Dans un prestigieux hôtel-casino, un meurtre fait tomber les couvertures. Entre James Bond et OSS 117, bluffez, négociez et protégez vos secrets sans renverser votre Martini.",
+    "intro": "Bienvenue dans le monde merveilleux de l’espionnage international, où personne n’est celui qu’il prétend être, où les cocktails sont toujours bien frappés et où les agents secrets ont parfois davantage de charme que de compétences.\n\nDans le cadre feutré d’un prestigieux hôtel-casino, les apparences sont trompeuses. Derrière les smokings impeccables et les robes de soirée se dissimulent des espions, des manipulateurs et quelques individus dont les intentions sont franchement douteuses.\n\nMais lorsqu’un meurtre vient perturber ce petit monde, les couvertures commencent à tomber. Et un mystérieux secret, le Code Tesla, pourrait bien bouleverser l’équilibre des forces.",
+    "experienceTitle": "Entre James Bond et OSS 117, une enquête délicieusement décalée.",
+    "experienceIntro": "Ici, on espionne ses voisins, on collectionne les fausses identités, on négocie des informations confidentielles et on tente de survivre aux intrigues internationales sans renverser son Martini. Une expérience qui fait la part belle au bluff, à la diplomatie, à la trahison et à l’humour.",
+    "highlights": [
+      {
+        "title": "Une couverture à préserver.",
+        "text": "Smokings et robes de soirée cachent des identités trompeuses. Observez vos voisins et choisissez avec soin ce que vous leur révélez."
+      },
+      {
+        "title": "Le Code Tesla au cœur des convoitises.",
+        "text": "Un meurtre et un mystérieux secret bouleversent les rapports de force. Les informations deviennent une monnaie d’échange et les alliances restent fragiles."
+      },
+      {
+        "title": "L’espionnage avec humour.",
+        "text": "L’élégance rencontre le décalage dans une ambiance de film d’espionnage. L’intrigue peut se transposer dans un hôtel, un casino ou un autre lieu élégant."
+      }
+    ],
+    "venue": "Hôtel, casino, salle de réception ou lieu élégant",
+    "dressCode": "Smokings, robes de soirée, agents secrets et élégance internationale",
+    "format": "Intrigue d’espionnage mêlant meurtre et enjeux internationaux",
+    "seoTitle": "Nid d’espions : murder party James Bond et OSS 117",
+    "seoDescription": "Un hôtel-casino, un meurtre et le Code Tesla. Nid d’espions mêle bluff, humour et espionnage à la James Bond ou OSS 117. 15 joueurs, environ 3 h."
+  },
+  {
+    "slug": "spy-party",
+    "title": "SPY PARTY",
+    "subtitle": "Votre événement passe sous couverture",
+    "category": "animation",
+    "minParticipants": 30,
+    "maxParticipants": 120,
+    "universe": "Espionnage",
+    "keywords": [
+      "Grands groupes",
+      "Animation"
+    ],
+    "era": "Missions secrètes · Agences rivales",
+    "eyebrow": "Rencontres, missions et infiltration",
+    "theme": "spy",
+    "image": "/images/spy-party.webp",
+    "tagline": "Les meilleures informations se cachent peut-être à la table d’à côté.",
+    "pitch": "De 30 à 120 participants, des agences rivales et des missions secrètes. Une animation d’espionnage conviviale pour briser la glace, bluffer et échanger au fil de votre événement.",
+    "intro": "Et si vos invités menaient une double vie le temps de votre événement ? Spy Party les plonge dans un jeu d’espionnage où les agences rivales, les identités secrètes et les informations confidentielles multiplient les occasions de se rencontrer.\n\nVotre mission : nouer des contacts, récolter des renseignements et négocier avec les autres participants. Entre bluff et infiltration, une conversation anodine peut devenir votre meilleur atout. Les smartphones et les QR codes accompagnent les missions et la circulation des informations.",
+    "experienceTitle": "Un grand groupe, mille occasions de se rencontrer.",
+    "experienceIntro": "Spy Party est une animation d’espionnage pour 30 à 120 participants, qui peut accompagner un cocktail ou un repas. Chacun joue à son rythme, sans personnage théâtral imposé. Le format et la durée sont définis avec vous selon le déroulement de votre événement.",
+    "highlights": [
+      {
+        "title": "Des missions pour briser la glace.",
+        "text": "Rencontrer d’autres invités, échanger des informations et négocier : les missions donnent un prétexte ludique aux conversations et aux nouvelles alliances."
+      },
+      {
+        "title": "Des agences et des identités secrètes.",
+        "text": "Saurez-vous repérer vos alliés et préserver vos informations ? Bluff, infiltration et diplomatie nourrissent le jeu entre les participants."
+      },
+      {
+        "title": "Une animation au rythme de la réception.",
+        "text": "Cocktail, repas, événement d’entreprise ou fête privée : nous précisons ensemble l’intégration de Spy Party, les besoins pratiques et la durée."
+      }
+    ],
+    "venue": "Un lieu adapté à votre réception, à définir ensemble",
+    "format": "Animation d’espionnage pour grands groupes",
+    "seoTitle": "Spy Party : animation espionnage pour 30 à 120 personnes",
+    "seoDescription": "Missions secrètes, agences rivales, bluff et rencontres : Spy Party anime votre cocktail, repas ou événement de 30 à 120 participants. Format sur devis."
   },
 ];

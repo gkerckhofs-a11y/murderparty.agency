@@ -1,7 +1,7 @@
 "use client";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { scenarios } from "@/content/fr";
+import { scenarios, participantLabel, durationLabel } from "@/content/fr";
 import { Arrow } from "./ui";
 type Quote = {
   kind: string;
@@ -65,12 +65,12 @@ function Form() {
       participantCount < minParticipants ||
       participantCount > maxParticipants);
   const capacityHint = selectedScenario
-    ? `${selectedScenario.title} : de ${minParticipants} à ${maxParticipants} participants.`
-    : "The Bikers : 10 à 15 participants. Les autres scénarios : 15 à 40 participants.";
+    ? `${selectedScenario.title} : ${participantLabel(selectedScenario)} participants.`
+    : "Murder parties : de 10 à 40 participants selon le scénario. Spy Party : de 30 à 120 participants.";
   const recap = [
     ["Événement", data.kind || "À préciser"],
-    ["Scénario souhaité", scenario],
-    ["Durée de l’enquête", selectedScenario ? `${selectedScenario.durationHours} h` : "Selon le scénario : 3 h, ou 4 h pour The Bikers"],
+    ["Expérience souhaitée", scenario],
+    ["Durée", selectedScenario ? durationLabel(selectedScenario) : "Murder parties : environ 3 h, 4 h pour The Bikers. Spy Party : à définir ensemble."],
     ...(selectedScenario?.departure ? [["Départ de l’enquête", selectedScenario.departure]] : []),
     ...(selectedScenario?.included
       ? [["Inclus", selectedScenario.included]]
@@ -89,7 +89,7 @@ function Form() {
     ["Téléphone", data.phone || "Non renseigné"],
     ["Votre projet", data.message || "Non renseigné"],
   ];
-  const emailBody = `Bonjour,\n\nJe souhaite un devis pour une Murder Party.\n\n${recap.map(([label, value]) => `${label} : ${value}`).join("\n")}\n\nMerci et à bientôt.`;
+  const emailBody = `Bonjour,\n\nJe souhaite un devis pour mon événement.\n\n${recap.map(([label, value]) => `${label} : ${value}`).join("\n")}\n\nMerci et à bientôt.`;
   const mailHref = `mailto:guillaume@leludificateur.be?subject=${encodeURIComponent(`Demande de devis — ${scenario}`)}&body=${encodeURIComponent(emailBody)}`;
   return (
     <div className="quote-form">
@@ -157,7 +157,7 @@ function Form() {
                 </select>
               </label>
               <label>
-                Scénario souhaité
+                Expérience souhaitée
                 <select
                   value={data.scenario}
                   onChange={(e) => update("scenario", e.target.value)}
@@ -166,7 +166,7 @@ function Form() {
                   {scenarios.map((s) => (
                     <option key={s.slug} value={s.slug}>
                       {s.title}
-                      {` · ${s.minParticipants}–${s.maxParticipants} pers. · ${s.durationHours} h`}
+                      {` · ${participantLabel(s)} pers. · ${durationLabel(s)}`}
                     </option>
                   ))}
                 </select>
@@ -200,7 +200,7 @@ function Form() {
                   role="alert"
                 >
                   {participantsInvalid
-                    ? `Indiquez un nombre entier entre ${minParticipants} et ${maxParticipants}${selectedScenario ? " pour ce scénario" : ""}, ou laissez ce champ vide si votre groupe n’est pas encore défini.`
+                    ? `${minParticipants === maxParticipants ? `Cette expérience est prévue pour ${minParticipants} participants` : `Indiquez un nombre entier entre ${minParticipants} et ${maxParticipants}${selectedScenario ? " pour cette expérience" : ""}`}, ou laissez ce champ vide si votre groupe n’est pas encore défini.`
                     : ""}
                 </span>
               </label>

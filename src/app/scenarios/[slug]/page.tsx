@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { scenarios } from "@/content/fr";
+import { scenarios, participantLabel, durationLabel } from "@/content/fr";
 import { Poster, Arrow, EndCta } from "@/components/ui";
 import { pageMetadata } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/structured-data";
@@ -27,7 +27,7 @@ export default async function Page({
   if (!s) notFound();
   return (
     <>
-      <Breadcrumbs items={[{ name: "Scénarios de murder party", path: "/scenarios/" }, { name: s.title, path: `/scenarios/${s.slug}/` }]} />
+      <Breadcrumbs items={[{ name: "Murder parties et animations", path: "/scenarios/" }, { name: s.title, path: `/scenarios/${s.slug}/` }]} />
       <section className="wrap scenario-hero">
         <div className="scenario-poster">
           <Poster scenario={s} large />
@@ -46,15 +46,16 @@ export default async function Page({
           >
             {s.title}
           </h1>
+          {s.subtitle && <p className="scenario-subtitle">{s.subtitle}</p>}
           <p className="scenario-tagline">{s.tagline}</p>
           <span className="status-pill">
-            MURDER PARTY ANIMÉE · SUR DEVIS
+            {s.category === "animation" ? "ANIMATION D’ESPIONNAGE" : "MURDER PARTY ANIMÉE"} · SUR DEVIS
           </span>
           <div className="scenario-intro">
             <span className="eyebrow">
               {s.eyebrow}
             </span>
-            <p>{s.intro}</p>
+            {s.intro.split("\n\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
           <dl className="facts">
             <div>
@@ -80,29 +81,30 @@ export default async function Page({
             <div>
               <dt>Participants</dt>
               <dd>
-                {s.minParticipants} à {s.maxParticipants} personnes
+                {participantLabel(s)} personnes
               </dd>
             </div>
             <div>
-              <dt>Durée de l’enquête</dt>
-              <dd>{s.durationHours} h</dd>
+              <dt>{s.category === "animation" ? "Durée de l’animation" : "Durée de l’enquête"}</dt>
+              <dd>{durationLabel(s)}</dd>
             </div>
             <div>
               <dt>{s.departure ? "Départ" : "Lieu"}</dt>
-              <dd>{s.departure || (s.slug === "meurtre-au-chateau" ? "Dans un château" : "À définir ensemble selon le scénario")}</dd>
+              <dd>{s.departure || s.venue || (s.slug === "meurtre-au-chateau" ? "Dans un château" : "À définir ensemble selon le scénario")}</dd>
             </div>
+            {s.dressCode && <div><dt>Dress code</dt><dd>{s.dressCode}</dd></div>}
             <div>
               <dt>Repas</dt>
               <dd>Prise en charge possible sur demande</dd>
             </div>
           </dl>
           <Link href={`/devis/?scenario=${s.slug}`} className="button primary">
-            Parlons de ce scénario <Arrow />
+            {s.category === "animation" ? "Organisons votre Spy Party" : "Parlons de ce scénario"} <Arrow />
           </Link>
           <p className="small-note">
             Modalités et disponibilité à préciser dans votre devis.
           </p>
-          <Link href="/soiree-enquete/" className="text-link">Préparer votre soirée enquête <Arrow /></Link>
+          {s.category !== "animation" && <Link href="/soiree-enquete/" className="text-link">Préparer votre soirée enquête <Arrow /></Link>}
         </div>
       </section>
       <section className="creator-approach" aria-labelledby="scenario-experience-title">
@@ -144,7 +146,7 @@ export default async function Page({
               Que comprend la prestation ? <span>+</span>
             </summary>
             <p>
-              La Murder Party est animée par nos équipes.{" "}
+              {s.category === "animation" ? "L’animation est organisée avec nos équipes." : "La Murder Party est animée par nos équipes."}{" "}
               {s.included && `${s.included}. `}Vous pouvez également nous
               confier la recherche d’un lieu partenaire et l’organisation du
               repas. Le détail des prestations et des conditions figure dans
@@ -190,14 +192,12 @@ export default async function Page({
               Combien de personnes peuvent participer ? <span>+</span>
             </summary>
             <p>
-              {s.title} accueille de {s.minParticipants} à {s.maxParticipants}{" "}
-              participants. Le nombre maximal est de {s.maxParticipants}{" "}
-              personnes.
+              {s.title} accueille {participantLabel(s)} participants.
             </p>
           </details>
           <details>
             <summary>
-              Comment organiser cette Murder Party ? <span>+</span>
+              {s.category === "animation" ? "Comment organiser cette animation ?" : "Comment organiser cette murder party ?"} <span>+</span>
             </summary>
             <p>
               Complétez le formulaire, vérifiez votre récapitulatif puis ouvrez

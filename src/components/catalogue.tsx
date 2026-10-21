@@ -22,7 +22,7 @@ export default function Catalogue() {
         ))}
       </div>
       <p className="results-count" role="status">
-        {visible.length} {visible.length === 1 ? "scénario" : "scénarios"}
+        {visible.length} {visible.length === 1 ? "expérience" : "expériences"}
       </p>
       <div className="cards">
         {visible.map((s) => (
