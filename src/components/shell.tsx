@@ -90,6 +90,7 @@ export function Footer() {
             <Link href="/soiree-enquete/">Organiser une soirée enquête</Link>
             <Link href="/a-propos/">À propos</Link>
             <Link href="/devis/">Demander un devis</Link>
+            <Link href="/contact/#partenaires">Proposer un lieu partenaire</Link>
             <Link href="/contact/">Contact & confidentialité</Link>
           </div>
         </div>

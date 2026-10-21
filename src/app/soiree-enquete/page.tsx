@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Arrow, EndCta } from "@/components/ui";
 import { Breadcrumbs } from "@/components/structured-data";
 import { pageMetadata } from "@/lib/seo";
+import { PartnerCta } from "@/components/partner-cta";
 
 export const metadata = pageMetadata(
   "Organiser une soirée enquête ou soirée mystère",
@@ -103,6 +104,7 @@ export default function MysteryEvening() {
             scénario, selon vos envies et les disponibilités, dans votre devis.</p>
           <Link href="/devis/" className="text-link">Trouvons le lieu de votre enquête <Arrow /></Link>
         </div>
+        <PartnerCta compact />
         <details><summary>Combien de temps dure une murder party ? <span>+</span></summary>
           <p>La durée de l’enquête est de 3 heures pour SHOWBIZ, Meurtre au Château et
             Black Velvet, et de 4 heures pour The Bikers. L’organisation d’un éventuel

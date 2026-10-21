@@ -2158,9 +2158,30 @@ p {
 .partner-venues ul { list-style: none; padding: 0; margin: 24px 0; display: grid; gap: 22px; }
 .partner-venues li { font-size: .88rem; line-height: 1.8; color: var(--muted); }
 .partner-venues li strong { display: block; color: var(--paper); font-weight: 500; margin-bottom: 4px; }
+.partner-invitation {
+  padding-block: 56px;
+  background: linear-gradient(110deg, #c99d7917, #171916);
+  border-block: 1px solid #c99d7945;
+}
+.partner-invitation-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 50px; }
+.partner-invitation h2, .partner-invitation h3 { font-family: var(--serif); line-height: 1.2; margin: 18px 0; }
+.partner-invitation p { font-size: .9rem; line-height: 1.8; max-width: 620px; }
+.partner-invitation .button { justify-self: start; }
+.partner-invitation.is-compact { padding: 28px; margin-bottom: 32px; }
+.partner-invitation.is-compact .partner-invitation-inner { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+.partner-invitation.is-compact h3 { font-size: 1.85rem; }
+.partner-invitation.is-compact p { margin-bottom: 0; }
+.partner-contact { margin-top: 56px; padding-block: 40px; border-block: 1px solid var(--line); }
+.partner-contact h2 { margin: 20px 0; }
+.partner-contact p { line-height: 1.8; margin-block: 24px; }
+.partner-contact .partner-contact-note { font-size: .8rem; overflow-wrap: anywhere; }
+.partner-contact-note a { text-decoration: underline; }
 @media (max-width: 800px) {
   .about-intro { padding-bottom: 50px; }
   .about-creator-inner { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 50px; }
   .about-creator .creator-portrait { max-width: 180px; }
   .partner-venues { padding: 24px 20px; }
+  .partner-invitation-inner { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .partner-invitation.is-compact { padding: 24px 20px; }
+  .partner-invitation .button, .partner-contact .button { max-width: 100%; white-space: normal; }
 }

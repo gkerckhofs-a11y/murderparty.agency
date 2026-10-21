@@ -3,6 +3,7 @@ import { Arrow, ScenarioCard, EndCta } from "@/components/ui";
 import { scenarios } from "@/content/fr";
 import { pageMetadata, organizationData } from "@/lib/seo";
 import { StructuredData } from "@/components/structured-data";
+import { PartnerCta } from "@/components/partner-cta";
 export const metadata = pageMetadata(
   "Murder party en Wallonie et à Bruxelles",
   "Votre soirée enquête ou soirée mystère en Wallonie et à Bruxelles. Quatre murder parties animées pour entreprises et groupes privés. Organisation sur devis.",
@@ -136,6 +137,7 @@ export default function Home() {
           Composer votre événement <Arrow />
         </Link>
       </section>
+      <PartnerCta />
       <section className="process">
         <div className="wrap">
           <div className="section-heading">
