@@ -1,5 +1,5 @@
 {
-  "request": "scenario-identities-and-creator-anchor",
+  "request": "prepare-email-activation-owner-step",
   "requested_at": "2026-10-21",
   "target": "murderparty-e4278",
   "scope": "hosting"
