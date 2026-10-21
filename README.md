@@ -7,10 +7,16 @@ Site commercial Next.js 16.4.2 / TypeScript / React 19.2.4, indépendant des mot
 Murder Parties exclusivement animées par les équipes, prix uniquement sur devis. Aucun paiement, achat immédiat ou réservation automatique. Français au lancement.
 
 - SHOWBIZ, Meurtre au Château, Black Velvet : 15–40 participants, 3 h.
+- Disco Killer : 20–30 joueurs, environ 3 h ; enquête avec soirée disco intégrée.
+- London Requiem : 15–20 joueurs, environ 3 h ; Londres 1912, vente privée et mystère gothique.
+- Nid d’espions : exactement 15 joueurs, environ 3 h ; hôtel-casino, Code Tesla, espionnage et humour.
+- Spy Party : animation d’espionnage distincte des murder parties, 30–120 participants ; durée à définir avec le client, sans personnage théâtral imposé.
 - The Bikers : 10–15 participants, 4 h, départ Hony (Esneux), vélos Uni MK au look de moto, location incluse dans le devis.
 - Meurtre au Château : immersion médiévale dans un château, costumes médiévaux fournis et compris dans le prix.
 - Déplacement des équipes, lieux partenaires et repas possibles selon le projet ; le départ de The Bikers reste Hony.
 - Page À propos : principe de la soirée enquête, fiche reçue à l’avance, préparation et interprétation du personnage ; courte présentation de Guillaume Kerckhofs / Le Ludificateur.
+
+Les textes et informations pratiques des trois nouvelles murder parties ont été fournis par l’utilisateur le 21 octobre 2026. Spy Party reprend les éléments de travail antérieurs (missions, agences rivales, échanges, smartphones/QR codes, intégration à une réception), avec la capacité 30–120 expressément confirmée. Les quatre nouveaux fonds (`disco-killer.webp`, `london-requiem.webp`, `nid-d-espions.webp`, `spy-party.webp`) sont des illustrations générées le même jour puis optimisées en WebP 1024 × 1280, avec les titres superposés en HTML.
 
 ## Parcours de devis
 
@@ -22,7 +28,7 @@ Aucun stockage local, base de données, SDK Firebase, outil publicitaire ou mesu
 
 `npm ci`, puis `npm run dev` pour le développement ou `npm run build` pour générer `out/`. `npm run typecheck` vérifie les types. Node.js 22 ou version compatible recommandé.
 
-Routes : accueil, catalogue, quatre fiches, devis, À propos, guide soirée enquête, contact/confidentialité et 404. Depuis le 21 octobre 2026, `/a-propos/` remplace la page créateur ; Firebase redirige définitivement `/le-createur/` vers cette nouvelle page. L’ancre `#guillaume-kerckhofs` y est conservée. L’ancienne page publique `/validation/` est retirée ; son historique reste dans `docs/validation-maquette.tsx.txt`.
+Routes : accueil, catalogue, huit fiches (sept murder parties et une animation), devis, À propos, guide soirée enquête, contact/confidentialité et 404. Depuis le 21 octobre 2026, `/a-propos/` remplace la page créateur ; Firebase redirige définitivement `/le-createur/` vers cette nouvelle page. L’ancre `#guillaume-kerckhofs` y est conservée. L’ancienne page publique `/validation/` est retirée ; son historique reste dans `docs/validation-maquette.tsx.txt`.
 
 Métadonnées, URLs canoniques, robots.txt et sitemap ciblent `https://murderparty.agency`. Les illustrations d’ambiance conservent leur mention explicative.
 
