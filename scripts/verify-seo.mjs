@@ -28,10 +28,11 @@ assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URLs');
 const robots = await read('/robots.txt');
 assert(robots.includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`), 'Wrong sitemap in robots.txt');
 assert(!/^Disallow:\s*\/\s*$/m.test(robots), 'Crawling blocked');
-assert.equal(urls.length, 28, 'Expected 14 public pages in each language');
+assert.equal(urls.length, 30, 'Expected 15 public pages in each language');
 const routePairs = [
   ['/', '/en/'], ['/scenarios/', '/en/scenarios/'],
   ['/soiree-enquete/', '/en/murder-mystery-party/'],
+  ['/games-of-influence/', '/en/games-of-influence/'],
   ['/a-propos/', '/en/about/'], ['/devis/', '/en/quote/'], ['/contact/', '/en/contact/'],
 ];
 function equivalents(path) {

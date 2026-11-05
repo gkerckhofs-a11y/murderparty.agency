@@ -1,3 +1,4 @@
+import { InfluenceTeaser } from "@/components/games-of-influence";
 import Link from "next/link";
 import { Arrow, ScenarioCard, EndCta } from "@/components/ui";
 import { scenarios } from "@/content/en";
@@ -31,7 +32,8 @@ export default function Home() {
       <div className="process-grid"><div><span>01</span><h3>We come to you.</h3><p>Our teams travel to host your murder mystery party at the venue you have in mind.</p></div><div><span>02</span><h3>Looking for a venue?</h3><p>We can suggest partner venues to host your event.</p></div><div><span>03</span><h3>And the meal, too.</h3><p>We can also arrange the meal. Your chosen services are brought together in a bespoke quote.</p></div></div>
       <Link href="/en/quote/" className="text-link">Plan your event <Arrow /></Link>
     </section>
-    <PartnerCta locale="en" />
+    <InfluenceTeaser locale="en" />
+      <PartnerCta locale="en" />
     <section className="process"><div className="wrap"><div className="section-heading"><div><span className="eyebrow">FROM AN IDEA TO A STORY</span><h2>Your event begins<br /><em>with a conversation.</em></h2></div><p>Share your ideas with our team.<br />The details take shape in your quote.</p></div>
       <div className="process-grid">{[
         ["01", "Your plans", "Tell us what you have in mind, whether you have a venue or need a partner venue, and your expected group size."],

@@ -88,8 +88,14 @@ Ne pas ajouter de promesse commerciale, témoignage, capacité, inclusion ou col
 
 ## Version française et anglaise
 
-Les 14 pages publiques sont disponibles en français à leurs adresses historiques et en anglais sous `/en/`. Le sélecteur FR / EN conserve la page, les ancres équivalentes et le scénario présélectionné dans le formulaire. Les données saisies ne sont pas conservées lors du changement de langue. Les fichiers de contenu sont `src/content/fr.ts` et `src/content/en.ts` ; les layouts distincts rendent les bons attributs `lang` sans JavaScript. Chaque page expose une canonique propre et des liens `hreflang` réciproques ; le sitemap contient 28 URL. La traduction du site ne constitue pas une promesse sur les langues d’animation disponibles.
+Les 15 pages publiques sont disponibles en français à leurs adresses historiques et en anglais sous `/en/`. Le sélecteur FR / EN conserve la page, les ancres équivalentes et le scénario présélectionné dans le formulaire. Les données saisies ne sont pas conservées lors du changement de langue. Les fichiers de contenu sont `src/content/fr.ts` et `src/content/en.ts` ; les layouts distincts rendent les bons attributs `lang` sans JavaScript. Chaque page expose une canonique propre et des liens `hreflang` réciproques ; le sitemap contient 30 URL. La traduction du site ne constitue pas une promesse sur les langues d’animation disponibles.
 
 Les effectifs des fiches sont des formats indicatifs. Le catalogue et les demandes de devis mettent en avant le sur-mesure, l’adaptation à la taille du groupe, à sa composition et à la diversité des genres. Le formulaire accepte toute estimation entière positive : un effectif hors du format habituel ajoute une demande d’adaptation au récapitulatif sans bloquer le devis. Les conditions restent à définir avec l’équipe.
 
 Le formulaire est traduit jusqu’au récapitulatif et au message préparé. Il ouvre toujours la messagerie de l’utilisateur ; aucun envoi serveur n’a été activé. La page technique d’activation reste non indexée, hors navigation et hors sitemap.
+
+## Games of Influence — 5 novembre 2026
+
+Offre distincte des murder parties, présentée sous `/games-of-influence/` et `/en/games-of-influence/`, dans la navigation, sur l’accueil et à la suite du catalogue. Textes et capacité de 12 à 60 participants fournis par Guillaume ; traduction anglaise éditoriale. Univers Western « Le Pacte des Fondateurs », mafia, Moyen Âge, corporations, science-fiction, politique, historique et sur mesure. Aucune durée ni prestation supplémentaire inventée. Le bouton de devis présélectionne cette offre ; sa durée reste à définir ensemble.
+
+`public/images/games-of-influence.webp` : illustration fictive générée le 5 novembre 2026 avec l’outil intégré, convertie en WebP 1600 × 900. Elle ne représente pas une séance ou un lieu réel. Prompt conservé dans `docs/games-of-influence-image-prompt.txt`. Symbole de factions reliées en SVG natif dans le composant.

@@ -1,15 +1,21 @@
 "use client";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { scenarios as frenchScenarios, durationLabel } from "@/content/fr";
+import { scenarios as frenchScenarios, durationLabel, type Scenario } from "@/content/fr";
 import { scenarios as englishScenarios } from "@/content/en";
 import { localizedPath, type Locale } from "@/lib/i18n";
 import { Arrow } from "./ui";
+import { gamesOfInfluence } from "@/content/games-of-influence";
+type QuoteExperience = Pick<Scenario, "slug" | "title" | "minParticipants" | "maxParticipants" | "durationHours" | "departure" | "included">;
+const quoteExperiences: Record<Locale, QuoteExperience[]> = {
+  fr: [...frenchScenarios, gamesOfInfluence],
+  en: [...englishScenarios, gamesOfInfluence],
+};
 type Quote = { kind: string; scenario: string; participants: string; date: string; location: string; venuePreference: string; meal: string; message: string; name: string; company: string; email: string; phone: string };
 const initial: Quote = { kind: "", scenario: "", participants: "", date: "", location: "", venuePreference: "", meal: "", message: "", name: "", company: "", email: "", phone: "" };
 function Form({ locale }: { locale: Locale }) {
   const t = (fr: string, en: string) => locale === "en" ? en : fr;
-  const scenarios = locale === "en" ? englishScenarios : frenchScenarios;
+  const scenarios = quoteExperiences[locale];
   const params = useSearchParams();
   const [data, setData] = useState<Quote>(initial);
   const [step, setStep] = useState(1);
@@ -36,7 +42,7 @@ function Form({ locale }: { locale: Locale }) {
   const recap = [
     [t("Événement", "Event"), data.kind || unspecified],
     [t("Expérience souhaitée", "Preferred experience"), scenario],
-    [t("Durée", "Duration"), selectedScenario ? durationLabel(selectedScenario, locale) : t("Murder parties : environ 3 h, 4 h pour The Bikers. Spy Party : à définir ensemble.", "Murder mysteries: around 3 hours, 4 hours for The Bikers. Spy Party: to be agreed.")],
+    [t("Durée", "Duration"), selectedScenario ? durationLabel(selectedScenario, locale) : t("Murder parties : environ 3 h, 4 h pour The Bikers. Spy Party et Games of Influence : à définir ensemble.", "Murder mysteries: around 3 hours, 4 hours for The Bikers. Spy Party and Games of Influence: to be agreed.")],
     ...(selectedScenario?.departure ? [[t("Départ de l’enquête", "Starting point"), selectedScenario.departure]] : []),
     ...(selectedScenario?.included ? [[t("Inclus", "Included"), selectedScenario.included]] : []),
     [t("Participants envisagés", "Estimated number of participants"), data.participants || unspecified],
@@ -72,7 +78,7 @@ function Form({ locale }: { locale: Locale }) {
           <option value="">{together}</option>{scenarios.map((s) => <option key={s.slug} value={s.slug}>{s.title} · {durationLabel(s, locale)}</option>)}
         </select>{selectedScenario?.included && <span className="field-help">{selectedScenario.included}.</span>}{selectedScenario?.departure && <span className="field-help">{t("Départ depuis", "Starting from")} {selectedScenario.departure}.</span>}</label>
         <label>{t("Nombre de participants envisagé", "Estimated number of participants")}<input inputMode="numeric" type="number" min={1} step="1" aria-describedby="participant-capacity participant-error" aria-invalid={participantsInvalid || undefined} value={data.participants} onChange={(e) => update("participants", e.target.value)} placeholder={t("Votre estimation", "Your estimate")} />
-          <span className="field-help" id="participant-capacity">{t("Nous travaillons sur mesure et adaptons les scénarios et les personnages à la taille de votre groupe, à sa composition et à la diversité des genres.", "We tailor the scenarios and character roles to your group’s size, make-up and gender diversity.")}{adaptationRequested && <> {t("Nous étudierons ensemble l’adaptation de cette expérience à votre groupe.", "We’ll discuss how this experience can be adapted to your group.")}</>}</span>
+          <span className="field-help" id="participant-capacity">{selectedScenario?.slug === gamesOfInfluence.slug ? t("Games of Influence est conçu pour 12 à 60 participants. Nous précisons ensemble le format selon la taille et la composition de votre groupe.", "Games of Influence is designed for 12 to 60 participants. We agree the format together to suit your group’s size and make-up.") : t("Nous travaillons sur mesure et adaptons les scénarios et les personnages à la taille de votre groupe, à sa composition et à la diversité des genres.", "We tailor the scenarios and character roles to your group’s size, make-up and gender diversity.")}{adaptationRequested && <> {t("Nous étudierons ensemble l’adaptation de cette expérience à votre groupe.", "We’ll discuss how this experience can be adapted to your group.")}</>}</span>
           <span id="participant-error" className="field-error" role="alert">{participantsInvalid ? t("Indiquez un nombre entier supérieur à zéro, ou laissez ce champ vide si votre groupe n’est pas encore défini.", "Enter a whole number greater than zero, or leave this blank if your group size is not yet confirmed.") : ""}</span>
         </label>
         <label>{t("Date souhaitée", "Preferred date")}<input type="date" value={data.date} onChange={(e) => update("date", e.target.value)} /><span className="field-help">{t("N’entraîne aucune réservation.", "This does not make a booking.")}</span></label>

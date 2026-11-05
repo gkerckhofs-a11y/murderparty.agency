@@ -1,6 +1,7 @@
 export type Locale = "fr" | "en";
 const routes = [
   ["/", "/en/"], ["/scenarios/", "/en/scenarios/"],
+  ["/games-of-influence/", "/en/games-of-influence/"],
   ["/a-propos/", "/en/about/"], ["/soiree-enquete/", "/en/murder-mystery-party/"],
   ["/devis/", "/en/quote/"], ["/contact/", "/en/contact/"],
 ] as const;

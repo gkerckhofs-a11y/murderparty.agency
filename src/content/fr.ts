@@ -32,7 +32,7 @@ export function participantLabel(scenario: Scenario, locale: "fr" | "en" = "fr")
     ? `${scenario.minParticipants}`
     : `${scenario.minParticipants}${locale === "en" ? " to " : " à "}${scenario.maxParticipants}`;
 }
-export function durationLabel(scenario: Scenario, locale: "fr" | "en" = "fr") {
+export function durationLabel(scenario: Pick<Scenario, "durationHours">, locale: "fr" | "en" = "fr") {
   return scenario.durationHours ? `${scenario.durationHours} h` : (locale === "en" ? "Duration to be agreed" : "Durée à définir ensemble");
 }
 export const scenarios: Scenario[] = [

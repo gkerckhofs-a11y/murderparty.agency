@@ -1,3 +1,4 @@
+import { InfluenceTeaser } from "@/components/games-of-influence";
 import { pageMetadata } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/structured-data";
 import Catalogue from "@/components/catalogue";
@@ -31,6 +32,7 @@ export default function Page() {
       <section className="wrap catalogue-full">
         <Catalogue />
       </section>
+      <InfluenceTeaser locale="fr" />
       <section className="wrap practical">
         <div>
           <span className="eyebrow">UNE QUESTION DE FORMAT ?</span>

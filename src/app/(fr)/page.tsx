@@ -1,3 +1,4 @@
+import { InfluenceTeaser } from "@/components/games-of-influence";
 import Link from "next/link";
 import { Arrow, ScenarioCard, EndCta } from "@/components/ui";
 import { scenarios } from "@/content/fr";
@@ -138,6 +139,7 @@ export default function Home() {
           Composer votre événement <Arrow />
         </Link>
       </section>
+      <InfluenceTeaser locale="fr" />
       <PartnerCta />
       <section className="process">
         <div className="wrap">

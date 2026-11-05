@@ -23,6 +23,7 @@ export function Header({ locale = "fr" }: { locale?: Locale }) {
       onKeyDown={(e) => { if (e.key === "Escape") setOpen(false); }}>
       <Link aria-current={frenchPath === "/" ? "page" : undefined} href={href("/")}>{en ? "The experience" : "L’expérience"}</Link>
       <Link aria-current={frenchPath.startsWith("/scenarios/") ? "page" : undefined} href={href("/scenarios/")}>{en ? "Scenarios" : "Les scénarios"}</Link>
+      <Link aria-current={frenchPath === "/games-of-influence/" ? "page" : undefined} href={href("/games-of-influence/")}>Games of Influence</Link>
       <Link aria-current={frenchPath === "/a-propos/" ? "page" : undefined} href={href("/a-propos/")} onClick={() => setOpen(false)}>{en ? "About" : "À propos"}</Link>
       <Link className="button outline small" aria-current={frenchPath === "/devis/" ? "page" : undefined} href={href("/devis/")}>{en ? "Your event" : "Votre événement"} <Arrow /></Link>
       <div className="language language-switch" aria-label={en ? "Language" : "Langue"}>
@@ -52,6 +53,7 @@ export function Footer({ locale = "fr" }: { locale?: Locale }) {
       <p>{en ? "Secrets to share." : "Des secrets à partager."}<br />{en ? "An evening to live." : "Une soirée à vivre."}</p>
       <div>
         <Link href={href("/scenarios/")}>{en ? "Scenarios" : "Les scénarios"}</Link>
+        <Link href={href("/games-of-influence/")}>Games of Influence</Link>
         <Link href={href("/soiree-enquete/")}>{en ? "Plan a murder mystery party" : "Organiser une soirée enquête"}</Link>
         <Link href={href("/a-propos/")}>{en ? "About" : "À propos"}</Link>
         <Link href={href("/devis/")}>{en ? "Request a quote" : "Demander un devis"}</Link>
