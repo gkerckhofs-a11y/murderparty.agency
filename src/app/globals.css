@@ -2356,6 +2356,7 @@ p {
   color: #e8d1ac;
 }
 .noel .poster-symbol { color: #d3af7d; }
+.scenario-card .noel .poster-symbol { font-size: 4rem; height: 1em; margin-top: 0; }
 .scenario-card .noel .poster-name { font-size: clamp(1.7rem, 2.4vw, 2.75rem); line-height: 1.05; }
 .poster-large.noel .poster-name { font-size: clamp(2.2rem, 3.6vw, 3.7rem); line-height: 1.05; }
 @media (max-width: 1100px) {
