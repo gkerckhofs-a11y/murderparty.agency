@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/structured-data";
 import Catalogue from "@/components/catalogue";
 import { EndCta } from "@/components/ui";
-export const metadata = pageMetadata("Murder parties et animation Spy Party", "Disco, mystère gothique, espionnage, mafia, cinéma ou Moyen Âge : sept murder parties et Spy Party pour les grands groupes. Découvrez nos expériences sur devis.", "/scenarios/");
+export const metadata = pageMetadata("Murder parties et animation Spy Party", "Noël, disco, mystère gothique, espionnage, mafia, cinéma ou Moyen Âge : huit murder parties et Spy Party pour votre groupe. Expériences sur devis.", "/scenarios/");
 export default function Page() {
   return (
     <>
@@ -17,10 +17,10 @@ export default function Page() {
         </h1>
         <div className="intro-columns">
           <p>
-            Disco, Londres gothique, espionnage, glamour hollywoodien, mafia,
+            Noël, disco, Londres gothique, espionnage, glamour hollywoodien, mafia,
             banquet médiéval ou paysages à découvrir…
             <br />
-            Sept murder parties et l’animation Spy Party pour les grands groupes.
+            Huit murder parties et l’animation Spy Party pour les grands groupes.
           </p>
           <p className="editorial-note">
             Votre projet en Wallonie ou à Bruxelles : nous précisons le lieu et

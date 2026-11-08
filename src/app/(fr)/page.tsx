@@ -87,7 +87,7 @@ export default function Home() {
             Voir le catalogue <Arrow />
           </Link>
         </div>
-        <p className="editorial-note">Sept murder parties en personnages et l’animation d’espionnage Spy Party pour 30 à 120 participants.</p>
+        <p className="editorial-note">Huit murder parties en personnages et l’animation d’espionnage Spy Party pour 30 à 120 participants.</p>
         <div className="cards">
           {scenarios.map((s, i) => (
             <ScenarioCard key={s.slug} scenario={s} index={i} />

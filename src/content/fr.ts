@@ -33,7 +33,11 @@ export function participantLabel(scenario: Scenario, locale: "fr" | "en" = "fr")
     : `${scenario.minParticipants}${locale === "en" ? " to " : " à "}${scenario.maxParticipants}`;
 }
 export function durationLabel(scenario: Pick<Scenario, "durationHours">, locale: "fr" | "en" = "fr") {
-  return scenario.durationHours ? `${scenario.durationHours} h` : (locale === "en" ? "Duration to be agreed" : "Durée à définir ensemble");
+  if (!scenario.durationHours) return locale === "en" ? "Duration to be agreed" : "Durée à définir ensemble";
+  const totalMinutes = Math.round(scenario.durationHours * 60);
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  return minutes ? `${hours} h ${String(minutes).padStart(2, "0")}` : `${hours} h`;
 }
 export const scenarios: Scenario[] = [
   {
@@ -275,6 +279,34 @@ export const scenarios: Scenario[] = [
     "format": "Intrigue d’espionnage mêlant meurtre et enjeux internationaux",
     "seoTitle": "Nid d’espions : murder party James Bond et OSS 117",
     "seoDescription": "Un hôtel-casino, un meurtre et le Code Tesla. Nid d’espions mêle bluff, humour et espionnage à la James Bond ou OSS 117. 15 joueurs, environ 3 h."
+  },
+  {
+    slug: "qui-a-tue-le-pere-noel",
+    minParticipants: 15,
+    maxParticipants: 30,
+    durationHours: 2.5,
+    title: "Qui a tué le Père Noël ?",
+    posterTitle: ["QUI A TUÉ", "LE PÈRE", "NOËL ?"],
+    universe: "Noël",
+    keywords: ["Humour", "Élections"],
+    era: "Un village à Noël",
+    eyebrow: "Secrets sous les guirlandes",
+    theme: "noel",
+    image: "/images/qui-a-tue-le-pere-noel.webp",
+    tagline: "Cette année, Noël risque bien de ne jamais arriver…",
+    pitch: "Le Père Noël a été assassiné. Entre privatisation de Noël, rennes en révolte et élections sous les guirlandes, enquêtez, négociez et tentez de sauver les fêtes.",
+    intro: "Au cœur d’un petit village illuminé, tout est prêt pour la grande soirée de Noël : vin chaud, chalets, musique, pulls kitsch, rennes, lutins et guirlandes à perte de vue.\n\nMais au moment de faire une annonce capitale sur l’avenir de Noël, le Père Noël s’effondre devant tout le monde.\n\nIl a été assassiné.\n\nTrès vite, les secrets remontent à la surface.\n\nLe Père Noël préparait-il vraiment la privatisation de Noël ? Pourquoi les rennes en ont-ils assez de Rudolph ? Qui rêve de prendre la place du Père Noël ? Que cachent les lutins derrière leurs grands principes ? Et surtout… le Grinch est-il vraiment coupable cette fois-ci ?\n\nPendant que l’enquête progresse, deux élections viennent mettre le feu aux poudres : les habitants doivent choisir le prochain Père Noël, tandis que les rennes votent pour désigner leur nouvelle star du traîneau.\n\nPromesses, trahisons, campagnes électorales, magouilles, secrets de famille et rivalités sous les guirlandes : chacun a quelque chose à défendre… et presque tout le monde avait une bonne raison d’en vouloir au Père Noël.",
+    experienceTitle: "Cette année, vous allez devoir sauver Noël.",
+    experienceIntro: "Une murder party de Noël drôle, immersive et pleine de rebondissements, où l’esprit des fêtes rencontre l’enquête policière. Enfilez votre plus beau pull de Noël. Cette année, vous ne venez pas simplement fêter Noël. Vous allez devoir le sauver.",
+    highlights: [
+      { title: "Un meurtre sous les guirlandes.", text: "Le Père Noël s’effondre au moment d’une annonce capitale. Derrière les lumières du village, les secrets de famille et les rivalités refont surface. Presque tout le monde avait une raison de lui en vouloir." },
+      { title: "Deux élections, mille magouilles.", text: "Qui prendra la place du Père Noël ? Quel renne deviendra la nouvelle star du traîneau ? L’enquête se mêle aux campagnes électorales, aux promesses et aux trahisons." },
+      { title: "L’esprit de Noël, avec humour.", text: "Privatisation des fêtes, rennes lassés de Rudolph, lutins aux grands principes et Grinch suspect : un univers de Noël décalé où chacun a quelque chose à défendre." },
+    ],
+    dressCode: "Votre plus beau pull de Noël",
+    format: "Soirée enquête de Noël avec deux élections intégrées",
+    seoTitle: "Qui a tué le Père Noël ? Murder party de Noël",
+    seoDescription: "Qui a tué le Père Noël ? Une murder party de Noël drôle et immersive : enquête, lutins, rennes et élections. De 15 à 30 participants, 2 h 30, sur devis.",
   },
   {
     "slug": "spy-party",

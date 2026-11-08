@@ -128,6 +128,23 @@ const translations: Record<string, Translation> = {
     seoTitle: "Spy Party: an espionage activity for 30 to 120 people",
     seoDescription: "Secret missions, rival agencies, bluff and new connections: Spy Party brings play to your reception, meal or event for 30 to 120 people. Bespoke quotes.",
   },
+  "qui-a-tue-le-pere-noel": {
+    title: "Who Killed Santa Claus?", posterTitle: ["WHO KILLED", "SANTA", "CLAUS?"],
+    universe: "Christmas", keywords: ["Humour", "Elections"], era: "A village at Christmas", eyebrow: "Secrets beneath the fairy lights",
+    tagline: "This year, Christmas might never come…",
+    pitch: "Santa Claus has been murdered. With Christmas privatisation, rebellious reindeer and elections beneath the fairy lights, investigate, negotiate and try to save the festive season.",
+    intro: "In the heart of a little village aglow with lights, everything is ready for the big Christmas celebration: mulled wine, wooden chalets, music, kitsch jumpers, reindeer, elves and garlands as far as the eye can see.\n\nBut just as he is about to make a momentous announcement about the future of Christmas, Santa Claus collapses in front of everyone.\n\nHe has been murdered.\n\nBefore long, secrets begin to surface.\n\nWas Santa really planning to privatise Christmas? Why have the reindeer had enough of Rudolph? Who dreams of taking Santa’s place? What are the elves hiding behind their lofty principles? And above all… is the Grinch actually guilty this time?\n\nAs the investigation unfolds, two elections add fuel to the fire: the villagers must choose the next Santa Claus, while the reindeer vote for the new star of the sleigh.\n\nPromises, betrayals, election campaigns, shady deals, family secrets and rivalries beneath the fairy lights: everyone has something to defend… and almost everyone had a good reason to resent Santa Claus.",
+    experienceTitle: "This year, you’ll have to save Christmas.",
+    experienceIntro: "A funny, immersive Christmas murder mystery full of twists, where festive spirit meets detective work. Put on your finest Christmas jumper. This year, you’re not just here to celebrate Christmas. You’re going to have to save it.",
+    highlights: [
+      { title: "Murder beneath the fairy lights.", text: "Santa collapses as he prepares to make a momentous announcement. Behind the village lights, family secrets and rivalries come to the surface. Almost everyone had a reason to resent him." },
+      { title: "Two elections. Plenty of scheming.", text: "Who will take Santa’s place? Which reindeer will become the new star of the sleigh? The investigation intertwines with election campaigns, promises and betrayals." },
+      { title: "Festive spirit, with a twist.", text: "Christmas privatisation, reindeer fed up with Rudolph, principled elves and a suspicious Grinch: a comic Christmas world where everyone has something to defend." },
+    ],
+    dressCode: "Your finest Christmas jumper", format: "Christmas murder mystery with two elections woven into the story",
+    seoTitle: "Who Killed Santa Claus? Christmas murder mystery party",
+    seoDescription: "Who Killed Santa Claus? A funny, immersive Christmas murder mystery with elves, reindeer and elections. 15 to 30 participants, 2 hours 30 minutes. Bespoke quotes.",
+  },
 };
 
 // Capacities, duration, images and identifiers share the French source of truth.

@@ -32,6 +32,12 @@ const symbols: Record<string, ReactNode> = {
     <path d="M10 17h44L32 39 10 17Zm22 22v17m-10 0h20M18 25h28M41 27 53 9" />
     <ellipse cx="43" cy="24" rx="4" ry="3" transform="rotate(-52 43 24)" />
   </>,
+  noel: <>
+    <path d="M12 43c2-12 4-24 17-28 9-3 17 1 20 12l3 8M14 43h32M28 16c9 2 13 12 18 21" />
+    <rect x="10" y="43" width="39" height="10" rx="5" />
+    <circle cx="52" cy="38" r="6" />
+    <path d="M8 15v8m-4-4h8M53 8v8m-4-4h8" />
+  </>,
   spy: <>
     <path d="M8 21V12h18l6 7h24v35H8V21Zm0 7h48" />
     <rect x="25" y="36" width="14" height="12" rx="2" />

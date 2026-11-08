@@ -42,7 +42,7 @@ function Form({ locale }: { locale: Locale }) {
   const recap = [
     [t("Événement", "Event"), data.kind || unspecified],
     [t("Expérience souhaitée", "Preferred experience"), scenario],
-    [t("Durée", "Duration"), selectedScenario ? durationLabel(selectedScenario, locale) : t("Murder parties : environ 3 h, 4 h pour The Bikers. Spy Party et Games of Influence : à définir ensemble.", "Murder mysteries: around 3 hours, 4 hours for The Bikers. Spy Party and Games of Influence: to be agreed.")],
+    [t("Durée", "Duration"), selectedScenario ? durationLabel(selectedScenario, locale) : t("À préciser selon l’expérience choisie et votre événement.", "To be agreed according to your chosen experience and event.")],
     ...(selectedScenario?.departure ? [[t("Départ de l’enquête", "Starting point"), selectedScenario.departure]] : []),
     ...(selectedScenario?.included ? [[t("Inclus", "Included"), selectedScenario.included]] : []),
     [t("Participants envisagés", "Estimated number of participants"), data.participants || unspecified],

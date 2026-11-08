@@ -28,11 +28,11 @@ Aucun stockage local, base de données, SDK Firebase, outil publicitaire ou mesu
 
 `npm ci`, puis `npm run dev` pour le développement ou `npm run build` pour générer `out/`. `npm run typecheck` vérifie les types. Node.js 22 ou version compatible recommandé.
 
-Routes : accueil, catalogue, huit fiches (sept murder parties et une animation), devis, À propos, guide soirée enquête, contact/confidentialité et 404. Depuis le 21 octobre 2026, `/a-propos/` remplace la page créateur ; Firebase redirige définitivement `/le-createur/` vers cette nouvelle page. L’ancre `#guillaume-kerckhofs` y est conservée. L’ancienne page publique `/validation/` est retirée ; son historique reste dans `docs/validation-maquette.tsx.txt`.
+Routes : accueil, catalogue, neuf fiches (huit murder parties et une animation), devis, À propos, guide soirée enquête, contact/confidentialité et 404. Depuis le 21 octobre 2026, `/a-propos/` remplace la page créateur ; Firebase redirige définitivement `/le-createur/` vers cette nouvelle page. L’ancre `#guillaume-kerckhofs` y est conservée. L’ancienne page publique `/validation/` est retirée ; son historique reste dans `docs/validation-maquette.tsx.txt`.
 
 Métadonnées, URLs canoniques, robots.txt et sitemap ciblent `https://murderparty.agency`. Les illustrations d’ambiance conservent leur mention explicative.
 
-Référencement : page `/soiree-enquete/`, métadonnées propres aux 28 pages publiques (14 par langue), données structurées et contrôles automatisés. Voir [l’audit et les étapes d’indexation](docs/REFERENCEMENT.md). `npm run verify:seo` vérifie l’export après compilation ; `node scripts/verify-seo.mjs https://murderparty-e4278.web.app` contrôle les pages publiées.
+Référencement : page `/soiree-enquete/`, métadonnées propres aux 32 pages publiques (16 par langue), données structurées et contrôles automatisés. Voir [l’audit et les étapes d’indexation](docs/REFERENCEMENT.md). `npm run verify:seo` vérifie l’export après compilation ; `node scripts/verify-seo.mjs https://murderparty-e4278.web.app` contrôle les pages publiées.
 
 ## Firebase Hosting
 
@@ -88,7 +88,7 @@ Ne pas ajouter de promesse commerciale, témoignage, capacité, inclusion ou col
 
 ## Version française et anglaise
 
-Les 15 pages publiques sont disponibles en français à leurs adresses historiques et en anglais sous `/en/`. Le sélecteur FR / EN conserve la page, les ancres équivalentes et le scénario présélectionné dans le formulaire. Les données saisies ne sont pas conservées lors du changement de langue. Les fichiers de contenu sont `src/content/fr.ts` et `src/content/en.ts` ; les layouts distincts rendent les bons attributs `lang` sans JavaScript. Chaque page expose une canonique propre et des liens `hreflang` réciproques ; le sitemap contient 30 URL. La traduction du site ne constitue pas une promesse sur les langues d’animation disponibles.
+Les 16 pages publiques sont disponibles en français à leurs adresses historiques et en anglais sous `/en/`. Le sélecteur FR / EN conserve la page, les ancres équivalentes et le scénario présélectionné dans le formulaire. Les données saisies ne sont pas conservées lors du changement de langue. Les fichiers de contenu sont `src/content/fr.ts` et `src/content/en.ts` ; les layouts distincts rendent les bons attributs `lang` sans JavaScript. Chaque page expose une canonique propre et des liens `hreflang` réciproques ; le sitemap contient 32 URL. La traduction du site ne constitue pas une promesse sur les langues d’animation disponibles.
 
 Les effectifs des fiches sont des formats indicatifs. Le catalogue et les demandes de devis mettent en avant le sur-mesure, l’adaptation à la taille du groupe, à sa composition et à la diversité des genres. Le formulaire accepte toute estimation entière positive : un effectif hors du format habituel ajoute une demande d’adaptation au récapitulatif sans bloquer le devis. Les conditions restent à définir avec l’équipe.
 
@@ -99,3 +99,9 @@ Le formulaire est traduit jusqu’au récapitulatif et au message préparé. Il 
 Offre distincte des murder parties, présentée sous `/games-of-influence/` et `/en/games-of-influence/`, dans la navigation, sur l’accueil et à la suite du catalogue. Textes et capacité de 12 à 60 participants fournis par Guillaume ; traduction anglaise éditoriale. Univers Western « Le Pacte des Fondateurs », mafia, Moyen Âge, corporations, science-fiction, politique, historique et sur mesure. Aucune durée ni prestation supplémentaire inventée. Le bouton de devis présélectionne cette offre ; sa durée reste à définir ensemble.
 
 `public/images/games-of-influence.webp` : illustration fictive générée le 5 novembre 2026 avec l’outil intégré, convertie en WebP 1600 × 900. Elle ne représente pas une séance ou un lieu réel. Prompt conservé dans `docs/games-of-influence-image-prompt.txt`. Symbole de factions reliées en SVG natif dans le composant.
+
+## Qui a tué le Père Noël ? — 8 novembre 2026
+
+Nouvelle murder party dans le catalogue, sur l’accueil et dans le guide des soirées enquête, avec fiche française et traduction anglaise « Who Killed Santa Claus? ». Le texte promotionnel et les deux élections sont issus du brief utilisateur du 8 novembre 2026. Le récit public ne dévoile aucun coupable. Le devis présélectionne `qui-a-tue-le-pere-noel`. Effectif et durée confirmés par Guillaume dans le même échange : 15 à 30 participants, 2 h 30. Les durées fractionnaires sont affichées en heures et minutes dans le catalogue, la fiche et le devis. Les scénarios existants gardent leurs indications.
+
+Affiche dans le composant partagé `Poster`, avec titre HTML et icône SVG de bonnet de Noël. Illustration fictive générée par l’outil intégré, optimisée en WebP sous `public/images/qui-a-tue-le-pere-noel.webp` ; aucun lieu ou événement réel représenté. Prompt conservé dans `docs/christmas-image-prompt.txt`.

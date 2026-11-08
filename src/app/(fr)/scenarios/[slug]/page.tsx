@@ -41,7 +41,7 @@ export default async function Page({
           </span>
           <h1
             className={
-              s.slug === "meurtre-au-chateau" ? "long-title" : undefined
+              ["meurtre-au-chateau", "qui-a-tue-le-pere-noel"].includes(s.slug) ? "long-title" : undefined
             }
           >
             {s.title}

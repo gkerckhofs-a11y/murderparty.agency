@@ -71,7 +71,7 @@ export default function MysteryEvening() {
     <section className="wrap detail-copy">
       <span className="eyebrow">CHOISIR SON INTRIGUE</span>
       <div>
-        <h2>Sept murder parties,<br /><em>autant de façons d’enquêter.</em></h2>
+        <h2>Huit murder parties,<br /><em>autant de façons d’enquêter.</em></h2>
         <p><Link href="/scenarios/showbiz/">SHOWBIZ</Link> vous entraîne dans le glamour
           d’Hollywood, entre ambitions de cinéma et casting bouleversé par un meurtre.
           Avec <Link href="/scenarios/meurtre-au-chateau/">Meurtre au Château</Link>,
@@ -90,6 +90,7 @@ export default function MysteryEvening() {
           et mystères gothiques. <Link href="/scenarios/nid-d-espions/">Nid d’espions</Link>
           vous invite dans un hôtel-casino où le bluff et l’humour de l’espionnage
           se mêlent à une affaire de meurtre.</p>
+        <p><Link href="/scenarios/qui-a-tue-le-pere-noel/">Qui a tué le Père Noël ?</Link> transforme la fête en enquête : privatisation de Noël, rivalités entre lutins et rennes, et deux élections sous les guirlandes. Une soirée de Noël drôle et immersive où il faudra sauver les fêtes.</p>
         <h3>Une animation pour les grands groupes : Spy Party.</h3>
         <p>Pour 30 à 120 participants, <Link href="/scenarios/spy-party/">Spy Party</Link>
           propose des missions secrètes, des agences rivales et des informations
@@ -123,7 +124,7 @@ export default function MysteryEvening() {
         <details><summary>Combien de temps dure une murder party ? <span>+</span></summary>
           <p>Comptez environ 3 heures pour SHOWBIZ, Meurtre au Château, Black Velvet,
             Disco Killer, London Requiem et Nid d’espions, et 4 heures pour The Bikers.
-            La durée de l’animation Spy Party est définie selon votre événement.
+            Qui a tué le Père Noël ? dure 2 h 30 et accueille de 15 à 30 participants. La durée de l’animation Spy Party est définie selon votre événement.
             L’organisation d’un éventuel
             repas est précisée séparément dans votre devis.</p></details>
         <details><summary>Quel est le prix d’une soirée enquête ? <span>+</span></summary>

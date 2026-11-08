@@ -25,7 +25,7 @@ export default function Home() {
       <Link href="/en/quote/" className="text-link">Imagine your event <Arrow /></Link>
     </div></section>
     <section className="catalogue-preview wrap"><div className="section-heading"><div><span className="eyebrow">THE WORLDS</span><h2>Choose your <em>mystery.</em></h2></div><Link className="text-link" href="/en/scenarios/">Browse the catalogue <Arrow /></Link></div>
-      <p className="editorial-note">Seven character-based murder mysteries and the Spy Party espionage activity for 30 to 120 participants.</p>
+      <p className="editorial-note">Eight character-based murder mysteries and the Spy Party espionage activity for 30 to 120 participants.</p>
       <div className="cards">{scenarios.map((s, i) => <ScenarioCard key={s.slug} scenario={s} index={i} locale="en" />)}</div>
     </section>
     <section className="services-section wrap"><div className="section-heading"><div><span className="eyebrow">YOUR EVENT, TAILORED TO YOU</span><h2>The story, the venue,<br /><em>and the pleasure of hosting.</em></h2></div><p>We build your quote around your wishes: the activity, the venue and the meal.</p></div>

@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <div className="scenario-poster"><Poster scenario={s} large locale="en" /><span className="image-credit">Atmosphere illustration</span></div>
       <div className="scenario-info">
         <span className="eyebrow">{s.universe} · {s.era}</span>
-        <h1 className={s.slug === "meurtre-au-chateau" ? "long-title" : undefined}>{s.title}</h1>
+        <h1 className={["meurtre-au-chateau", "qui-a-tue-le-pere-noel"].includes(s.slug) ? "long-title" : undefined}>{s.title}</h1>
         {s.subtitle && <p className="scenario-subtitle">{s.subtitle}</p>}
         <p className="scenario-tagline">{s.tagline}</p>
         <span className="status-pill">{s.category === "animation" ? "ESPIONAGE ACTIVITY" : "HOSTED MURDER MYSTERY"} · BESPOKE QUOTE</span>
