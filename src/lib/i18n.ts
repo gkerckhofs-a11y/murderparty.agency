@@ -3,6 +3,7 @@ const routes = [
   ["/", "/en/"], ["/scenarios/", "/en/scenarios/"],
   ["/games-of-influence/", "/en/games-of-influence/"],
   ["/a-propos/", "/en/about/"], ["/soiree-enquete/", "/en/murder-mystery-party/"],
+  ["/murder-party-liege/", "/en/murder-party-liege/"],
   ["/devis/", "/en/quote/"], ["/contact/", "/en/contact/"],
 ] as const;
 export function localizedPath(path: string, locale: Locale): string {
