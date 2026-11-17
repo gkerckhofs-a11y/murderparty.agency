@@ -1,6 +1,8 @@
 {
-  "request": "publish-christmas-poster-spacing",
-  "requested_at": "2026-11-08",
+  "request": "publish-seo-murder-party-liege",
+  "requested_at": "2026-11-17",
+  "source_pr": 1,
+  "source_commit": "89bdb64bccfc6401db9ddd3fe7d7a6574942ed67",
   "target": "murderparty-e4278",
   "scope": "hosting"
 }
