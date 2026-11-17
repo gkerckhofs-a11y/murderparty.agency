@@ -45,6 +45,7 @@ export default function Home() {
       <h2 id="enquete-title">Your murder mystery evening<br /><em>in Wallonia and Brussels.</em></h2>
       <p>Planning a murder mystery party in Liège, elsewhere in Wallonia or in Brussels? Bring your colleagues or private group together around a story. Choose a theme, tell us your group size and let our teams help you organise the event. Let us know your preferred town or area: the venue, travel, activity and any meal arrangements are confirmed in your quote according to the scenario.</p>
       <p>For a murder mystery near Liège, <Link href="/en/scenarios/the-bikers/">The Bikers</Link> offers an electric fatbike investigation starting in Hony, Esneux. For the other scenarios, the venue is agreed with you to suit your event.</p>
+      <p>Planning a local event? Explore our <Link href="/en/murder-party-liege/">murder mystery party in Liège guide</Link> for venues, formats and real experiences in the region.</p>
       <Link className="text-link" href="/en/murder-mystery-party/">How do you organise a murder mystery party? <Arrow /></Link>
     </div></section><EndCta locale="en" />
   </>;
