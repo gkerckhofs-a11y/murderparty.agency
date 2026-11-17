@@ -42,6 +42,7 @@ export default function MysteryEvening() {
           ce que vous souhaitez proposer à vos collègues et la taille du groupe.
           Pour un événement privé, partagez l’occasion, vos envies et le cadre envisagé.
           Nous précisons ensemble le format adapté et les conditions d’organisation.</p>
+        <p>Vous préparez votre événement dans la région ? Consultez notre page <Link href="/murder-party-liege/">murder party et soirée enquête à Liège</Link> pour les formats et références locales.</p>
         <Link href="/devis/" className="text-link">Parler de votre événement <Arrow /></Link>
       </div>
     </section>
