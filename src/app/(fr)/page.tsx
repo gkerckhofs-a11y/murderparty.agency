@@ -198,6 +198,7 @@ export default function Home() {
           <p>Pour une murder party près de Liège, <Link href="/scenarios/the-bikers/">The Bikers</Link> propose
             une enquête en fatbike électrique au départ de Hony, à Esneux.
             Pour les autres scénarios, le lieu est convenu avec vous selon le projet.</p>
+          <p>Vous recherchez spécifiquement une <Link href="/murder-party-liege/">murder party ou soirée enquête à Liège</Link> ? Retrouvez nos scénarios, références en province de Liège et modalités d’organisation locales.</p>
           <Link className="text-link" href="/soiree-enquete/">Comment organiser une soirée enquête ? <Arrow /></Link>
         </div>
       </section>
