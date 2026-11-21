@@ -26,12 +26,10 @@ export function Mark() {
 export function Poster({
   scenario,
   large = false,
-  showText = true,
   locale = "fr",
 }: {
   scenario: Scenario;
   large?: boolean;
-  showText?: boolean;
   locale?: Locale;
 }) {
   return (
@@ -40,19 +38,19 @@ export function Poster({
       aria-hidden="true"
     >
       <div className="poster-lines" />
-      {showText && <div className="poster-top">
+      <div className="poster-top">
         MURDER PARTY AGENCY<span>{locale === "en" ? "A STORY TO STEP INTO" : "UNE INTRIGUE À VIVRE"}</span>
-      </div>}
+      </div>
       <div className="poster-symbol">
         <ScenarioIcon theme={scenario.theme} />
       </div>
-      {showText && <><div className="poster-name">
+      <div className="poster-name">
         {(scenario.posterTitle || scenario.title.split(" ")).map((word, i) => (
           <span key={i}>{word}</span>
         ))}
       </div>
       <div className="poster-era">{scenario.era}</div>
-      <div className="poster-bottom">{scenario.eyebrow}</div></>}
+      <div className="poster-bottom">{scenario.eyebrow}</div>
     </div>
   );
 }
@@ -72,7 +70,7 @@ export function ScenarioCard({
         href={localizedPath(`/scenarios/${scenario.slug}/`, locale)}
         aria-label={`${locale === "en" ? "Discover" : "Découvrir"} ${scenario.title}`}
       >
-        <Poster scenario={scenario} locale={locale} showText={false} />
+        <Poster scenario={scenario} locale={locale} />
         <span className="poster-open">
           <Arrow diagonal />
         </span>

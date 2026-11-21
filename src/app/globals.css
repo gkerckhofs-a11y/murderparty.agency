@@ -2366,3 +2366,42 @@ p {
   .scenario-card .noel .poster-name { font-size: clamp(2.2rem, 8vw, 3.2rem); }
   .poster-large.noel .poster-name { font-size: clamp(2.1rem, 7.8vw, 3rem); }
 }
+
+/* Give every caption its own row so poster text cannot overlap. */
+.poster-link { container-type: inline-size; }
+.scenario-card .poster {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+  justify-items: center;
+  align-items: center;
+  gap: 3cqw;
+  padding: 8cqw 6cqw;
+}
+.scenario-card .poster-top,
+.scenario-card .poster-bottom {
+  position: static;
+  max-width: 100%;
+  margin: 0;
+}
+.scenario-card .poster-top { font-size: 2.1cqw; line-height: 1.5; }
+.scenario-card .poster-top span { font-size: 1.8cqw; margin-top: 1cqw; }
+.scenario-card .poster .poster-symbol {
+  font-size: 20cqw;
+  height: 1em;
+  margin: 0;
+}
+.scenario-card .poster .poster-name {
+  max-width: 100%;
+  margin: 0;
+  font-size: 10cqw;
+  line-height: 1.08;
+  letter-spacing: .025em;
+}
+.scenario-card .poster.chateau .poster-name,
+.scenario-card .poster.noel .poster-name { font-size: 9cqw; }
+.scenario-card .poster-era { font-size: 2.4cqw; line-height: 1.5; }
+.scenario-card .poster-bottom {
+  font-size: 3.4cqw;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
