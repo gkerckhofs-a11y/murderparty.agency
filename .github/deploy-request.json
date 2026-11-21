@@ -1,8 +1,6 @@
 {
-  "request": "publish-seo-murder-party-liege",
-  "requested_at": "2026-11-17",
-  "source_pr": 1,
-  "source_commit": "89bdb64bccfc6401db9ddd3fe7d7a6574942ed67",
+  "request": "publish-cosa-nostra-games-of-influence",
+  "requested_at": "2026-11-21",
   "target": "murderparty-e4278",
   "scope": "hosting"
 }
